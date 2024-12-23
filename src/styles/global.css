@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.debug {
+  outline: 2px solid lime;
+  background: hsl(0 100% 50% / .1)
+}
+
+.wrapper {
+  width: min(768px, 100% - 1rem);
+  margin-inline: auto;
+  outline: 1px solid white;
+}
+
+body {
+  min-block-size: 100vb;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  background-color: white;
+  color: var(--copy-color);
+  font-family: system-ui;
+}
+
+header,
+footer,
+main {
+  background-color: pink;
+}
+
+:is(h1, h2, h3, h4, h5) {
+  line-height: 1.1;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+ul {
+  list-style: none;
+}

@@ -2,16 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <nav>nav</nav>
-    <section class="product-section">
-      <h2>products</h2>
-    </section>
-    <footer></footer>
+    <div class="wrapper">
+      <header>header</header>
+      <main>main</main>
+      <!-- ProduktSektion -->
+      <section class="product-section">
+        <h2>products</h2>
+        <!-- ProduktLista -->
+        <ul class="product-list">
+          <li class="product">
+            <img
+              class="product-image"
+              src="https://s2.adlibris.com/images/63247538/yellowface.jpg"
+              alt="book cover"
+            />
+            <div class="product-info">
+              <div class="title-container">
+                <h3 class="product-title">Yellowface</h3>
+                <p class="product-release-date">2023</p>
+              </div>
+              <p class="product-author">Rebecca F Kuang</p>
+              <div class="format-container">
+                <p>Inbunden</p>
+                <p>Engelska</p>
+              </div>
+            </div>
+            <menu>
+              <button class="add-to-cart-button">Lägg till</button>
+              <button class="like-button">♥️</button>
+            </menu>
+          </li>
+          <li class="product">
+            <img
+              class="product-image"
+              src="https://www.sfbok.se/sites/default/files/styles/large/sfbok/sfbokbilder/728/728858.jpg?bust=1721120061&itok=2XKhKD10"
+              alt="book cover"
+            />
+            <div class="product-info">
+              <div class="title-container">
+                <h3 class="product-title">Yellowface</h3>
+                <p class="product-release-date">2023</p>
+              </div>
+              <p class="product-author">Rebecca F Kuang</p>
+              <div class="format-container">
+                <p>Inbunden</p>
+                <p>Engelska</p>
+              </div>
+            </div>
+            <menu>
+              <button class="add-to-cart-button">Lägg till</button>
+              <button class="like-button">♥️</button>
+            </menu>
+          </li>
+        </ul>
+        <!-- ProduktLista end -->
+      </section>
+      <!-- ProduktSektion end -->
+
+      <footer>footer</footer>
+    </div>
   </body>
 </html>
