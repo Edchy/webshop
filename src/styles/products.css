@@ -1,0 +1,106 @@
+.product-section {
+  padding: var(--gap-m);
+
+  h2 {
+    padding-block-end: var(--gap-s);
+    font-size: var(--fs-0);
+  }
+
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* grid-template-rows: repeat(4, auto); */
+    gap: var(--gap-s);
+    justify-items: center;
+  }
+}
+
+/* BOK ELEMENT */
+article.product {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  background-color: white;
+  color: var(--text);
+  /* border: 1px solid pink; */
+  max-width: 200px;
+
+  .product-image img {
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+
+  }
+
+  .product-info {
+    /* padding-block: .25rem;
+    padding-inline: .5rem; */
+
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-m);
+
+      .product-title {
+        font-weight: bold;
+        font-size: var(--fs-0);
+
+        /* Cappa långa titlar */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .product-release-date {
+        color: var(--text-faded);
+        font-style: italic;
+        font-size: var(--fs--1);
+      }
+    }
+
+    .product-author a {
+      color: var(--text-faded);
+      text-underline-offset: 2px;
+      font-size: var(--fs--1);
+      font-variant: small-caps;
+      text-transform: lowercase;
+    }
+
+
+  }
+
+  .product-price {
+    font-weight: bold;
+    font-size: var(--fs-0);
+  }
+
+  .product-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+    button {
+      display: grid;
+      place-content: center;
+      border: none;
+      color: white;
+      padding-block: .5rem;
+    }
+
+    .add-to-cart-button {
+      border-top-left-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+      background-color: var(--primary-color);
+    }
+
+    .like-button {
+      border-top-right-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      background-color: var(--secondary-color);
+    }
+  }
+}
