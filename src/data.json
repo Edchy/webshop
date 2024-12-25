@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "a book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  },
+  {
+    "id": 2,
+    "title": "another book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  },
+  {
+    "id": 2,
+    "title": "another book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  },
+  {
+    "id": 2,
+    "title": "another book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  },
+  {
+    "id": 2,
+    "title": "another book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  },
+  {
+    "id": 2,
+    "title": "another book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  },
+  {
+    "id": 2,
+    "title": "another book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  },
+  {
+    "id": 2,
+    "title": "another book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  },
+  {
+    "id": 3,
+    "title": "third book",
+    "author": [
+      { "firstname": "Ed", "lastname": "son" },
+      { "firstname": "Pal", "lastname": "Ming" }
+    ],
+    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    "year": 2020,
+    "price": 150
+  }
+]
