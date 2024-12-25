@@ -10,7 +10,7 @@
 }
 
 .wrapper {
-  width: min(768px, 100% - 1rem);
+  width: min(1268px, 100% - 1rem);
   margin-inline: auto;
   outline: 1px solid white;
 }

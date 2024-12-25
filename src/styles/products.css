@@ -1,5 +1,5 @@
 .product-section {
-  padding: var(--gap-m);
+  /* padding: var(--gap-m); */
 
   h2 {
     padding-block-end: var(--gap-s);
@@ -8,10 +8,11 @@
 
   .product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     /* grid-template-rows: repeat(4, auto); */
-    gap: var(--gap-s);
-    justify-items: center;
+    column-gap: var(--gap-m);
+    row-gap: 4rem;
+    /* justify-items: center; */
   }
 }
 
@@ -23,10 +24,14 @@ article.product {
   background-color: white;
   color: var(--text);
   /* border: 1px solid pink; */
-  max-width: 200px;
+  /* width: 300px; */
+  row-gap: 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.138);
+  border-radius: var(--radius);
+  padding: 1rem;
 
   .product-image img {
-    max-width: 100%;
+    min-width: 100%;
     min-height: 100%;
     object-fit: cover;
 
@@ -38,6 +43,7 @@ article.product {
 
 
     .title-container {
+      padding-block-start: var(--gap-s);
       display: flex;
       align-items: center;
       gap: var(--gap-m);
