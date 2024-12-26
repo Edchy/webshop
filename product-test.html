@@ -1,0 +1,40 @@
+<article class="product">
+  <figure class="product-image">
+    <a href="#">
+      <img
+        src="${book.cover}"
+        alt="book cover of ${book.title} by ${printNames(book.author)}"
+      />
+    </a>
+  </figure>
+  <div class="product-info">
+    <div class="title-container">
+      <h3 class="product-title">${book.title}</h3>
+      <time datetime="${book.year}" class="product-release-date"
+        >${book.year}</time
+      >
+    </div>
+  </div>
+  <p class="product-author"><a href="#">${printNames(book.author)}</a></p>
+  <div class="product-price">
+    <data value="${book.price}">${book.price}kr</data>
+  </div>
+  <div class="product-actions">
+    <button
+      type="button"
+      class="add-to-cart-button"
+      data-x-son="x"
+      data-book-id="${book.id}"
+    >
+      Lägg till
+    </button>
+    <button
+      type="button"
+      aria-label="Add to favorites"
+      class="like-button"
+      data-book-id="${book.id}"
+    >
+      ♥️
+    </button>
+  </div>
+</article>

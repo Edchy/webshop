@@ -2,100 +2,29 @@
   {
     "id": 1,
     "title": "a book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
+    "author": [{ "firstname": "Rebecka F.", "lastname": "Kuang" }],
     "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
     "year": 2020,
-    "price": 150
+    "format": "Pocket",
+    "genre": "Some genre",
+    "lang": "English",
+    "description": "Some descr...",
+    "price": 150,
+    "discount": 0,
+    "stock": 200
   },
   {
     "id": 2,
-    "title": "another book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
-    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
-    "year": 2020,
-    "price": 150
-  },
-  {
-    "id": 2,
-    "title": "another book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
-    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
-    "year": 2020,
-    "price": 150
-  },
-  {
-    "id": 2,
-    "title": "another book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
-    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
-    "year": 2020,
-    "price": 150
-  },
-  {
-    "id": 2,
-    "title": "another book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
-    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
-    "year": 2020,
-    "price": 150
-  },
-  {
-    "id": 2,
-    "title": "another book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
-    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
-    "year": 2020,
-    "price": 150
-  },
-  {
-    "id": 2,
-    "title": "another book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
-    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
-    "year": 2020,
-    "price": 150
-  },
-  {
-    "id": 2,
-    "title": "another book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
-    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
-    "year": 2020,
-    "price": 150
-  },
-  {
-    "id": 3,
-    "title": "third book",
-    "author": [
-      { "firstname": "Ed", "lastname": "son" },
-      { "firstname": "Pal", "lastname": "Ming" }
-    ],
-    "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
-    "year": 2020,
-    "price": 150
+    "title": "The Adventures of Sherlock Holmes",
+    "author": [{ "firstname": "Arthur", "lastname": "Conan Doyle" }],
+    "cover": "https://cdn.waterstones.com/bookjackets/large/9780/2413/9780241347782.jpg ",
+    "year": 2018,
+    "format": "Pocket",
+    "genre": "Some genre",
+    "lang": "English",
+    "description": "Some descr...",
+    "price": 150,
+    "discount": 50,
+    "stock": 200
   }
 ]

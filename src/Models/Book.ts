@@ -6,13 +6,13 @@ interface IBook {
   author: Author[];
   cover: string;
   year: number;
+  format: string;
+  genre: string;
+  lang: string;
+  description?: string;
   price: number;
-  // format: string;
-  // genre: string;
-  // lang: string;
-  // discount: [boolean, number];
-  // stock: number;
-  // description?: string;
+  discount: number;
+  stock: number;
 }
 
 interface ICartBook extends IBook {
