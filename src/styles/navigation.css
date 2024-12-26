@@ -1,0 +1,25 @@
+h1 {
+  font-size: 40px;
+}
+
+.container {
+  background-color: rgb(114, 115, 115);
+  padding: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+  font-size: 30px;
+}
