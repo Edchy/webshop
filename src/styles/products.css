@@ -1,5 +1,6 @@
 .product-section {
-  /* padding: var(--gap-m); */
+  padding: var(--gap-l);
+  padding: 5rem;
 
   h2 {
     padding-block-end: var(--gap-s);
@@ -94,8 +95,9 @@ article.product {
       justify-content: space-between;
 
       .product-title {
-        font-weight: bold;
-        font-size: var(--fs--1);
+        /* font-weight: bold; */
+        text-wrap: balance;
+        font-size: var(--fs-0);
 
         /* Cappa långa titlar */
         display: -webkit-box;
@@ -116,7 +118,7 @@ article.product {
     .product-author a {
       color: var(--text-faded);
       text-underline-offset: 4px;
-      font-size: var(--fs--2);
+      font-size: var(--fs--1);
       font-variant: small-caps;
       text-transform: lowercase;
     }

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "a book",
+    "title": "Yellowface",
     "author": [{ "firstname": "Rebecka", "lastname": "F. Kuang" }],
     "cover": "https://s2.adlibris.com/images/63247538/yellowface.jpg",
     "year": 2020,
@@ -28,5 +28,35 @@
     "price": 150,
     "discount": 90,
     "stock": 0
+  },
+  {
+    "id": 3,
+    "title": "Intermezzo",
+    "author": [{ "firstname": "Sally", "lastname": "Rooney" }],
+    "cover": "https://cdn.waterstones.com/bookjackets/large/9780/5713/9780571365463.jpg",
+    "year": 2024,
+    "format": "Hardback",
+    "genre": "Fiction",
+    "pages": 432,
+    "lang": "English",
+    "description": "Some descr...",
+    "price": 170,
+    "discount": 10,
+    "stock": 51
+  },
+  {
+    "id": 4,
+    "title": "The City and Its Uncertain Walls",
+    "author": [{ "firstname": "Haruki", "lastname": "Murakami" }],
+    "cover": "https://cdn.waterstones.com/override/v1/large/9781/7873/9781787304475.jpg",
+    "year": 2024,
+    "format": "Hardback",
+    "genre": "Fiction",
+    "pages": 464,
+    "lang": "English",
+    "description": "Some descr...",
+    "price": 200,
+    "discount": null,
+    "stock": 14
   }
 ]
