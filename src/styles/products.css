@@ -126,33 +126,50 @@ article.product {
 
   }
 
-  .product-price {
+  .product-availability {
     font-weight: bold;
     font-size: var(--fs-0);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--gap-s);
 
-    .strike {
-      text-decoration: line-through;
-      color: var(--text-faded);
-      font-size: var(--fs--1);
+    .product-price {
+      .strike {
+        text-decoration: line-through;
+        color: var(--text-faded);
+        font-size: var(--fs--1);
+      }
     }
 
-    .stock-indicator {
-      width: 10px;
-      aspect-ratio: 1;
-      border-radius: 100vw;
+    .product-stock-status {
+      display: flex;
+      align-items: center;
+      gap: calc(var(--gap-s) / 2);
+
+      .stock-indicator {
+        width: 10px;
+        height: 10px;
+        /* aspect-ratio: 1; */
+        border-radius: 100vw;
+      }
+
+      .in-stock {
+        background-color: green;
+      }
+
+      .out-of-stock {
+        background-color: red;
+
+      }
+
+      .x {
+        font-size: var(--fs--2);
+      }
     }
 
-    .in-stock {
-      background-color: green;
-    }
 
-    .out-of-stock {
-      background-color: red;
 
-    }
   }
 
   .product-actions {
