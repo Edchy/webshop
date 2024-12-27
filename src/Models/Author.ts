@@ -1,4 +1,4 @@
-export type Author = {
+export type TAuthor = {
   firstname: string;
   lastname: string;
 }
