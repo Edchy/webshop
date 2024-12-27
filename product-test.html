@@ -1,40 +1,33 @@
-<article class="product">
-  <figure class="product-image">
-    <a href="#">
-      <img
-        src="${book.cover}"
-        alt="book cover of ${book.title} by ${printNames(book.author)}"
-      />
-    </a>
-  </figure>
-  <div class="product-info">
-    <div class="title-container">
-      <h3 class="product-title">${book.title}</h3>
-      <time datetime="${book.year}" class="product-release-date"
-        >${book.year}</time
-      >
-    </div>
-  </div>
-  <p class="product-author"><a href="#">${printNames(book.author)}</a></p>
-  <div class="product-price">
-    <data value="${book.price}">${book.price}kr</data>
-  </div>
-  <div class="product-actions">
-    <button
-      type="button"
-      class="add-to-cart-button"
-      data-x-son="x"
-      data-book-id="${book.id}"
-    >
-      Lägg till
-    </button>
-    <button
-      type="button"
-      aria-label="Add to favorites"
-      class="like-button"
-      data-book-id="${book.id}"
-    >
-      ♥️
-    </button>
-  </div>
-</article>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // hämta in query parametrarna som skickades med i urlen från <a>
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get("id");
+        const bookTitle = urlParams.get("title");
+        console.log(bookId, bookTitle, urlParams);
+
+        if (bookTitle) {
+          document.documentElement.innerHTML = `<h1>${bookTitle}</h1>`;
+        }
+
+        if (bookId) {
+          // Använd ID som parameter till en funktion som hämtar mer info om boken (sök igenom data.json efter ID:t)
+          fetchBookDetails(bookId);
+        }
+      });
+
+      function fetchBookDetails(id) {
+        // Logik för att hämta info
+        console.log("Fetching details for book with ID:", id);
+      }
+    </script>
+  </body>
+</html>

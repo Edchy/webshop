@@ -33,7 +33,7 @@ function createBookCard({id, title, author, cover, year, price, discount, stock}
     <article class="product">
     ${discount ? `<div class="discount-badge"><span>du sparar</span><span>${price - discountPrice}kr</span></div>` : ""}
       <figure class="product-image">
-        <a href="#">
+        <a href="product-test.html?id=${id}&title=${title}">
           <img src="${cover}" alt="book cover of ${title} by ${printNames(author)}" />
         </a>
       </figure>
@@ -61,7 +61,7 @@ function createBookCard({id, title, author, cover, year, price, discount, stock}
 
 }
 
-// Add event listeners after rendering
+
 document.addEventListener('click', (e) => {
  if(e.target && e.target instanceof HTMLElement) {
    if (e.target.parentElement && e.target.matches('.add-to-cart-button')) {
@@ -72,7 +72,7 @@ document.addEventListener('click', (e) => {
   }
   if (e.target.matches('.add-to-fav-button')) {
     const bookId = e.target.dataset.bookId;
-    // handleLike(bookId);
+    // handleLAddToFav(bookId);
   }
  }
 });
