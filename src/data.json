@@ -7,10 +7,11 @@
     "year": 2020,
     "format": "Pocket",
     "genre": "Some genre",
+    "pages": 309,
     "lang": "English",
     "description": "Some descr...",
     "price": 150,
-    "discount": 0,
+    "discount": null,
     "stock": 200
   },
   {
@@ -21,10 +22,11 @@
     "year": 2018,
     "format": "Pocket",
     "genre": "Some genre",
+    "pages": 401,
     "lang": "English",
     "description": "Some descr...",
     "price": 150,
     "discount": 50,
-    "stock": 200
+    "stock": 0
   }
 ]

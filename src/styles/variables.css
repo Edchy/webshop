@@ -34,4 +34,7 @@
   --fs-3: clamp(1.9531rem, 1.4951rem + 1.9542vw, 2.9607rem);
   --fs-4: clamp(2.4414rem, 1.7572rem + 2.9193vw, 3.9467rem);
   --fs-5: clamp(3.0518rem, 2.0476rem + 4.2844vw, 5.2609rem);
+
+  /* States */
+  --disabled: rgb(222, 228, 230);
 }

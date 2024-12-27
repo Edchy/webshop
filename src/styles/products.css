@@ -30,11 +30,25 @@ article.product {
   border-radius: var(--radius);
   padding: 1rem;
 
-  .product-image img {
-    /* min-width: 100%; */
-    min-height: 100%;
-    object-fit: cover;
-    /* border-radius: var(--radius); */
+  .product-image {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      right: 0;
+    }
+
+    img {
+      /* min-width: 100%; */
+      min-height: 100%;
+      object-fit: cover;
+      /* border-radius: var(--radius); */
+
+    }
 
   }
 
@@ -68,14 +82,14 @@ article.product {
       .product-release-date {
         color: var(--text-faded);
         font-style: italic;
-        font-size: var(--fs--1);
+        font-size: var(--fs--2);
       }
     }
 
     .product-author a {
       color: var(--text-faded);
       text-underline-offset: 4px;
-      font-size: var(--fs--1);
+      font-size: var(--fs--2);
       font-variant: small-caps;
       text-transform: lowercase;
     }
@@ -108,6 +122,12 @@ article.product {
       border: none;
       color: white;
       padding-block: .5rem;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: var(--disabled);
+        cursor: not-allowed;
+      }
     }
 
     .add-to-cart-button {

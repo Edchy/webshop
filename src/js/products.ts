@@ -1,4 +1,3 @@
-// import {books} from "../js/data.ts"
 import { IBook } from "../Models/Book.ts";
 import { printNames, calculateDiscount } from "./utils.ts";
 import getBooks from "./service/bookService.ts"
@@ -14,14 +13,15 @@ export async function renderProductList(): Promise<void> {
   }
 }
 
-function createBookCard({id, title, author, cover, year, price, discount}: IBook): string {
+function createBookCard({id, title, author, cover, year, price, discount, stock}: IBook): string {
 
-  const isDiscounted = discount > 0;  
+  // const isDiscounted = discount && discount > 0;  
   const discountPrice = calculateDiscount(price, discount)
+  const outOfStock = stock < 1;
   
   const html = `
     <article class="product">
-  
+    
       <figure class="product-image">
         <a href="#">
           <img src="${cover}" alt="book cover of ${title} by ${printNames(author)}" />
@@ -36,13 +36,14 @@ function createBookCard({id, title, author, cover, year, price, discount}: IBook
       </div>
 
       <div class="product-price">
-        <data class="${isDiscounted ? "strike" : ""}" value="${price}">${price}kr</data>    
-        ${isDiscounted ? `<data value="${discountPrice}">${discountPrice}kr</data>` : ''}    
+        <data class="${discount ? "strike" : ""}" value="${price}">${price}kr</data>    
+        ${discount ? `<data value="${discountPrice}">${discountPrice}kr</data>` : ''}   
+        <div class="${stock > 0 ? "in-stock": "out-of-stock"} stock-indicator"></div>
       </div>
 
       <div class="product-actions">
-        <button type="button" class="add-to-cart-button" data-x-son="x" data-book-id="${id}">Lägg till</button>
-        <button type="button" aria-label="Add to favorites" class="like-button" data-book-id="${id}">♥️</button>
+        <button ${outOfStock && "disabled"} type="button" class="add-to-cart-button" data-x-son="x" data-book-id="${id}">Lägg till</button>
+        <button type="button" aria-label="Add to favorites" class="like-button" data-book-id="${id}">⭐️</button>
       </div>
     </article>
   `;
