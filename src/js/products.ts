@@ -45,10 +45,18 @@ function createBookCard({id, title, author, cover, year, price, discount, stock}
         <p class="product-author"><a href="#">${printNames(author)}</a></p>
       </div>
 
-      <div class="product-price">
-        <data class="${discount ? "strike" : ""}" value="${price}">${price}kr</data>    
-        ${discount ? `<data value="${discountPrice}">${discountPrice}kr</data>` : ''}   
-        <div class="${isOutOfStock ? "out-of-stock": "in-stock"} stock-indicator"></div>
+      <div class="product-availability">
+
+        <div class="product-price">
+          <data class="${discount ? "strike" : ""}" value="${price}">${price}kr</data>
+          ${discount ? `<data value="${discountPrice}">${discountPrice}kr</data>` : ''}
+        </div>
+
+        <div class="product-stock-status">
+          <div class="${isOutOfStock ? "out-of-stock": "in-stock"} stock-indicator"></div>
+          <div class="x ">Lagerstatus</div>
+        </div>   
+     
       </div>
 
       <div data-x="hello" class="product-actions">

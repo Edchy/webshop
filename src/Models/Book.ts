@@ -1,5 +1,5 @@
 import { TAuthor } from "./Author";
-import IStock from "./Stock";
+// import IStock from "./Stock";
 
 type TDiscount = number | null;
 
