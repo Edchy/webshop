@@ -1,0 +1,206 @@
+.product-section {
+  padding: var(--gap-l);
+  padding: 5rem;
+
+  h2 {
+    padding-block-end: var(--gap-s);
+    font-size: var(--fs-0);
+  }
+
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    /* grid-template-rows: repeat(4, auto); */
+    column-gap: var(--gap-m);
+    row-gap: 4rem;
+    justify-items: center;
+  }
+}
+
+/* BOK ELEMENT */
+article.product {
+  position: relative;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  background-color: white;
+  color: var(--text);
+  /* border: 1px solid pink; */
+  width: min(300px, 100%);
+  row-gap: 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.138);
+  border-radius: var(--radius);
+  padding: 1rem;
+
+  .discount-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: red;
+    z-index: 2;
+    border-radius: 100vw;
+    width: 70px;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    font-weight: bold;
+
+    span:first-child {
+      font-size: var(--fs--2);
+      font-style: italic;
+
+    }
+
+    span:last-child {
+      margin-top: -5px;
+      font-size: var(--fs-0);
+      text-align: center;
+    }
+  }
+
+  .product-image {
+    position: relative;
+
+    /* &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      right: 0;
+    } */
+
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      /* border-radius: var(--radius); */
+
+    }
+
+  }
+
+
+
+  .product-info {
+    /* padding-block: .25rem;
+    padding-inline: .5rem; */
+
+
+    .title-container {
+      padding-block-start: var(--gap-s);
+      display: flex;
+      align-items: baseline;
+      /* gap: var(--gap-m); */
+      justify-content: space-between;
+
+      .product-title {
+        /* font-weight: bold; */
+        text-wrap: balance;
+        font-size: var(--fs-0);
+
+        /* Cappa långa titlar */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .product-release-date {
+        color: var(--text-faded);
+        font-style: italic;
+        font-size: var(--fs--2);
+      }
+    }
+
+    .product-author a {
+      color: var(--text-faded);
+      text-underline-offset: 4px;
+      font-size: var(--fs--1);
+      font-variant: small-caps;
+      text-transform: lowercase;
+    }
+
+
+  }
+
+  .product-availability {
+    font-weight: bold;
+    font-size: var(--fs-0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-s);
+
+    .product-price {
+      .strike {
+        text-decoration: line-through;
+        color: var(--text-faded);
+        font-size: var(--fs--1);
+      }
+    }
+
+    .product-stock-status {
+      display: flex;
+      align-items: center;
+      gap: calc(var(--gap-s) / 2);
+
+      .stock-indicator {
+        width: 10px;
+        height: 10px;
+        /* aspect-ratio: 1; */
+        border-radius: 100vw;
+      }
+
+      .in-stock {
+        background-color: green;
+      }
+
+      .out-of-stock {
+        background-color: red;
+
+      }
+
+      .x {
+        font-size: var(--fs--2);
+      }
+    }
+
+
+
+  }
+
+  .product-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+    button {
+      display: grid;
+      place-content: center;
+      border: none;
+      color: white;
+      padding-block: var(--gap-s);
+      cursor: pointer;
+
+      &:disabled {
+        background-color: var(--disabled);
+        cursor: not-allowed;
+      }
+    }
+
+    .add-to-cart-button {
+      border-top-left-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+      background-color: var(--primary-color);
+    }
+
+    .add-to-fav-button {
+      border-top-right-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      background-color: var(--secondary-color);
+    }
+  }
+}

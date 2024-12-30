@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // hämta in query parametrarna som skickades med i urlen från <a>
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get("id");
+        const bookTitle = urlParams.get("title");
+        console.log(bookId, bookTitle, urlParams);
+
+        if (bookTitle) {
+          document.documentElement.innerHTML = `<h1>${bookTitle}</h1>`;
+        }
+
+        if (bookId) {
+          // Använd ID som parameter till en funktion som hämtar mer info om boken (sök igenom data.json efter ID:t)
+          fetchBookDetails(bookId);
+        }
+      });
+
+      function fetchBookDetails(id) {
+        // Logik för att hämta info
+        console.log("Fetching details for book with ID:", id);
+      }
+    </script>
+  </body>
+</html>

@@ -2,16 +2,87 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Böckkker</title>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <nav>nav</nav>
-    <section class="product-section">
-      <h2>products</h2>
-    </section>
-    <footer></footer>
+    <div class="wrapper">
+      <header class="container">
+        <nav class="navigation">
+          <h1>Logo</h1>
+          <ul>
+            <li>Produkter</li>
+            <li>Kontakt</li>
+            <li>Sök</li>
+          </ul>
+          <p>Fri frakt över 599kr</p>
+          <p>En prudukt| 349kr</p>
+          <!-- dessa två rader är allt som behövs för att skapa en modal -->
+          <button popovertarget="shopping-cart">cart</button>
+          <aside popover class="shopping-cart" id="shopping-cart">
+            <button
+              onclick="(() => {
+                const popover = document.querySelector('.shopping-cart');
+                popover.hidePopover();
+                  console.log(popover);
+                })()"
+            >
+              ❌
+            </button>
+            kundvagn...tom
+          </aside>
+        </nav>
+      </header>
+      <main>
+        <div class="hero">
+          <div class="hero-text">
+            <h1>Din bokhandel online!</h1>
+            <p>Utforska vårt lilla utbud av exklusiva böcker</p>
+          </div>
+
+          <div class="hero-image">
+            <img src="src/photos/bok5.jpeg" alt="Bild på böcker" />
+          </div>
+        </div>
+
+        <!-- ProduktSektion -->
+        <section class="product-section">
+          <h2>Senaste</h2>
+          <!-- ProduktLista -->
+          <ul class="product-list"></ul>
+          <!-- ProduktLista end -->
+        </section>
+        <!-- ProduktSektion end -->
+      </main>
+    </div>
+
+    <footer>
+      <section class="footer-container">
+        <div class="footer-section">
+          <h3>*Namn på vår webshop*</h3>
+          <p>Om oss</p>
+          <p>Kundservice</p>
+          <p>Valiga frågor</p>
+        </div>
+        <div class="footer-section">
+          <h3>Nyhetsbrev</h3>
+          <input
+            type="email"
+            id="email-input"
+            placeholder="Din e-post adress"
+          />
+          <button id="subscribe-button">Anmäl dig</button>
+        </div>
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <p>
+            Gustavslundsvägen 151 D <br />
+            167 51 Bromma<br />+46 123 345 67 88
+          </p>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>
