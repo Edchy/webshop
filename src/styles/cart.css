@@ -1,14 +1,32 @@
-dialog[popover] {
+button[popovertarget="shopping-cart"] {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: .25rem;
+  cursor: pointer;
+}
+
+.shopping-cart[popover] {
+  background-color: red;
+  inset: auto;
+  right: 0;
+  width: 50%;
+  height: 50vh;
+  margin-top: 10vh;
+}
+
+.shopping-cart[popover]:popover-open {
+  background-color: green;
+}
+
+/* [popover] {
   margin: 0;
   inset: auto;
   position-anchor: --toggle-cart;
   top: anchor(bottom);
-  /* right: 2px; */
   margin-block-start: 10px;
-  /* position: absolute; */
   right: 0;
   background-color: black;
-  /* padding: 2rem; */
   color: white;
   border: none;
   opacity: 0;
@@ -28,8 +46,7 @@ dialog[popover] {
     translate: 0;
     display: flex;
     flex-direction: column;
-    /* grid-template-columns: 1fr; */
-    /* align-items: center; */
+
 
     @starting-style {
       translate: 100%;
@@ -78,7 +95,6 @@ dialog[popover] {
 }
 
 .cart-product {
-  /* border: 1px solid pink; */
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -88,13 +104,11 @@ dialog[popover] {
     align-items: center;
 
     .number-input-container {
-      /* background-color: pink; */
       display: flex;
       align-items: center;
       gap: .25rem;
 
       button {
-        /* padding: .25rem; */
         aspect-ratio: 1;
         inline-size: 20px;
         border: none;
@@ -124,4 +138,4 @@ dialog[popover] {
     }
   }
 
-}
+} */
