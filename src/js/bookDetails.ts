@@ -65,7 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const descriptionP = document.createElement("p");
   descriptionP.textContent = book.description ?? "Beskrivning saknas";
 
-  productDetails.append(h1, authorP, priceDiv, descriptionP);
+  const addBtn = document.createElement("button");
+  addBtn.innerHTML = "Lägg till i varukorg";
+  addBtn.className = "addBtn";
+
+  productDetails.append(h1, authorP, priceDiv, descriptionP, addBtn);
 
   const imageContainer = document.createElement("div");
   imageContainer.className = "product-image";
