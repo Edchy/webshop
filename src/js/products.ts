@@ -18,7 +18,7 @@ const books: IBook[] = [
   {
     id: 1,
     title: "Yellowface",
-    author: "Name name",
+    author: "Rebecka F. Kuang",
     cover: "https://s2.adlibris.com/images/63247538/yellowface.jpg",
     year: 2020,
     format: "Pocket",
@@ -33,7 +33,7 @@ const books: IBook[] = [
   {
     id: 2,
     title: "The Adventures of Sherlock Holmes",
-    author: "Name nameson",
+    author: "Arthur Conan Doyle",
     cover:
       "https://cdn.waterstones.com/bookjackets/large/9780/2413/9780241347782.jpg ",
     year: 2018,
@@ -43,6 +43,22 @@ const books: IBook[] = [
     lang: "English",
     description: "Some descr...",
     price: 150,
+    discount: 0,
+    stock: 200,
+  },
+  {
+    id: 3,
+    title: "Learn with Peppa: First Coding sticker activity book",
+    author: "Peppa Pig",
+    cover:
+      "https://cdn.waterstones.com/bookjackets/large/9780/2416/9780241645697.jpg",
+    year: 2024,
+    format: "Paperback",
+    genre: "Kids",
+    pages: 404,
+    lang: "English",
+    description: "Some descr...",
+    price: 99,
     discount: 0,
     stock: 200,
   },
