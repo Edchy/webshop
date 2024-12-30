@@ -10,6 +10,8 @@ interface IBook {
   pages: number;
   description?: string;
   price: number;
+  discount: number;
+  stock: number;
 }
 // skapa en array av "IBooks"
 const books: IBook[] = [
@@ -25,6 +27,8 @@ const books: IBook[] = [
     lang: "English",
     description: "Some descr...",
     price: 150,
+    discount: 0,
+    stock: 100,
   },
   {
     id: 2,
@@ -39,6 +43,8 @@ const books: IBook[] = [
     lang: "English",
     description: "Some descr...",
     price: 150,
+    discount: 0,
+    stock: 200,
   },
 ];
 
