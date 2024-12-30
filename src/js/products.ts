@@ -1,86 +1,144 @@
-import { IBook } from "../Models/Book.ts";
-import { printNames, calculateDiscount } from "./utils.ts";
-import getBooks from "./service/bookService.ts"
+interface IBook {
+  id: number;
+  title: string;
+  author: string;
+  cover: string;
+  year: number;
+  format: string;
+  genre: string;
+  lang: string;
+  pages: number;
+  description?: string;
+  price: number;
+}
+// skapa en array av "IBooks"
+const books: IBook[] = [
+  {
+    id: 1,
+    title: "Yellowface",
+    author: "Name name",
+    cover: "https://s2.adlibris.com/images/63247538/yellowface.jpg",
+    year: 2020,
+    format: "Pocket",
+    genre: "Some genre",
+    pages: 309,
+    lang: "English",
+    description: "Some descr...",
+    price: 150,
+  },
+  {
+    id: 2,
+    title: "The Adventures of Sherlock Holmes",
+    author: "Name nameson",
+    cover:
+      "https://cdn.waterstones.com/bookjackets/large/9780/2413/9780241347782.jpg ",
+    year: 2018,
+    format: "Hardback",
+    genre: "Crime",
+    pages: 401,
+    lang: "English",
+    description: "Some descr...",
+    price: 150,
+  },
+];
 
+// rendera en lista med våra produkter, denna funktion exporteras och anropas i "main.ts" när sidan laddats.
+export function renderProductList() {
+  // hämta en referens till html-element, som finns i vår index.html
+  const productList = document.querySelector(
+    ".product-list"
+  ) as HTMLUListElement;
 
-export async function renderProductList() {
-  const productList = document.querySelector(".product-list") as HTMLUListElement
-  const books: IBook[] = await getBooks();
-  console.log(books);
-  
+  // om listan och arrayen "finns"
   if (productList && books) {
-    productList.innerHTML = books.map(book => createBookCard(book)).join("");
+    // loopa igenom arrayen
+    books.forEach((book) => {
+      // Bok
+      const article = document.createElement("article");
+      article.className = "product";
+
+      // image
+      const figure = document.createElement("figure");
+      figure.className = "product-image";
+
+      // länk till produktsidan, skicka med bok.id som url parameter
+      const link = document.createElement("a");
+      link.href = `product-test.html?id=${book.id}&title=${book.title}`;
+
+      const img = document.createElement("img");
+      img.src = book.cover;
+      img.alt = `book cover of ${book.title} by ${book.author}`;
+
+      link.appendChild(img);
+      figure.appendChild(link);
+      article.appendChild(figure);
+
+      // produkt info
+      const productInfo = document.createElement("div");
+      productInfo.className = "product-info";
+
+      const titleContainer = document.createElement("div");
+      titleContainer.className = "title-container";
+
+      const h3 = document.createElement("h3");
+      h3.className = "product-title";
+      h3.textContent = book.title;
+
+      const time = document.createElement("time");
+      time.className = "product-release-date";
+      time.dateTime = book.year.toString();
+      time.textContent = book.year.toString();
+
+      titleContainer.append(h3, time);
+
+      const authorP = document.createElement("p");
+      authorP.className = "product-author";
+
+      const authorLink = document.createElement("a");
+      authorLink.href = "#";
+      authorLink.textContent = book.author;
+
+      authorP.appendChild(authorLink);
+      productInfo.append(titleContainer, authorP);
+      article.appendChild(productInfo);
+
+      const availability = document.createElement("div");
+      availability.className = "product-availability";
+
+      const priceDiv = document.createElement("div");
+      priceDiv.className = "product-price";
+
+      const priceData = document.createElement("data");
+      priceData.value = book.price.toString();
+      priceData.textContent = `${book.price}kr`;
+
+      priceDiv.appendChild(priceData);
+
+      availability.append(priceDiv);
+      article.appendChild(availability);
+
+      // Knapparna
+      const actions = document.createElement("div");
+      actions.className = "product-actions";
+
+      const addToCartBtn = document.createElement("button");
+      addToCartBtn.type = "button";
+      addToCartBtn.className = "add-to-cart-button";
+      addToCartBtn.setAttribute("data-book-id", book.id.toString());
+      addToCartBtn.textContent = "lägg till";
+      addToCartBtn.addEventListener("click", () => {
+        console.log(book.id);
+      });
+
+      const favBtn = document.createElement("button");
+      favBtn.type = "button";
+      favBtn.className = "add-to-fav-button";
+      favBtn.setAttribute("data-book-id", book.id.toString());
+      favBtn.textContent = "⭐️";
+
+      actions.append(addToCartBtn, favBtn);
+      article.appendChild(actions);
+      productList.appendChild(article);
+    });
   }
 }
-
-// function getStockStatus(stock: number) {
-//   if (stock < 1) return {status: 4, message: "slut i lager"}
-//   if (stock < 20) return {status: 3, message: "få kvar i lager"}
-//   if (stock < 50 && stock > 20) return {status: 2, message: "20+ i lager"}
-//   if (stock > 50) return {status: 1, message: "50+ i lager"}
-// }
-
-function createBookCard({id, title, author, cover, year, price, discount, stock}: IBook): string {
-  
-  // const isDiscounted = discount && discount > 0;  
-  const discountPrice: number = calculateDiscount(price, discount)
-  const isOutOfStock: boolean = stock < 1;
-  // const stockStatus = getStockStatus(stock);
-  // console.log('status:', stockStatus);
-  
-
-  const html = `
-    <article class="product">
-    ${discount ? `<div class="discount-badge"><span>du sparar</span><span>${price - discountPrice}kr</span></div>` : ""}
-      <figure class="product-image">
-        <a href="product-test.html?id=${id}&title=${title}">
-          <img src="${cover}" alt="book cover of ${title} by ${printNames(author)}" />
-        </a>
-      </figure>
-      <div class="product-info">
-        <div class="title-container">
-          <h3 class="product-title">${title}</h3>
-          <time datetime="${year}" class="product-release-date">${year}</time>
-        </div>
-        <p class="product-author"><a href="#">${printNames(author)}</a></p>
-      </div>
-
-      <div class="product-availability">
-
-        <div class="product-price">
-          <data class="${discount ? "strike" : ""}" value="${price}">${price}kr</data>
-          ${discount ? `<data value="${discountPrice}">${discountPrice}kr</data>` : ''}
-        </div>
-
-        <div class="product-stock-status">
-          <div class="${isOutOfStock ? "out-of-stock": "in-stock"} stock-indicator"></div>
-          <div class="x ">Lagerstatus</div>
-        </div>   
-     
-      </div>
-
-      <div data-x="hello" class="product-actions">
-        <button ${isOutOfStock && "disabled"} type="button" class="add-to-cart-button" data-x-son="x" data-book-id="${id}">${isOutOfStock ? "Slut i lager" : "Lägg till"}</button>
-        <button type="button" aria-label="Add to favorites" class="add-to-fav-button" data-book-id="${id}">⭐️</button>
-      </div>
-    </article>
-  `;
-  return html;
-
-}
-
-
-document.addEventListener('click', (e) => {
- if(e.target && e.target instanceof HTMLElement) {
-   if (e.target.parentElement && e.target.matches('.add-to-cart-button')) {
-    console.log(e.target.parentElement.dataset);
-    
-    const bookId = e.target.dataset.bookId;
-    // handleAddToCart(bookId);
-  }
-  if (e.target.matches('.add-to-fav-button')) {
-    const bookId = e.target.dataset.bookId;
-    // handleLAddToFav(bookId);
-  }
- }
-});

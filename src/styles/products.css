@@ -32,70 +32,23 @@ article.product {
   border-radius: var(--radius);
   padding: 1rem;
 
-  .discount-badge {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    background-color: red;
-    z-index: 2;
-    border-radius: 100vw;
-    width: 70px;
-    aspect-ratio: 1;
-    display: grid;
-    place-content: center;
-    font-weight: bold;
-
-    span:first-child {
-      font-size: var(--fs--2);
-      font-style: italic;
-
-    }
-
-    span:last-child {
-      margin-top: -5px;
-      font-size: var(--fs-0);
-      text-align: center;
-    }
-  }
-
-  .product-image {
-    position: relative;
-
-    /* &::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      background-color: red;
-      position: absolute;
-      right: 0;
-    } */
-
-    img {
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      /* border-radius: var(--radius); */
-
-    }
-
+  .product-image img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
   }
 
 
 
   .product-info {
-    /* padding-block: .25rem;
-    padding-inline: .5rem; */
-
 
     .title-container {
       padding-block-start: var(--gap-s);
       display: flex;
       align-items: baseline;
-      /* gap: var(--gap-m); */
       justify-content: space-between;
 
       .product-title {
-        /* font-weight: bold; */
         text-wrap: balance;
         font-size: var(--fs-0);
 
@@ -122,8 +75,6 @@ article.product {
       font-variant: small-caps;
       text-transform: lowercase;
     }
-
-
   }
 
   .product-availability {
@@ -133,42 +84,6 @@ article.product {
     align-items: center;
     justify-content: space-between;
     gap: var(--gap-s);
-
-    .product-price {
-      .strike {
-        text-decoration: line-through;
-        color: var(--text-faded);
-        font-size: var(--fs--1);
-      }
-    }
-
-    .product-stock-status {
-      display: flex;
-      align-items: center;
-      gap: calc(var(--gap-s) / 2);
-
-      .stock-indicator {
-        width: 10px;
-        height: 10px;
-        /* aspect-ratio: 1; */
-        border-radius: 100vw;
-      }
-
-      .in-stock {
-        background-color: green;
-      }
-
-      .out-of-stock {
-        background-color: red;
-
-      }
-
-      .x {
-        font-size: var(--fs--2);
-      }
-    }
-
-
 
   }
 
