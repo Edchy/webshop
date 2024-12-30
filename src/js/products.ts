@@ -62,6 +62,23 @@ export const books: IBook[] = [
     discount: 0,
     stock: 200,
   },
+  {
+    id: 4,
+    title:
+      "Medicinsk teknik - Teori, planering och genomförande (bok + digital produkt)",
+    author: "Lennart Boman",
+    cover:
+      "https://s2.adlibris.com/images/55125289/medicinsk-teknik---teori-planering-och-genomforande-bok-digital-produkt.jpg",
+    year: 2024,
+    format: "Paperback",
+    genre: "Studier",
+    pages: 404,
+    lang: "Swedish",
+    description: "Some descr...",
+    price: 481,
+    discount: 0,
+    stock: 200,
+  },
 ];
 
 // rendera en lista med våra produkter, denna funktion exporteras och anropas i "main.ts" när sidan laddats.

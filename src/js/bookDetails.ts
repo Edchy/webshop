@@ -31,24 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
   img.alt = `Omslag för ${book.title} av ${book.author}`;
   link.appendChild(img);
 
-  bookDetailsContainer.appendChild(link);
+  const mainContent = document.createElement("div");
+  mainContent.className = "main-content";
 
-  const productInfo = document.createElement("div");
-  productInfo.className = "product-info";
+  const productInformation = document.createElement("div");
+  productInformation.className = "product-information";
 
-  const titleContainer = document.createElement("div");
-  titleContainer.className = "title-container";
+  const productDetails = document.createElement("div");
+  productDetails.className = "product-details";
 
   const h1 = document.createElement("h1");
   h1.className = "product-title";
   h1.textContent = book.title;
-
-  const time = document.createElement("time");
-  time.className = "product-release-date";
-  time.dateTime = book.year.toString();
-  time.textContent = book.year.toString();
-
-  titleContainer.append(h1, time);
 
   const authorP = document.createElement("p");
   authorP.className = "product-author";
@@ -59,18 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   authorP.appendChild(authorLink);
 
-  const descriptionP = document.createElement("p");
-  descriptionP.textContent = book.description ?? "Beskrivning saknas";
-
-  const genreP = document.createElement("p");
-  genreP.textContent = `Genre: ${book.genre}`;
-
-  productInfo.append(titleContainer, authorP, descriptionP, genreP);
-  bookDetailsContainer.appendChild(productInfo);
-
-  const availability = document.createElement("div");
-  availability.className = "product-availability";
-
   const priceDiv = document.createElement("div");
   priceDiv.className = "product-price";
 
@@ -79,6 +61,39 @@ document.addEventListener("DOMContentLoaded", () => {
   priceData.textContent = `${book.price} kr`;
 
   priceDiv.appendChild(priceData);
-  availability.append(priceDiv);
-  bookDetailsContainer.appendChild(availability);
+
+  const descriptionP = document.createElement("p");
+  descriptionP.textContent = book.description ?? "Beskrivning saknas";
+
+  productDetails.append(h1, authorP, priceDiv, descriptionP);
+
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "product-image";
+  imageContainer.appendChild(link);
+
+  productInformation.append(imageContainer, productDetails);
+
+  const additionalInfo = document.createElement("div");
+  additionalInfo.className = "product-additional-info";
+
+  const genreP = document.createElement("p");
+  genreP.textContent = `Genre: ${book.genre}`;
+
+  const yearP = document.createElement("p");
+  yearP.textContent = `Utgivningsår: ${book.year}`;
+
+  const languageP = document.createElement("p");
+  languageP.textContent = `Språk: ${book.lang}`;
+
+  const pagesP = document.createElement("p");
+  pagesP.textContent = `Antal sidor: ${book.pages}`;
+
+  const formatP = document.createElement("p");
+  formatP.textContent = `Format: ${book.format}`;
+
+  additionalInfo.append(genreP, yearP, languageP, pagesP, formatP);
+
+  mainContent.append(productInformation, additionalInfo);
+
+  bookDetailsContainer.appendChild(mainContent);
 });
