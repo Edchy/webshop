@@ -3,10 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/main.ts"></script>
     <title>Document</title>
   </head>
   <body>
-    <script>
+    <div class="wrapper">
+      <header class="container">
+        <nav class="navigation">
+          <h1>Logo</h1>
+          <ul>
+            <li>Produkter</li>
+            <li>Kontakt</li>
+            <li>Sök</li>
+          </ul>
+          <p>Fri frakt över 599kr</p>
+          <p>En prudukt| 349kr</p>
+          <!-- dessa två rader är allt som behövs för att skapa en modal -->
+          <button popovertarget="shopping-cart">cart</button>
+          <aside popover class="shopping-cart" id="shopping-cart">
+            <button
+              onclick="(() => {
+              const popover = document.querySelector('.shopping-cart');
+              popover.hidePopover();
+                console.log(popover);
+              })()"
+            >
+              ❌
+            </button>
+            kundvagn...tom
+          </aside>
+        </nav>
+      </header>
+    </div>
+    <!-- <script>
       // hämta in query parametrarna som skickades med i urlen från <a>
       document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
@@ -28,6 +57,6 @@
         // Logik för att hämta info
         console.log("Fetching details for book with ID:", id);
       }
-    </script>
+    </script> -->
   </body>
 </html>
