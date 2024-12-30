@@ -3,8 +3,10 @@ h1 {
 }
 
 .container {
-  background-color: rgb(114, 115, 115);
+  background-color: rgba(161, 161, 161, 0.514);
   padding: 20px;
+  border-bottom: 2px solid #ccc; /* Lägg till ett streck under hela navigationen */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Valfritt: en skugga för effekt */
 }
 
 .navigation {
