@@ -3,12 +3,12 @@ import { printNames, calculateDiscount } from "./utils.ts";
 import getBooks from "./service/bookService.ts"
 
 
-export async function renderProductList(): Promise<void> {
+export async function renderProductList() {
   const productList = document.querySelector(".product-list") as HTMLUListElement
-  const books = await getBooks();
+  const books: IBook[] = await getBooks();
   console.log(books);
   
-  if (productList) {
+  if (productList && books) {
     productList.innerHTML = books.map(book => createBookCard(book)).join("");
   }
 }
