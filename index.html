@@ -22,6 +22,15 @@
           <!-- dessa två rader är allt som behövs för att skapa en modal -->
           <button popovertarget="shopping-cart">cart</button>
           <aside popover class="shopping-cart" id="shopping-cart">
+            <button
+              onclick="(() => {
+                const popover = document.querySelector('.shopping-cart');
+                popover.hidePopover();
+                  console.log(popover);
+                })()"
+            >
+              ❌
+            </button>
             kundvagn...tom
           </aside>
         </nav>
