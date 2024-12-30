@@ -14,7 +14,7 @@ interface IBook {
   stock: number;
 }
 // skapa en array av "IBooks"
-const books: IBook[] = [
+export const books: IBook[] = [
   {
     id: 1,
     title: "Yellowface",
