@@ -128,7 +128,7 @@ export function renderProductList() {
       time.dateTime = book.year.toString();
       time.textContent = book.year.toString();
 
-      titleContainer.append(h3, time);
+      titleContainer.append(h3);
 
       const authorP = document.createElement("p");
       authorP.className = "product-author";
@@ -138,7 +138,7 @@ export function renderProductList() {
       authorLink.textContent = book.author;
 
       authorP.appendChild(authorLink);
-      productInfo.append(titleContainer, authorP);
+      productInfo.append(titleContainer, time, authorP);
       article.appendChild(productInfo);
 
       const availability = document.createElement("div");
@@ -191,7 +191,7 @@ function createStarElement(starNumber: number) {
   starDiv.className = `star-${starNumber}`;
   starDiv.ariaHidden = "true";
 
-  // Create SVG element with all its attributes
+  // skapa svg med alla sina konstiga attribute
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
   svg.setAttribute("viewBox", "0 0 784.11 815.53");
@@ -202,18 +202,18 @@ function createStarElement(starNumber: number) {
   svg.setAttribute("version", "1.1");
   svg.setAttribute("xml:space", "preserve");
 
-  // Create the g element
+  // g
   const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
   g.setAttribute("id", "Layer_x0020_1");
 
-  // Create metadata
+  // metadata
   const metadata = document.createElementNS(
     "http://www.w3.org/2000/svg",
     "metadata"
   );
   metadata.setAttribute("id", "CorelCorpID_0Corel-Layer");
 
-  // Create path
+  // path
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttribute(
     "d",
@@ -221,11 +221,12 @@ function createStarElement(starNumber: number) {
   );
   path.setAttribute("class", "fil0");
 
-  // Append all elements together
+  // Appenda allt
   g.appendChild(metadata);
   g.appendChild(path);
   svg.appendChild(g);
   starDiv.appendChild(svg);
 
+  // ge tillbaks div med allt inuti
   return starDiv;
 }
