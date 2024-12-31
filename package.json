@@ -13,6 +13,7 @@
     "vite": "^6.0.1"
   },
   "dependencies": {
+    "balloons-js": "^0.0.2",
     "typed.js": "^2.1.0"
   }
 }
