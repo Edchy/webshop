@@ -8,82 +8,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="container">
-        <nav class="navigation">
-          <h1>Logo</h1>
-          <ul>
-            <li><a href="index.html">Produkter</a></li>
-            <li><a href="#footer">Kontakt</a></li>
-          </ul>
-          <p>Fri frakt över 599kr</p>
-          <!-- dessa två rader är allt som behövs för att skapa en modal -->
-          <button popovertarget="shopping-cart">cart</button>
-          <aside popover class="shopping-cart" id="shopping-cart">
-            <button
-              onclick="(() => {
-              const popover = document.querySelector('.shopping-cart');
-              popover.hidePopover();
-                console.log(popover);
-              })()"
-            >
-              ❌
-            </button>
-            kundvagn...tom
-          </aside>
-        </nav>
-      </header>
-
       <div id="book-details"></div>
     </div>
-    <footer id="footer">
-      <section class="footer-container">
-        <div class="footer-section">
-          <h3>*Namn på vår webshop*</h3>
-          <p>Om oss</p>
-          <p>Kundservice</p>
-          <p>Valiga frågor</p>
-        </div>
-        <div class="footer-section">
-          <h3>Nyhetsbrev</h3>
-          <input
-            type="email"
-            id="email-input"
-            placeholder="Din e-post adress"
-          />
-          <button id="subscribe-button">Anmäl dig</button>
-        </div>
-        <div class="footer-section">
-          <h3>Kontakt</h3>
-          <p>
-            Gustavslundsvägen 151 D <br />
-            167 51 Bromma<br />+46 123 345 67 88
-          </p>
-        </div>
-      </section>
-    </footer>
-    <!-- <script>
-      // hämta in query parametrarna som skickades med i urlen från <a>
-      document.addEventListener("DOMContentLoaded", () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const bookId = urlParams.get("id");
-        const bookTitle = urlParams.get("title");
-        console.log(bookId, bookTitle, urlParams);
-
-        if (bookTitle) {
-          document.documentElement.innerHTML = `<h1>${bookTitle}</h1>`;
-        }
-
-        if (bookId) {
-          // Använd ID som parameter till en funktion som hämtar mer info om boken (sök igenom data.json efter ID:t)
-          fetchBookDetails(bookId);
-        }
-      });
-
-      function fetchBookDetails(id) {
-        // Logik för att hämta info
-        console.log("Fetching details for book with ID:", id);
-      }
-    </script> -->
     <script type="module" src="/src/js/bookDetails.ts"></script>
   </body>
 </html>

@@ -102,7 +102,7 @@ export function renderProductList() {
 
       // länk till produktsidan, skicka med bok.id som url parameter
       const link = document.createElement("a");
-      link.href = `product-test.html?id=${book.id}&title=${book.title}`;
+      link.href = `product-test.html?id=${book.id}`;
 
       const img = document.createElement("img");
       img.src = book.cover;
@@ -227,6 +227,7 @@ export function renderProductList() {
   }
 }
 
+// funktion som skapar starDivs, används i loopen ovan
 function createStarElement(starNumber: number) {
   const starDiv = document.createElement("div");
   starDiv.className = `star-${starNumber}`;
