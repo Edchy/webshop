@@ -174,6 +174,7 @@ export function renderProductList() {
       favBtn.className = "add-to-fav-button";
       favBtn.setAttribute("data-book-id", book.id.toString());
       favBtn.textContent = "✨";
+      favBtn.title = "Add to Favorites";
 
       for (let i = 1; i <= 6; i++) {
         favBtn.appendChild(createStarElement(i));

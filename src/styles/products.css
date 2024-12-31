@@ -101,7 +101,7 @@ article.product {
       display: grid;
       place-content: center;
       border: none;
-      color: white;
+      color: var(--clr-golden);
       padding-block: var(--gap-s);
       cursor: pointer;
 
@@ -114,13 +114,13 @@ article.product {
     .add-to-cart-button {
       border-top-left-radius: var(--radius);
       border-bottom-left-radius: var(--radius);
-      background-color: var(--primary-color);
+      background-color: var(--clr-primary-500);
     }
 
     .add-to-fav-button {
       border-top-right-radius: var(--radius);
       border-bottom-right-radius: var(--radius);
-      background-color: var(--secondary-color);
+      background-color: var(--clr-primary-400);
     }
   }
 }
