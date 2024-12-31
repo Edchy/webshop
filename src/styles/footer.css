@@ -30,7 +30,7 @@ footer {
 }
 
 .footer-section button {
-    background-color: rgb(112, 112, 255);
+    background-color: var(--clr-primary-500);
     color: #fff;
     border: none;
     padding: 10px 16px;
@@ -40,5 +40,5 @@ footer {
 }
 
 .footer-section button:hover {
-    background-color: #0056b3;
+    background-color: var(--clr-primary-400);
 }

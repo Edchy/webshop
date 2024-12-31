@@ -112,9 +112,16 @@ article.product {
     }
 
     .add-to-cart-button {
+
       border-top-left-radius: var(--radius);
       border-bottom-left-radius: var(--radius);
       background-color: var(--clr-primary-500);
+
+      &>* {
+        margin-left: 20px;
+      }
+
+
     }
 
     .add-to-fav-button {
@@ -129,14 +136,6 @@ article.product {
 /* Fav button effect */
 button.add-to-fav-button {
   position: relative;
-  /* padding: 12px 35px; */
-  /* background: #FFFFFF; */
-  /* font-size: 17px; */
-  /* font-weight: 500; */
-  /* color: #000000; */
-  /* border: 3px solid #0e3a3a; */
-  /* border-radius: 8px; */
-  /* box-shadow: 0 0 0 #fec1958c; */
   transition: all .3s ease-in-out;
 }
 

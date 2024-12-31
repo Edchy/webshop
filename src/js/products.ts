@@ -160,15 +160,55 @@ export function renderProductList() {
       const actions = document.createElement("div");
       actions.className = "product-actions";
 
+      // add to cart
       const addToCartBtn = document.createElement("button");
       addToCartBtn.type = "button";
+      addToCartBtn.title = "Add to Cart";
       addToCartBtn.className = "add-to-cart-button";
       addToCartBtn.setAttribute("data-book-id", book.id.toString());
-      addToCartBtn.textContent = "lägg till";
+      // addToCartBtn.textContent = "lägg till";
       addToCartBtn.addEventListener("click", () => {
         console.log(book.id);
       });
+      // cart svg
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("width", "24");
+      svg.setAttribute("height", "24");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("stroke", "currentColor");
+      svg.setAttribute("stroke-width", "2");
+      svg.setAttribute("stroke-linecap", "round");
+      svg.setAttribute("stroke-linejoin", "round");
+      svg.setAttribute(
+        "class",
+        "icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart-plus"
+      );
 
+      // Create all path elements
+      const paths = [
+        { d: "M0 0h24v24H0z", stroke: "none", fill: "none" },
+        { d: "M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" },
+        { d: "M12.5 17h-6.5v-14h-2" },
+        { d: "M6 5l14 1l-.86 6.017m-2.64 .983h-10.5" },
+        { d: "M16 19h6" },
+        { d: "M19 16v6" },
+      ];
+
+      // Create and append each path
+      paths.forEach((pathData) => {
+        const path = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "path"
+        );
+        path.setAttribute("d", pathData.d);
+        if (pathData.stroke) path.setAttribute("stroke", pathData.stroke);
+        if (pathData.fill) path.setAttribute("fill", pathData.fill);
+        svg.appendChild(path);
+      });
+      addToCartBtn.append(svg);
+
+      // add to favorite
       const favBtn = document.createElement("button");
       favBtn.type = "button";
       favBtn.className = "add-to-fav-button";

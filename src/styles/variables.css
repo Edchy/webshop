@@ -1,7 +1,7 @@
 :root {
   /* Colors */
-  --primary-color: rgb(48, 43, 43);
-  --secondary-color: rgb(174, 172, 172);
+  /* --primary-color: rgb(48, 43, 43);
+  --secondary-color: rgb(174, 172, 172); */
 
   --text: #0a0a0a;
   --text-faded: oklch(from var(--text) calc(1 - 0.4) c h);
