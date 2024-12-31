@@ -79,6 +79,38 @@ export const books: IBook[] = [
     discount: 0,
     stock: 200,
   },
+  {
+    id: 5,
+    title: "Onyx Storm (svensk utgåva)",
+    author: "Rebecca Yarros",
+    cover:
+      "https://image.bokus.com/images/9789189516229_200x_onyx-storm-svensk-utgava_haftad",
+    year: 2025,
+    format: "Paperback",
+    genre: "fiction",
+    pages: 698,
+    lang: "Swedish",
+    description: "Some descr...",
+    price: 249,
+    discount: 0,
+    stock: 200,
+  },
+  {
+    id: 6,
+    title: "Fourth Wing (svensk utgåva)",
+    author: "Rebecca Yarros",
+    cover:
+      "https://image.bokus.com/images/9789189516076_200x_fourth-wing-svensk-utgava_haftad",
+    year: 2023,
+    format: "Paperback",
+    genre: "fiction",
+    pages: 622,
+    lang: "Swedish",
+    description: "Some descr...",
+    price: 199,
+    discount: 0,
+    stock: 200,
+  },
 ];
 
 // rendera en lista med våra produkter, denna funktion exporteras och anropas i "main.ts" när sidan laddats.
