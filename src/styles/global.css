@@ -6,13 +6,15 @@
 
 .debug {
   outline: 2px solid lime;
-  background: hsl(0 100% 50% / .1)
+  background: hsl(0 100% 50% / 0.1);
 }
 
 .wrapper {
   width: min(1268px, 100% - 1rem);
   margin-inline: auto;
+  margin-block: 1rem;
   outline: 1px solid white;
+  min-height: 100vh;
 }
 
 body {
@@ -26,8 +28,11 @@ body {
   font-family: system-ui;
 }
 
-
-:is(h1, h2, h3, h4, h5) {
+h1,
+h2,
+h3,
+h4,
+h5 {
   line-height: 1.1;
   /* text-wrap: balance; */
   overflow-wrap: break-word;
@@ -45,4 +50,12 @@ ul {
 img {
   display: block;
   max-width: 100%;
+}
+
+button {
+  transition: opacity .2s;
+
+  &:hover {
+    opacity: .9;
+  }
 }

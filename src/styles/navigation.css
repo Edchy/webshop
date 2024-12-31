@@ -1,16 +1,23 @@
 h1 {
-  font-size: 40px;
+  font-size: var(--fs-1);
 }
 
 .container {
-  background-color: rgb(114, 115, 115);
+  background-color: var(--clr-primary-500);
   padding: 20px;
+  color: var(--clr-light);
+  border-bottom: 2px solid #ccc;
+  /* Lägg till ett streck under hela navigationen */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Valfritt: en skugga för effekt */
 }
 
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: var(--wrapper-width);
+  margin-inline: auto;
 }
 
 ul {
@@ -18,8 +25,9 @@ ul {
   gap: 20px;
 }
 
-li {
-  list-style-type: none;
+a {
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
-  font-size: 30px;
+  font-size: var(--fs--1)
 }
