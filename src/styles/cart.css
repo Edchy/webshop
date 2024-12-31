@@ -1,6 +1,6 @@
 button[popovertarget="shopping-cart"] {
   background-color: transparent;
-  color: var(--text);
+  color: var(--clr-light);
   border: none;
   padding: .25rem;
   cursor: pointer;
