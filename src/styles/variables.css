@@ -26,6 +26,9 @@
   /* Radius */
   --radius: .5rem;
 
+  /* Widths */
+  --wrapper-width: min(1268px, 100% - 1rem);
+
   /* Fluid fontsizes */
   --fs--2: clamp(0.64rem, 0.6111rem + 0.1231vw, 0.7035rem);
   --fs--1: clamp(0.8rem, 0.7374rem + 0.2671vw, 0.9377rem);
