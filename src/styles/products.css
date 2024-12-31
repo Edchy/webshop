@@ -31,13 +31,15 @@ article.product {
   border-radius: var(--radius);
   padding: 1rem;
 
-  .product-image img {
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
+  .product-image {
+    width: 100%;
+
+
+    img {
+      min-height: 100%;
+      object-fit: cover;
+    }
   }
-
-
 
   .product-info {
 
@@ -83,6 +85,10 @@ article.product {
     align-items: center;
     justify-content: space-between;
     gap: var(--gap-s);
+
+    .product-price {
+      font-weight: bold;
+    }
 
   }
 
