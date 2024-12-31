@@ -4,7 +4,7 @@
 
   h2 {
     padding-block-end: var(--gap-s);
-    font-size: var(--fs-0);
+    font-size: var(--fs--1);
   }
 
   .product-list {
