@@ -6,6 +6,7 @@
   --text: #0a0a0a;
   --text-faded: oklch(from var(--text) calc(1 - 0.4) c h);
 
+  --clr-light: #f7f7f7;
   --clr-primary-300: hsl(219, 76%, 55%);
   --clr-primary-400: hsl(219, 76%, 40%);
   --clr-primary-500: hsl(219, 76%, 25%);
@@ -16,7 +17,7 @@
   --clr-accent-300: hsl(358, 72%, 65%);
   --clr-accent-400: hsl(358, 72%, 50%);
   --clr-accent-500: hsl(358, 72%, 35%);
-
+  --clr-golden: #FDDF3A;
   /* Gaps & Margins */
   --gap-s: .5rem;
   --gap-m: .75rem;
