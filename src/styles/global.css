@@ -26,6 +26,7 @@ body {
   background-color: white;
   color: var(--copy-color);
   font-family: 'Bespoke Serif', serif;
+  font-family: 'system-ui';
 }
 
 h1,

@@ -1,11 +1,9 @@
 import "./styles/main.css";
 import Typed from "typed.js";
 import { balloons } from "balloons-js";
-
-balloons();
-
 import { renderProductList } from "./js/products.ts";
 
+// balloons();
 renderProductList();
 
 // hero typewriter

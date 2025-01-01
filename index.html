@@ -9,6 +9,11 @@
       href="https://api.fontshare.com/v2/css?f[]=bespoke-serif@400&f[]=tanker@400&display=swap"
       rel="stylesheet"
     />
+    <!-- 3rd party CDN, not recommended for production use -->
+    <script
+      type="module"
+      src="https://www.unpkg.com/@stefanjudis/sparkly-text"
+    ></script>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
@@ -16,7 +21,9 @@
       <nav class="navigation">
         <div class="logo-container">
           <img src="/src/photos/logo.svg" alt="" />
-          <h2>Tales & Tails</h2>
+          <sparkly-text style="--sparkly-text-color: rainbow">
+            <h2>Tales & Tails</h2>
+          </sparkly-text>
         </div>
         <ul>
           <li><a href="index.html">Produkter</a></li>
