@@ -18,14 +18,14 @@
   font-size: var(--fs-3);
   margin-bottom: 15px;
   letter-spacing: 2px;
-  font-family: 'Tanker', sans-serif;
+  /* font-family: 'Tanker', sans-serif; */
 }
 
 .hero-text .typed {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--text-faded);
-  font-family: 'Bespoke Serif', serif;
+  /* font-family: 'Bespoke Serif', serif; */
 }
 
 .hero-image {

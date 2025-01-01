@@ -1,16 +1,16 @@
 import "./styles/main.css";
-import Typed from "typed.js";
-import { balloons } from "balloons-js";
+// import Typed from "typed.js";
+// import { balloons } from "balloons-js";
 import { renderProductList } from "./js/products.ts";
 
 // balloons();
 renderProductList();
 
 // hero typewriter
-var typed = new Typed(".typed", {
-  stringsElement: ".typed-strings",
-  typeSpeed: 30,
-});
+// var typed = new Typed(".typed", {
+//   stringsElement: ".typed-strings",
+//   typeSpeed: 30,
+// });
 // typescript för footer
 const subscribeButton = document.getElementById(
   "subscribe-button"

@@ -21,7 +21,7 @@ h1 {
 
   .logo-container {
     display: flex;
-    font-family: 'system-ui';
+    /* font-family: 'system-ui'; */
   }
 }
 
