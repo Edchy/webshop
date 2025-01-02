@@ -2,7 +2,11 @@ h1 {
   font-size: var(--fs-1);
 }
 
-.container {
+header.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
   background-color: var(--clr-primary-500);
   padding: 20px;
   color: var(--clr-light);
