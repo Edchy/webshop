@@ -1,6 +1,6 @@
 import { addToFavorites } from "./favorites";
 
-interface IBook {
+export interface IBook {
   id: number;
   title: string;
   author: string;
@@ -217,7 +217,7 @@ export function renderProductList() {
       favBtn.setAttribute("data-book-id", book.id.toString());
       favBtn.textContent = "✨";
       favBtn.title = "Add to Favorites";
-      favBtn.addEventListener("click", () => addToFavorites(book.id));
+      favBtn.addEventListener("click", () => addToFavorites(book));
 
       for (let i = 1; i <= 6; i++) {
         favBtn.appendChild(createStarElement(i));

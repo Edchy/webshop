@@ -26,7 +26,11 @@
         </ul>
         <p>Fri frakt över 599kr</p>
 
-        <!-- dessa två rader är allt som behövs för att skapa en modal -->
+        <!-- Favorites -->
+        <button popovertarget="favorites">favs</button>
+        <aside popover id="favorites">hehe</aside>
+
+        <!-- Cart -->
         <button popovertarget="shopping-cart">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +51,7 @@
             <path d="M6 5l14 1l-1 7h-13" />
           </svg>
         </button>
-        <aside popover class="shopping-cart" id="shopping-cart">
+        <div popover class="shopping-cart" id="shopping-cart">
           <button
             onclick="(() => {
                 const popover = document.querySelector('.shopping-cart');
@@ -58,7 +62,7 @@
             ❌
           </button>
           kundvagn...tom
-        </aside>
+        </div>
       </nav>
     </header>
     <div class="wrapper">
