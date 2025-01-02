@@ -38,11 +38,15 @@ function createHTML(obj: IBook) {
   const title = document.createElement("h3");
   title.textContent = obj.title;
 
+  const link = document.createElement("a");
+  link.href = "product-test.html?id=" + obj.id;
+  link.appendChild(title);
+
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener("click", () => removeBook(obj.id));
 
-  div.append(cover, title, removeBtn);
+  div.append(cover, link, removeBtn);
   return div;
 }
 
