@@ -1,5 +1,5 @@
 import "./styles/main.css";
-import sparklyText from "@stefanjudis/sparkly-text";
+import "@stefanjudis/sparkly-text";
 // import Typed from "typed.js";
 // import { balloons } from "balloons-js";
 import { renderProductList } from "./js/products.ts";
