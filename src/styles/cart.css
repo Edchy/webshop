@@ -29,7 +29,7 @@ button[popovertarget="shopping-cart"] {
 
 
 
- [popover] {
+/* [popover] {
   margin: 0;
   inset: auto;
   position-anchor: --toggle-cart;
@@ -57,11 +57,11 @@ button[popovertarget="shopping-cart"] {
     flex-direction: column;
 
 
-   /* @starting-style {
+    @starting-style {
       translate: 100%;
       opacity: 0;
     }
-  */
+
   }
 
   ul {
@@ -148,7 +148,7 @@ button[popovertarget="shopping-cart"] {
   }
 
 }
-
+ */
 
 .cart-item {
   display: flex;
@@ -160,10 +160,10 @@ button[popovertarget="shopping-cart"] {
 
 
 .cart-item img {
-  width: 50px; 
-  height: auto; 
-  margin-right: 10px; 
-  object-fit: cover; 
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  object-fit: cover;
 }
 
 
@@ -175,7 +175,7 @@ button[popovertarget="shopping-cart"] {
 
 .cart-item-details p {
   margin: 0;
-  font-size: 14px; 
+  font-size: 14px;
   color: #333;
 }
 

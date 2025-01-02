@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bookDetailsContainer.innerHTML = "<p>Ingen bok hittades!</p>";
     return;
   }
-
+  // behövs ej
   const link = document.createElement("a");
   link.href = `product-test.html?id=${book.id}&title=${book.title}`;
 
@@ -72,29 +72,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addBtn.addEventListener("click", () => {
     if (cartContainer) {
-     
       const cartItem = document.createElement("li");
       cartItem.classList.add("cart-item");
-  
-      
+
       const cartItemImage = document.createElement("img");
       cartItemImage.src = book.cover;
       cartItemImage.alt = `Omslag för ${book.title} av ${book.author}`;
       cartItem.appendChild(cartItemImage);
-  
-      
+
       const cartItemDetails = document.createElement("div");
       cartItemDetails.classList.add("cart-item-details");
       cartItemDetails.textContent = `${book.title} - ${book.price} kr`;
       cartItem.appendChild(cartItemDetails);
-  
-     
+
       cartContainer.appendChild(cartItem);
     } else {
       console.error("Varukorgsbehållaren saknas i HTML.");
     }
   });
-  
+
   productDetails.append(h1, authorP, priceDiv, descriptionP, addBtn);
 
   const imageContainer = document.createElement("div");
