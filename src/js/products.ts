@@ -325,7 +325,7 @@ export function renderProductList() {
       // addToCartBtn.textContent = "lägg till";
       addToCartBtn.addEventListener("click", () => {
         console.log(book.id);
-      });
+      })
       // cart svg
       const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       svg.setAttribute("width", "24");
