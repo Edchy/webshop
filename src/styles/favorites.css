@@ -1,0 +1,35 @@
+button[popovertarget="favorites"] {
+  background-color: transparent;
+  color: var(--clr-light);
+  border: none;
+  padding: .25rem;
+  cursor: pointer;
+}
+
+.favorites[popover] {
+  background-color: red;
+  inset: auto;
+  right: 0;
+
+
+}
+
+.favorites[popover]:popover-open {
+  background-color: green;
+  padding: 1rem;
+  width: 50%;
+  min-height: 100vh;
+  margin-top: 10vh;
+}
+
+.fav-book {
+  background-color: white;
+  display: flex;
+  gap: 1rem;
+  margin-top: 5px;
+
+  img {
+    width: 50px;
+    aspect-ratio: 1;
+  }
+}

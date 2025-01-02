@@ -9,11 +9,6 @@
       href="https://api.fontshare.com/v2/css?f[]=bespoke-serif@400&f[]=tanker@400&display=swap"
       rel="stylesheet"
     />
-    <!-- 3rd party CDN, not recommended for production use -->
-    <script
-      type="module"
-      src="https://www.unpkg.com/@stefanjudis/sparkly-text"
-    ></script>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
@@ -31,7 +26,11 @@
         </ul>
         <p>Fri frakt över 599kr</p>
 
-        <!-- dessa två rader är allt som behövs för att skapa en modal -->
+        <!-- Favorites -->
+        <button popovertarget="favorites">favs</button>
+        <div popover class="favorites" id="favorites">hehe</div>
+
+        <!-- Cart -->
         <button popovertarget="shopping-cart">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +51,7 @@
             <path d="M6 5l14 1l-1 7h-13" />
           </svg>
         </button>
-        <aside popover class="shopping-cart" id="shopping-cart">
+        <div popover class="shopping-cart" id="shopping-cart">
           <button
             onclick="(() => {
                 const popover = document.querySelector('.shopping-cart');
@@ -63,7 +62,7 @@
             ❌
           </button>
           kundvagn...tom
-        </aside>
+        </div>
       </nav>
     </header>
     <div class="wrapper">
