@@ -5,7 +5,7 @@ const favPopoverBtn = document.querySelector(
   "button[popovertarget='favorites']"
 ) as HTMLButtonElement;
 
-// gör om till Set ?
+// gör om till Set ? (inga dubbletter by default, lättare att ta bort)
 export let favorites: IBook[] = JSON.parse(
   localStorage.getItem("favorites") || "[]"
 );
@@ -30,12 +30,19 @@ function updateFavoritesUI() {
 
 function createHTML(obj: IBook) {
   const div = document.createElement("div");
+  div.className = "fav-book";
+
+  const cover = document.createElement("img");
+  cover.src = obj.cover;
+
   const title = document.createElement("h3");
   title.textContent = obj.title;
+
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener("click", () => removeBook(obj.id));
-  div.append(title, removeBtn);
+
+  div.append(cover, title, removeBtn);
   return div;
 }
 
