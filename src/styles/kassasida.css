@@ -1,0 +1,73 @@
+/* Kassasidan */
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.138);
+    border-radius: var(--radius);
+    background-color: white;
+}
+
+.cart-item span {
+    font-size: 1rem;
+}
+
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.138);
+    border-radius: var(--radius);
+}
+
+.total-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+}
+
+.purchase-button {
+    width: 80px;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.purchase-button:hover {
+    background-color: #0056b3;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+}
