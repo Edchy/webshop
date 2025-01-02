@@ -72,23 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addBtn.addEventListener("click", () => {
     if (cartContainer) {
-      
       const cartItem = document.createElement("li");
-      cartItem.classList.add("cart-item");
-  
-      
-      const cartItemImage = document.createElement("img");
-      cartItemImage.src = book.cover;
-      cartItemImage.alt = `Omslag för ${book.title} av ${book.author}`;
-      cartItem.appendChild(cartItemImage);
-  
-     
-      const cartItemDetails = document.createElement("div");
-      cartItemDetails.classList.add("cart-item-details");
-      cartItemDetails.textContent = `${book.title} - ${book.price} kr`;
-      cartItem.appendChild(cartItemDetails);
-  
-      
+      cartItem.textContent = `${book.title} - ${book.price} kr`;
       cartContainer.appendChild(cartItem);
     } else {
       console.error("Varukorgsbehållaren saknas i HTML.");
