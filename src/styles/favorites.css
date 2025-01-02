@@ -13,12 +13,13 @@ button[popovertarget="favorites"] {
   width: 50%;
   height: 50vh;
   margin-top: 10vh;
+
 }
 
 .favorites[popover]:popover-open {
   background-color: green;
 }
 
-.favorites div {
+.favorites h3 {
   background-color: white;
 }
