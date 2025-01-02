@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const addBtn = document.createElement("button");
   addBtn.innerHTML = "Lägg till i varukorg";
-  addBtn.className = "addBtn";
+  addBtn.className = "add-btn";
 
   addBtn.addEventListener("click", () => {
     if (cartContainer) {
