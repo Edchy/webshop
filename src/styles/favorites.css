@@ -1,0 +1,24 @@
+button[popovertarget="favorites"] {
+  background-color: transparent;
+  color: var(--clr-light);
+  border: none;
+  padding: .25rem;
+  cursor: pointer;
+}
+
+.favorites[popover] {
+  background-color: red;
+  inset: auto;
+  right: 0;
+  width: 50%;
+  height: 50vh;
+  margin-top: 10vh;
+}
+
+.favorites[popover]:popover-open {
+  background-color: green;
+}
+
+.favorites div {
+  background-color: white;
+}
