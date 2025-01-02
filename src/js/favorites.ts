@@ -5,6 +5,7 @@ const favPopoverBtn = document.querySelector(
   "button[popovertarget='favorites']"
 ) as HTMLButtonElement;
 
+// gör om till Set ?
 export let favorites: IBook[] = JSON.parse(
   localStorage.getItem("favorites") || "[]"
 );
@@ -24,12 +25,24 @@ favPopoverBtn?.addEventListener("click", updateFavoritesUI);
 
 function updateFavoritesUI() {
   favoritesPopover.innerHTML = "";
+  favorites.forEach((book) => favoritesPopover.append(createHTML(book)));
+}
 
-  favorites.forEach((fav) => {
-    const title = document.createElement("h3");
-    title.textContent = fav.title;
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    favoritesPopover.append(title, removeBtn);
-  });
+function createHTML(obj: IBook) {
+  const div = document.createElement("div");
+  const title = document.createElement("h3");
+  title.textContent = obj.title;
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "Remove";
+  removeBtn.addEventListener("click", () => removeBook(obj.id));
+  div.append(title, removeBtn);
+  return div;
+}
+
+function removeBook(id: number) {
+  console.log(id);
+  const filtered = favorites.filter((book) => book.id !== id);
+  favorites = [...filtered];
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  updateFavoritesUI();
 }
