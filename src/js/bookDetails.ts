@@ -97,7 +97,14 @@ document.addEventListener("DOMContentLoaded", () => {
       cartPrice.className = "cart-price";
       detailsWrapper.append(cartTitle, cartPrice);
 
-      cartItem.append(imageWrapper, detailsWrapper);
+      const buttonsWrapper = document.createElement("div");
+      const plusBtn = document.createElement("button");
+      plusBtn.innerHTML = "plus";
+      const minusBtn = document.createElement("button");
+      minusBtn.innerHTML = "minus";
+      buttonsWrapper.append(plusBtn, minusBtn);
+
+      cartItem.append(imageWrapper, detailsWrapper, buttonsWrapper);
       cartContain.appendChild(cartItem);
       cartContainer.appendChild(cartContain);
     } else {
