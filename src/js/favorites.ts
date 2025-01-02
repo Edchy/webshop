@@ -1,6 +1,3 @@
-export const favorites: number[] = [];
-console.log("fav");
-
-setTimeout(() => {
-  console.log(favorites);
-}, 2200);
+export const favorites: Set<number> = new Set(
+  JSON.parse(localStorage.getItem("favorites") || "[]")
+);

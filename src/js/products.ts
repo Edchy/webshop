@@ -219,7 +219,9 @@ export function renderProductList() {
       favBtn.title = "Add to Favorites";
       favBtn.addEventListener("click", () => {
         console.log(book.id);
-        favorites.push(book.id);
+        favorites.add(book.id);
+        console.log(favorites);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
       });
 
       for (let i = 1; i <= 6; i++) {
