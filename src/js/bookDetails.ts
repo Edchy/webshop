@@ -72,9 +72,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addBtn.addEventListener("click", () => {
     if (cartContainer) {
+      const cartContain = document.createElement("ul");
+      cartContain.className = "cart-contain";
+
       const cartItem = document.createElement("li");
-      cartItem.textContent = `${book.title} - ${book.price} kr`;
-      cartContainer.appendChild(cartItem);
+      cartItem.className = "cart-item";
+
+      // Skapa en div för bilden
+      const imageWrapper = document.createElement("div");
+      imageWrapper.className = "image-wrapper";
+      const cartCover = document.createElement("img");
+      cartCover.src = book.cover;
+      cartCover.className = "cart-cover";
+      imageWrapper.appendChild(cartCover);
+
+      // Skapa en div för titel och pris
+      const detailsWrapper = document.createElement("div");
+      detailsWrapper.className = "details-wrapper";
+      const cartTitle = document.createElement("h1");
+      cartTitle.innerHTML = `${book.title}`;
+      cartTitle.className = "cart-title";
+      const cartPrice = document.createElement("span");
+      cartPrice.innerHTML = `${book.price} kr`;
+      cartPrice.className = "cart-price";
+      detailsWrapper.append(cartTitle, cartPrice);
+
+      cartItem.append(imageWrapper, detailsWrapper);
+      cartContain.appendChild(cartItem);
+      cartContainer.appendChild(cartContain);
     } else {
       console.error("Varukorgsbehållaren saknas i HTML.");
     }
