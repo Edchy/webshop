@@ -2,6 +2,7 @@ import { books } from "./products";
 
 document.addEventListener("DOMContentLoaded", () => {
   const bookDetailsContainer = document.getElementById("book-details");
+  const cartContainer = document.getElementById("shopping-cart");
 
   if (!bookDetailsContainer) {
     console.error("Elementet med ID 'book-details' finns inte på sidan.");
@@ -68,6 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.createElement("button");
   addBtn.innerHTML = "Lägg till i varukorg";
   addBtn.className = "addBtn";
+
+  addBtn.addEventListener("click", () => {
+    if (cartContainer) {
+      const cartItem = document.createElement("li");
+      cartItem.textContent = `${book.title} - ${book.price} kr`;
+      cartContainer.appendChild(cartItem);
+    } else {
+      console.error("Varukorgsbehållaren saknas i HTML.");
+    }
+  });
 
   productDetails.append(h1, authorP, priceDiv, descriptionP, addBtn);
 
