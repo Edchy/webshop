@@ -326,20 +326,19 @@ export function renderProductList() {
       addToCartBtn.addEventListener("click", () => {
         console.log(book.id);
 
-        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-        const existingBook = cart.find((item: { id: number }) => item.id === book.id);
-        if (existingBook) {
-          existingBook.quantity += 1;
-        } else {
-          cart.push({ ...book, quantity: 1 });
-        }
-          
-        localStorage.setItem("cart", JSON.stringify(cart));
-        console.log(`Boken "${book.title}" lades till i varukorgen.`);
+        //   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        //   const existingBook = cart.find((item: { id: number }) => item.id === book.id);
+        //   if (existingBook) {
+        //     existingBook.quantity += 1;
+        //   } else {
+        //     cart.push({ ...book, quantity: 1 });
+        //   }
+
+        //   localStorage.setItem("cart", JSON.stringify(cart));
+        //   console.log(`Boken "${book.title}" lades till i varukorgen.`);
+        // });
       });
-      
-      })
-      
+
       // cart svg
       const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       svg.setAttribute("width", "24");
