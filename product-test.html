@@ -15,13 +15,17 @@
             <h2>Tales & Tails</h2>
           </sparkly-text>
         </a>
-        <ul>
+        <ul class="nav-links">
           <li><a href="index.html">Produkter</a></li>
           <li><a href="#footer">Kontakt</a></li>
         </ul>
         <p>Fri frakt över 599kr</p>
 
-        <!-- dessa två rader är allt som behövs för att skapa en modal -->
+        <!-- Favorites -->
+        <button popovertarget="favorites">favs</button>
+        <div popover class="favorites" id="favorites">hehe</div>
+
+        <!-- Cart -->
         <button popovertarget="shopping-cart">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,18 +46,15 @@
             <path d="M6 5l14 1l-1 7h-13" />
           </svg>
         </button>
-        <aside popover class="shopping-cart" id="shopping-cart">
-          <button
-            onclick="(() => {
-                const popover = document.querySelector('.shopping-cart');
-                popover.hidePopover();
-                  console.log(popover);
-                })()"
-          >
-            ❌
-          </button>
-          kundvagn...tom
-        </aside>
+        <div popover class="shopping-cart" id="shopping-cart">
+          <ul class="shopping-cart-list">
+            your cart is empty...
+          </ul>
+          <footer class="shopping-cart-footer">
+            <p class="shopping-cart-total"></p>
+            <button class="go-to-payment-btn">Till kassan</button>
+          </footer>
+        </div>
       </nav>
     </header>
     <div class="wrapper">

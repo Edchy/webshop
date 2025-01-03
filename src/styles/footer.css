@@ -1,4 +1,4 @@
-footer {
+footer:not(.shopping-cart-footer) {
     background-color: var(--clr-primary-500);
     color: #fff;
     padding: 40px 20px;
