@@ -9,10 +9,14 @@ export const cart: ICartBook[] = JSON.parse(
 // const cartOpenBtn = document.querySelector(
 //   "button[popovertarget='shopping-cart']"
 // );
+
 const cartContainer = document.querySelector(".shopping-cart") as HTMLElement;
 const cartList = document.querySelector(".shopping-cart-list") as HTMLElement;
 const priceTotalOutput = document.querySelector(
   ".shopping-cart-total"
+) as HTMLElement;
+const cartNotification = document.querySelector(
+  ".cart-notification"
 ) as HTMLElement;
 //
 // cartOpenBtn?.addEventListener("click", () => console.log("hi"));
@@ -28,10 +32,10 @@ export function mapBookToCartBook(book: IBook): ICartBook {
   };
 }
 
-function updateQuantity(item: ICartBook, plusOrMinus: string) {
-  if (plusOrMinus === "+") item.quantity++;
-  if (plusOrMinus === "-") item.quantity--;
-}
+// function updateQuantity(item: ICartBook, plusOrMinus: string) {
+//   if (plusOrMinus === "+") item.quantity++;
+//   if (plusOrMinus === "-") item.quantity--;
+// }
 
 export function addToCart(newBook: ICartBook) {
   const existingBook: ICartBook | undefined = cart.find(
@@ -39,8 +43,8 @@ export function addToCart(newBook: ICartBook) {
   );
 
   if (existingBook) {
-    // existingBook.quantity += 1;
-    updateQuantity(existingBook, "+");
+    existingBook.quantity += 1;
+    // updateQuantity(existingBook, "+");
   } else {
     cart.push(newBook);
   }
@@ -61,6 +65,7 @@ export function renderCartUI() {
     const total = calculateTotal(cart).toString();
     priceTotalOutput.textContent = cart.length > 0 ? total : "";
   }
+  if (cartNotification) cartNotification.innerHTML = cart.length.toString();
 }
 
 function removeFromCart(id: number) {
