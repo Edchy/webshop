@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kassasida</title>
+    <script type="module" src="/src/main.ts"></script>
+</head>
+
+<body>
+    <header class="container">
+        <nav class="navigation">
+            <div class="logo-container">
+                <img src="/src/photos/logo.svg" alt="" />
+                <sparkly-text style="--sparkly-text-color: rainbow">
+                    <h2>Tales & Tails</h2>
+                </sparkly-text>
+            </div>
+            <ul>
+                <li><a href="index.html">Produkter</a></li>
+                <li><a href="#footer">Kontakt</a></li>
+            </ul>
+            <p>Fri frakt över 599kr</p>
+        
+            <!-- dessa två rader är allt som behövs för att skapa en modal -->
+            <button popovertarget="shopping-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M17 17h-11v-14h-2" />
+                    <path d="M6 5l14 1l-1 7h-13" />
+                </svg>
+            </button>
+            <aside popover class="shopping-cart" id="shopping-cart">
+                <button onclick="(() => {
+                    const popover = document.querySelector('.shopping-cart');
+                    popover.hidePopover();
+                    console.log(popover);
+                })()">
+                ❌
+                </button>
+                kundvagn...tom
+            </aside>
+        </nav>
+    </header>
+
+    <h1>Kassa</h1>
+    <section class="cartHeadings">
+        <h3>Produkt</h3>
+        <h3>Antal</h3>
+        <h3>Pris</h3>
+    </section>
+
+    <div class="cart-container">
+
+    </div>
+    <p class="total-price">Totalt: 0 kr</p>
+    <div class="consumerInfo">
+        <h3>Kontaktuppgifter</h3>
+        <input type="text" placeholder="Förnamn" class="contact-info" />
+        <input type="text" placeholder="Efternamn" class="contact-info" />
+        <input type="text" placeholder="Adress" class="contact-info" />
+        <input type="text" placeholder="E-post" class="contact-info" />
+        <input type="text" placeholder="telefonnummer" class="contact-info" />
+        <h3>Betalningsmetod</h3>
+        <label>
+            <input type="radio" name="payment-method" value="card" />
+                Kortbetalning
+        </label>
+        <input type="text" placeholder="Kortinnehavare" class="contact-info" />
+        <input type="text" placeholder="Kortnummer" class="contact-info" />
+        <input type="text" placeholder="CVC" class="contact-info" />
+
+        <button class="purchase-button">Köp</button>
+    </div>
+
+    <footer id="footer">
+        <section class="footer-container">
+            <div class="footer-section">
+                <h3>Tales & Tails</h3>
+                <p>Om oss</p>
+                <p>Kundservice</p>
+                <p>Valiga frågor</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nyhetsbrev</h3>
+                <input type="email" id="email-input" placeholder="Din e-post adress" />
+                <button id="subscribe-button">Anmäl dig</button>
+            </div>
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <p>
+                    Gustavslundsvägen 151 D <br />167 51 Bromma<br />+46 123 345 67 88
+                </p>
+            </div>
+        </section>
+    </footer>
+    <script type="module" src="/src/js/kassasida.ts" defer></script>
+</body>
+</html>
