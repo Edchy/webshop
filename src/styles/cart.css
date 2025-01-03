@@ -11,7 +11,7 @@ button[popovertarget="shopping-cart"] {
   position: fixed;
   inset: auto;
   right: 0;
-  width: 30%;
+  width: 50vw;
   height: 70vh;
   margin-top: 10.5vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);

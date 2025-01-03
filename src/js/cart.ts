@@ -19,8 +19,17 @@ export function mapBookToCartBook(book: IBook): ICartBook {
 }
 
 export function addToCart(book: ICartBook) {
-  cart.push(book);
-  renderCartUI();
+  const existingBook: ICartBook = cart.find(
+    (item: ICartBook) => item.id === book.id
+  );
+  console.log(existingBook);
+  if (existingBook) {
+    existingBook.quantity += 1;
+  } else {
+    cart.push(book);
+  }
+
+  renderCartUI(); // move away, single responsibility
   console.log(cart);
 }
 
@@ -39,12 +48,17 @@ function createCartItem(book: ICartBook) {
   cartItem.classList.add("cart-item");
   const cartItemImage = document.createElement("img");
   cartItemImage.src = book.cover;
-  cartItemImage.alt = `Omslag för ${book.title} av ${book.author}`;
+  // cartItemImage.alt = `Omslag för ${book.title} av ${book.author}`;
   cartItem.appendChild(cartItemImage);
   const cartItemDetails = document.createElement("div");
   cartItemDetails.classList.add("cart-item-details");
   cartItemDetails.textContent = `${book.title} - ${book.price} kr`;
-  cartItem.appendChild(cartItemDetails);
+
+  const cartItemQuantity = document.createElement("input") as HTMLInputElement;
+  cartItemQuantity.type = "number";
+  cartItemQuantity.valueAsNumber = book.quantity;
+
+  cartItem.append(cartItemDetails, cartItemQuantity);
 
   return cartItem;
 }
