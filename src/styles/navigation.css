@@ -2,7 +2,11 @@ h1 {
   font-size: var(--fs-1);
 }
 
-.container {
+header.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
   background-color: var(--clr-primary-500);
   padding: 20px;
   color: var(--clr-light);
@@ -23,16 +27,20 @@ h1 {
     display: flex;
     /* font-family: 'system-ui'; */
   }
-}
 
-ul {
-  display: flex;
-  gap: 20px;
-}
+  ul {
+    display: flex;
+    gap: 20px;
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  font-size: var(--fs--1)
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: var(--fs--1)
+  }
+
+  p {
+    font-size: var(--fs--1);
+  }
 }

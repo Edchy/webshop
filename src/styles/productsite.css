@@ -51,3 +51,13 @@
 .product-additional-info p {
   margin: 5px 0;
 }
+
+.add-btn {
+  border-radius: 10px;
+  background-color: var(--clr-primary-500);
+  max-width: 150px;
+  border: none;
+  color: var(--clr-golden);
+  padding-block: var(--gap-s);
+  cursor: pointer;
+}

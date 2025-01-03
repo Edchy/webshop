@@ -41,7 +41,6 @@ article.product {
   }
 
   .product-info {
-
     .title-container {
       padding-block-start: var(--gap-s);
       display: flex;
@@ -60,8 +59,6 @@ article.product {
         overflow: hidden;
         text-overflow: ellipsis;
       }
-
-
     }
 
     .product-author a {
@@ -90,7 +87,6 @@ article.product {
     .product-price {
       font-weight: bold;
     }
-
   }
 
   .product-actions {
@@ -113,16 +109,13 @@ article.product {
     }
 
     .add-to-cart-button {
-
       border-top-left-radius: var(--radius);
       border-bottom-left-radius: var(--radius);
       background-color: var(--clr-primary-500);
 
-      &>* {
+      & > * {
         margin-left: 20px;
       }
-
-
     }
 
     .add-to-fav-button {
@@ -133,11 +126,10 @@ article.product {
   }
 }
 
-
 /* Fav button effect */
 button.add-to-fav-button {
   position: relative;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .star-1 {
@@ -181,7 +173,7 @@ button.add-to-fav-button {
   height: auto;
   filter: drop-shadow(0 0 0 var(--color-primary-300));
   z-index: -5;
-  transition: all .8s cubic-bezier(0, 0.4, 0, 1.01);
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
 }
 
 .star-5 {
@@ -192,7 +184,7 @@ button.add-to-fav-button {
   height: auto;
   filter: drop-shadow(0 0 0 var(--color-primary-300));
   z-index: -5;
-  transition: all .6s cubic-bezier(0, 0.4, 0, 1.01);
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
 }
 
 .star-6 {
@@ -203,7 +195,7 @@ button.add-to-fav-button {
   height: auto;
   filter: drop-shadow(0 0 0 var(--color-primary-300));
   z-index: -5;
-  transition: all .8s ease;
+  transition: all 0.8s ease;
 }
 
 button.add-to-fav-button {
@@ -275,4 +267,16 @@ button:hover .star-6 {
 
 .fil0 {
   fill: var(--clr-golden);
+}
+
+
+
+.product-image img {
+  min-height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+article.product:hover .product-image img {
+  transform: scale(1.05); /* Slight zoom effect */
 }

@@ -7,27 +7,36 @@ button[popovertarget="shopping-cart"] {
 }
 
 .shopping-cart[popover] {
-  background-color: red;
+  background-color: rgb(255, 255, 255);
   inset: auto;
   right: 0;
-  width: 50%;
-  height: 50vh;
-  margin-top: 10vh;
+  width: 30%;
+  height: 70vh;
+  margin-top: 10.5vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
 .shopping-cart[popover]:popover-open {
-  background-color: green;
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* [popover] {
+
+
+   [popover] {
   margin: 0;
   inset: auto;
-  position-anchor: --toggle-cart;
+  
   top: anchor(bottom);
   margin-block-start: 10px;
   right: 0;
   background-color: black;
-  color: white;
   border: none;
   opacity: 0;
   translate: 100%;
@@ -38,7 +47,7 @@ button[popovertarget="shopping-cart"] {
   overflow-y: scroll;
 
   &::backdrop {
-    background-color: rgba(0, 0, 0, 0.21);
+    background-color: rgba(0, 0, 0, 0.15);
   }
 
   &:popover-open {
@@ -138,4 +147,39 @@ button[popovertarget="shopping-cart"] {
     }
   }
 
-} */
+}
+ */
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.cart-item img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.cart-item-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.cart-item-details span {
+  font-weight: bold;
+  color: #007bff;
+}
