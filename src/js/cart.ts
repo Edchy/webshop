@@ -6,16 +6,16 @@ import { calculateTotal, updateLocalStorage } from "./utils";
 export const cart: ICartBook[] = JSON.parse(
   localStorage.getItem("cart") || "[]"
 );
-const cartOpenBtn = document.querySelector(
-  "button[popovertarget='shopping-cart']"
-);
+// const cartOpenBtn = document.querySelector(
+//   "button[popovertarget='shopping-cart']"
+// );
 const cartContainer = document.querySelector(".shopping-cart") as HTMLElement;
 const cartList = document.querySelector(".shopping-cart-list") as HTMLElement;
 const priceTotalOutput = document.querySelector(
   ".shopping-cart-total"
 ) as HTMLElement;
 //
-cartOpenBtn?.addEventListener("click", () => console.log("hi"));
+// cartOpenBtn?.addEventListener("click", () => console.log("hi"));
 
 export function mapBookToCartBook(book: IBook): ICartBook {
   return {
@@ -93,9 +93,20 @@ function createCartItem(book: ICartBook) {
   const cartItemQuantity = document.createElement("input") as HTMLInputElement;
   cartItemQuantity.type = "number";
   cartItemQuantity.valueAsNumber = book.quantity;
+  cartItemQuantity.addEventListener("change", () => {
+    updateCart(book.id, cartItemQuantity.valueAsNumber);
+  });
 
   cartItemActions.append(cartItemQuantity, cartItemRemove);
   cartItem.append(cartItemDetails, cartItemActions);
 
   return cartItem;
+}
+
+function updateCart(bookId: number, newQuantity: number) {
+  const indexInArray = cart.findIndex((item) => item.id === bookId);
+  cart[indexInArray].quantity = newQuantity;
+  console.log(cart);
+
+  renderCartUI();
 }
