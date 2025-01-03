@@ -3,7 +3,7 @@ import { books } from "./data";
 
 document.addEventListener("DOMContentLoaded", () => {
   const bookDetailsContainer = document.getElementById("book-details");
-  const cartContainer = document.getElementById("shopping-cart");
+  // const cartContainer = document.getElementById("shopping-cart");
 
   if (!bookDetailsContainer) {
     console.error("Elementet med ID 'book-details' finns inte på sidan.");

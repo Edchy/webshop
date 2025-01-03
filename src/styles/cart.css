@@ -41,6 +41,11 @@ button[popovertarget="shopping-cart"] {
   }
 }
 
+.shopping-cart-list {
+  display: flex;
+  flex-direction: column;
+}
+
 .cart-item {
   display: flex;
   align-items: center;
