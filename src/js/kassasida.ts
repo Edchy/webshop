@@ -27,17 +27,20 @@ function loadCart() {
   totalPriceEl.textContent = `Total: ${totalPrice} kr`;
 }
 
-// Event för att skicka beställning
-function handlePurchase() {
-  const purchaseButton = document.querySelector(".purchase-button") as HTMLButtonElement;
+  function handlePurchase() {
+    const purchaseButton = document.querySelector(".purchase-button") as HTMLButtonElement;
 
-  purchaseButton.addEventListener("click", () => {
-    alert("Tack för ditt köp!");
-    localStorage.removeItem("cart"); // Töm varukorgen
-    window.location.href = "index.html"; // Skicka användaren tillbaka till startsidan
-  });
-}
+    if (purchaseButton) {
+      purchaseButton.addEventListener("click", () => {
+        alert("Tack för ditt köp! Din beställning har mottagits.");
+        localStorage.removeItem("cart");
+        window.location.href = "index.html";
+      });
+    } else {
+      console.error("Knappen 'purchase-button' kunde inte hittas.");
+    }
+  }
 
-// Kör funktionerna när sidan laddas
-loadCart();
-handlePurchase();
+
+  loadCart();
+  handlePurchase();

@@ -49,29 +49,32 @@
     </header>
 
     <h1>Kassa</h1>
+    <section class="cartHeadings">
+        <h3>Produkt</h3>
+        <h3>Antal</h3>
+        <h3>Pris</h3>
+    </section>
+
     <div class="cart-container">
 
     </div>
-    <div class="cart-summary">
-        <p class="total-price">Totalt: 0 kr</p>
+    <p class="total-price">Totalt: 0 kr</p>
+    <div class="consumerInfo">
         <h3>Kontaktuppgifter</h3>
         <input type="text" placeholder="Förnamn" class="contact-info" />
         <input type="text" placeholder="Efternamn" class="contact-info" />
         <input type="text" placeholder="Adress" class="contact-info" />
         <input type="text" placeholder="E-post" class="contact-info" />
         <input type="text" placeholder="telefonnummer" class="contact-info" />
-
-        <div>
-            <h3>Betalningsmetod</h3>
-            <label>
-                <input type="radio" name="payment-method" value="card" />
+        <h3>Betalningsmetod</h3>
+        <label>
+            <input type="radio" name="payment-method" value="card" />
                 Kortbetalning
-            </label>
-            <input type="text" placeholder="Kortinnehavare" class="card-info" />
-            <input type="text" placeholder="Kortnummer" class="card-info" />
-            <input type="text" placeholder="CVC" class="card-info" />
+        </label>
+        <input type="text" placeholder="Kortinnehavare" class="contact-info" />
+        <input type="text" placeholder="Kortnummer" class="contact-info" />
+        <input type="text" placeholder="CVC" class="contact-info" />
 
-        </div>
         <button class="purchase-button">Köp</button>
     </div>
 
@@ -96,6 +99,6 @@
             </div>
         </section>
     </footer>
-    <script type="module" src="/src/kassasida.ts"></script>
+    <script type="module" src="/src/js/kassasida.ts" defer></script>
 </body>
 </html>
