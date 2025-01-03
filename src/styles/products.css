@@ -271,12 +271,12 @@ button:hover .star-6 {
 
 
 
-/* .product-image img {
+.product-image img {
   min-height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
 }
 
 article.product:hover .product-image img {
-  transform: scale(1.05); 
-} */
+  transform: scale(1.05);
+}
