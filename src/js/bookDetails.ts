@@ -20,52 +20,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const book = books.find((b) => b.id === bookId);
 
-  if (!book) {
-    bookDetailsContainer.innerHTML = "<p>Ingen bok hittades!</p>";
-    return;
-  }
-  // behövs ej
-  const link = document.createElement("a");
-  link.href = `product-test.html?id=${book.id}&title=${book.title}`;
+  if (book) {
+    const link = document.createElement("a");
+    link.href = `product-test.html?id=${book.id}&title=${book.title}`;
 
-  const img = document.createElement("img");
-  img.src = book.cover;
-  img.alt = `Omslag för ${book.title} av ${book.author}`;
-  link.appendChild(img);
+    const img = document.createElement("img");
+    img.src = book.cover;
+    img.alt = `Omslag för ${book.title} av ${book.author}`;
+    link.appendChild(img);
 
-  const mainContent = document.createElement("div");
-  mainContent.className = "main-content";
+    const mainContent = document.createElement("div");
+    mainContent.className = "main-content";
 
-  const productInformation = document.createElement("div");
-  productInformation.className = "product-information";
+    const productInformation = document.createElement("div");
+    productInformation.className = "product-information";
 
-  const productDetails = document.createElement("div");
-  productDetails.className = "product-details";
+    const productDetails = document.createElement("div");
+    productDetails.className = "product-details";
 
-  const h1 = document.createElement("h1");
-  h1.className = "product-title";
-  h1.textContent = book.title;
+    const h1 = document.createElement("h1");
+    h1.className = "product-title";
+    h1.textContent = book.title;
 
-  const authorP = document.createElement("p");
-  authorP.className = "product-author";
+    const authorP = document.createElement("p");
+    authorP.className = "product-author";
 
-  const authorLink = document.createElement("a");
-  authorLink.href = "#";
-  authorLink.textContent = book.author;
+    const authorLink = document.createElement("a");
+    authorLink.href = "#";
+    authorLink.textContent = book.author;
 
-  authorP.appendChild(authorLink);
+    authorP.appendChild(authorLink);
 
-  const priceDiv = document.createElement("div");
-  priceDiv.className = "product-price";
+    const priceDiv = document.createElement("div");
+    priceDiv.className = "product-price";
 
-  const priceData = document.createElement("data");
-  priceData.value = book.price.toString();
-  priceData.textContent = `${book.price} kr`;
+    const priceData = document.createElement("data");
+    priceData.value = book.price.toString();
+    priceData.textContent = `${book.price} kr`;
 
-  priceDiv.appendChild(priceData);
+    priceDiv.appendChild(priceData);
 
-  const descriptionP = document.createElement("p");
-  descriptionP.textContent = book.description ?? "Beskrivning saknas";
+    const descriptionP = document.createElement("p");
+    descriptionP.textContent = book.description ?? "Beskrivning saknas";
+
 
   const addToCartBtn = document.createElement("button");
   addToCartBtn.innerHTML = "Lägg till i varukorg";
@@ -77,33 +74,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
 
-  const imageContainer = document.createElement("div");
-  imageContainer.className = "product-image";
-  imageContainer.appendChild(link);
 
-  productInformation.append(imageContainer, productDetails);
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "product-image";
+    imageContainer.appendChild(link);
 
-  const additionalInfo = document.createElement("div");
-  additionalInfo.className = "product-additional-info";
+    productInformation.append(imageContainer, productDetails);
 
-  const genreP = document.createElement("p");
-  genreP.textContent = `Genre: ${book.genre}`;
+    const additionalInfo = document.createElement("div");
+    additionalInfo.className = "product-additional-info";
 
-  const yearP = document.createElement("p");
-  yearP.textContent = `Utgivningsår: ${book.year}`;
+    const genreP = document.createElement("p");
+    genreP.textContent = `Genre: ${book.genre}`;
 
-  const languageP = document.createElement("p");
-  languageP.textContent = `Språk: ${book.lang}`;
+    const yearP = document.createElement("p");
+    yearP.textContent = `Utgivningsår: ${book.year}`;
 
-  const pagesP = document.createElement("p");
-  pagesP.textContent = `Antal sidor: ${book.pages}`;
+    const languageP = document.createElement("p");
+    languageP.textContent = `Språk: ${book.lang}`;
 
-  const formatP = document.createElement("p");
-  formatP.textContent = `Format: ${book.format}`;
+    const pagesP = document.createElement("p");
+    pagesP.textContent = `Antal sidor: ${book.pages}`;
 
-  additionalInfo.append(genreP, yearP, languageP, pagesP, formatP);
+    const formatP = document.createElement("p");
+    formatP.textContent = `Format: ${book.format}`;
 
-  mainContent.append(productInformation, additionalInfo);
+    additionalInfo.append(genreP, yearP, languageP, pagesP, formatP);
 
-  bookDetailsContainer.appendChild(mainContent);
+    mainContent.append(productInformation, additionalInfo);
+
+    bookDetailsContainer.appendChild(mainContent);
+  }
 });
