@@ -1,7 +1,7 @@
 import { ICartBook } from "./Models/CartBook";
 
 export function calculateTotal(array: ICartBook[]): number {
-  return array.reduce((total, curr) => total + curr.price, 0);
+  return array.reduce((total, curr) => total + curr.price * curr.quantity, 0);
 }
 
 export function validateEmail(email: string): boolean {

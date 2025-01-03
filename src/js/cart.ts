@@ -92,6 +92,7 @@ function createCartItem(book: ICartBook) {
 
   const cartItemQuantity = document.createElement("input") as HTMLInputElement;
   cartItemQuantity.type = "number";
+  cartItemQuantity.min = "1";
   cartItemQuantity.valueAsNumber = book.quantity;
   cartItemQuantity.addEventListener("change", () => {
     updateCart(book.id, cartItemQuantity.valueAsNumber);
@@ -104,9 +105,12 @@ function createCartItem(book: ICartBook) {
 }
 
 function updateCart(bookId: number, newQuantity: number) {
+  if (newQuantity < 1) return;
   const indexInArray = cart.findIndex((item) => item.id === bookId);
-  cart[indexInArray].quantity = newQuantity;
-  console.log(cart);
-
-  renderCartUI();
+  if (indexInArray !== -1) {
+    cart[indexInArray].quantity = newQuantity;
+    console.log(cart);
+    updateLocalStorage("cart", cart);
+    renderCartUI();
+  }
 }
