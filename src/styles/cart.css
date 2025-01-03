@@ -12,10 +12,10 @@ button[popovertarget="shopping-cart"] {
   inset: auto;
   right: 0;
   width: 50vw;
-  height: 70vh;
+  height: 80vh;
   margin-top: 10.5vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
+  /* padding: 1rem; */
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   opacity: 0;
@@ -32,6 +32,10 @@ button[popovertarget="shopping-cart"] {
 .shopping-cart[popover]:popover-open {
   opacity: 1;
   translate: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overscroll-behavior: contain;
 
   @starting-style {
     translate: 100%;
@@ -52,7 +56,7 @@ button[popovertarget="shopping-cart"] {
   display: flex;
   align-items: center;
   /* margin-bottom: 15px; */
-  padding: 10px;
+  padding: 1rem;
   border-bottom: 1px solid #ccc;
 }
 
@@ -82,123 +86,12 @@ button[popovertarget="shopping-cart"] {
   color: #007bff;
 }
 
+.shopping-cart-footer {
+  background-color: var(--clr-primary-300);
+  padding: 1rem;
 
-/* [popover] {
-  margin: 0;
-  inset: auto;
-  
-  top: anchor(bottom);
-  margin-block-start: 10px;
-  right: 0;
-  background-color: black;
-  border: none;
-  opacity: 0;
-  translate: 100%;
-  transition: 250ms;
-  transition-behavior: allow-discrete;
-  max-block-size: 100vb;
-  inline-size: 50vi;
-  overflow-y: scroll;
-
-  &::backdrop {
-    background-color: rgba(0, 0, 0, 0.15);
-  }
-
-  &:popover-open {
-    opacity: 1;
-    translate: 0;
-    display: flex;
-    flex-direction: column;
-
-
-    @starting-style {
-      translate: 100%;
-      opacity: 0;
-    }
-
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cart-summary {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-block-start: 2rem;
-
-    .savings {
-      font-size: .75rem;
-    }
-
-    .total,
-    .savings {
-      grid-column: 3 / 4;
-    }
-  }
-
-  footer {
+  button {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-block: 1rem;
-
-    a {
-      display: block;
-      text-align: center;
-      color: white;
-      padding: .25rem .5rem;
-      border-radius: 1rem;
-      background-color: blue;
-      text-decoration: none;
-      width: 50%;
-    }
+    padding: 1rem;
   }
 }
-
-.cart-product {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  .description-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-
-    .number-input-container {
-      display: flex;
-      align-items: center;
-      gap: .25rem;
-
-      button {
-        aspect-ratio: 1;
-        inline-size: 20px;
-        border: none;
-      }
-    }
-  }
-
-  .price-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-    .order-2 {
-      grid-column: 2 / -1;
-    }
-
-    .price {
-      font-weight: bold;
-    }
-
-    .discount-price {
-      color: green;
-    }
-
-    .original-price {
-      color: red;
-      text-decoration: line-through;
-    }
-  }
-
-} */

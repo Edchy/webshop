@@ -17,7 +17,7 @@ function loadCart() {
         quantity: number;
       }) => {
         const productRow = document.createElement("div");
-        productRow.className = "cart-item";
+        productRow.className = "cart-checkout-item";
 
         productRow.innerHTML = `
         <span>${item.title}</span>
