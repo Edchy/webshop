@@ -29,10 +29,10 @@ button[popovertarget="shopping-cart"] {
 
 
 
-/* [popover] {
+   [popover] {
   margin: 0;
   inset: auto;
-  position-anchor: --toggle-cart;
+  
   top: anchor(bottom);
   margin-block-start: 10px;
   right: 0;
