@@ -1,5 +1,4 @@
 import { ICartBook } from "./Models/CartBook";
-import { cart } from "./cart";
 
 export function calculateTotal(array: ICartBook[]): number {
   return array.reduce((total, curr) => total + curr.price, 0);
@@ -10,6 +9,6 @@ export function validateEmail(email: string): boolean {
   return emailRegex.test(email);
 }
 
-export function updateLocalStorage(key: string, value: any[]) {
+export function updateLocalStorage(key: string, value: ICartBook[]) {
   localStorage.setItem(key, JSON.stringify(value));
 }

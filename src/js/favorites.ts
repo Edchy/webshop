@@ -1,4 +1,6 @@
 import { IBook } from "./Models/Book";
+import { ICartBook } from "./Models/CartBook";
+import { updateLocalStorage } from "./utils";
 
 const favoritesPopover = document.querySelector(".favorites") as HTMLElement;
 const favPopoverBtn = document.querySelector(
@@ -6,18 +8,18 @@ const favPopoverBtn = document.querySelector(
 ) as HTMLButtonElement;
 
 // gör om till Set ? (inga dubbletter by default, lättare att ta bort)
-export let favorites: IBook[] = JSON.parse(
+export let favorites: ICartBook[] = JSON.parse(
   localStorage.getItem("favorites") || "[]"
 );
 
-export function addToFavorites(book: IBook) {
+export function addToFavorites(book: ICartBook) {
   // kanske plocka ut 3-4 egenskaper och göra favorites till datatyp: IFavoriteBooks []
   const bookExistsInFavorites = favorites.some((fav) => fav.id === book.id);
   console.log(bookExistsInFavorites);
 
   if (!bookExistsInFavorites) {
     favorites.push(book);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    updateLocalStorage("favorites", favorites);
   }
 }
 
@@ -28,7 +30,7 @@ function updateFavoritesUI() {
   favorites.forEach((book) => favoritesPopover.append(createHTML(book)));
 }
 
-function createHTML(obj: IBook) {
+function createHTML(obj: ICartBook) {
   const div = document.createElement("div");
   div.className = "fav-book";
 
@@ -54,6 +56,6 @@ function removeBook(id: number) {
   console.log(id);
   const filtered = favorites.filter((book) => book.id !== id);
   favorites = [...filtered];
-  localStorage.setItem("favorites", JSON.stringify(favorites));
+  updateLocalStorage("favorites", favorites);
   updateFavoritesUI();
 }
