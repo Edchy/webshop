@@ -1,6 +1,6 @@
 import { ICartBook } from "./Models/CartBook";
 import { IBook } from "./Models/Book";
-import { calculateTotal } from "./utils";
+import { calculateTotal, updateLocalStorage } from "./utils";
 
 // referenser
 export const cart: ICartBook[] = JSON.parse(
@@ -44,7 +44,7 @@ export function addToCart(newBook: ICartBook) {
   } else {
     cart.push(newBook);
   }
-  localStorage.setItem("cart", JSON.stringify(cart));
+  updateLocalStorage("cart", cart);
   renderCartUI(); // move away, single responsibility
   console.log(cart);
 }
@@ -66,6 +66,7 @@ export function renderCartUI() {
 function removeFromCart(id: number) {
   const indexToRemove = cart.findIndex((item) => item.id === id);
   cart.splice(indexToRemove, 1);
+  updateLocalStorage("cart", cart);
   renderCartUI();
 }
 

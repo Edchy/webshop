@@ -2,6 +2,7 @@ import "./styles/main.css";
 import "@stefanjudis/sparkly-text";
 import { renderProductList } from "./js/products.ts";
 import { renderCartUI } from "./js/cart.ts";
+import { validateEmail } from "./js/utils.ts";
 
 renderProductList();
 renderCartUI();
@@ -22,8 +23,3 @@ subscribeButton.addEventListener("click", () => {
     alert("Vänligen ange en giltig e-postadress.");
   }
 });
-
-function validateEmail(email: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
