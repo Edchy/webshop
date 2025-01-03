@@ -1,4 +1,4 @@
-import { books } from "./products";
+import { books } from "./data";
 
 document.addEventListener("DOMContentLoaded", () => {
   const bookDetailsContainer = document.getElementById("book-details");

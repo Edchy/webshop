@@ -8,7 +8,7 @@ const productList = document.querySelector(".product-list") as HTMLUListElement;
 export function renderProductList() {
   // om listan och arrayen "finns"
   if (productList && books) {
-    // loopa igenom arrayen
+    // loopa igenom arrayen och appenda resultat av funktionanropet till produktlistan(ul)
     books.forEach((book) => {
       const bookHTML = createBookElement(book);
       productList.appendChild(bookHTML);
