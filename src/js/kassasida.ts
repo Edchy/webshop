@@ -1,5 +1,8 @@
+import { balloons } from "balloons-js";
+import { cart } from "./cart";
+
 function loadCart() {
-  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  // const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
   const cartContainer = document.querySelector(
     ".cart-container"
@@ -43,9 +46,10 @@ function handlePurchase() {
 
   if (purchaseButton) {
     purchaseButton.addEventListener("click", () => {
+      balloons();
       alert("Tack för ditt köp! Din beställning har mottagits.");
       localStorage.removeItem("cart");
-      window.location.href = "index.html";
+      // window.location.href = "index.html";
     });
   } else {
     console.error("Knappen 'purchase-button' kunde inte hittas.");

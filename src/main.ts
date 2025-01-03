@@ -1,19 +1,11 @@
 import "./styles/main.css";
 import "@stefanjudis/sparkly-text";
-// import Typed from "typed.js";
-// import { balloons } from "balloons-js";
 import { renderProductList } from "./js/products.ts";
 import { renderCartUI } from "./js/cart.ts";
 
-// balloons();
 renderProductList();
 renderCartUI();
 
-// hero typewriter
-// var typed = new Typed(".typed", {
-//   stringsElement: ".typed-strings",
-//   typeSpeed: 30,
-// });
 // typescript för footer
 const subscribeButton = document.getElementById(
   "subscribe-button"
