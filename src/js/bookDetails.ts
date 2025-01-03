@@ -1,3 +1,4 @@
+import { addToCart } from "./cart";
 import { books } from "./data";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -66,32 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const descriptionP = document.createElement("p");
   descriptionP.textContent = book.description ?? "Beskrivning saknas";
 
-  const addBtn = document.createElement("button");
-  addBtn.innerHTML = "Lägg till i varukorg";
-  addBtn.className = "add-btn";
+  const addToCartBtn = document.createElement("button");
+  addToCartBtn.innerHTML = "Lägg till i varukorg";
+  addToCartBtn.className = "add-btn";
+  addToCartBtn.addEventListener("click", () => addToCart(book));
 
-  addBtn.addEventListener("click", () => {
-    if (cartContainer) {
-      const cartItem = document.createElement("li");
-      cartItem.classList.add("cart-item");
-
-      const cartItemImage = document.createElement("img");
-      cartItemImage.src = book.cover;
-      cartItemImage.alt = `Omslag för ${book.title} av ${book.author}`;
-      cartItem.appendChild(cartItemImage);
-
-      const cartItemDetails = document.createElement("div");
-      cartItemDetails.classList.add("cart-item-details");
-      cartItemDetails.textContent = `${book.title} - ${book.price} kr`;
-      cartItem.appendChild(cartItemDetails);
-
-      cartContainer.appendChild(cartItem);
-    } else {
-      console.error("Varukorgsbehållaren saknas i HTML.");
-    }
-  });
-
-  productDetails.append(h1, authorP, priceDiv, descriptionP, addBtn);
+  productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
 
   const imageContainer = document.createElement("div");
   imageContainer.className = "product-image";

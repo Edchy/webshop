@@ -1,5 +1,6 @@
 import { addToFavorites } from "./favorites";
 import { books, IBook } from "./data";
+import { addToCart } from "./cart";
 
 // hämta en referens till html-element, som finns i vår index.html
 const productList = document.querySelector(".product-list") as HTMLUListElement;
@@ -137,21 +138,7 @@ function createBookElement(book: IBook) {
   addToCartBtn.className = "add-to-cart-button";
   addToCartBtn.setAttribute("data-book-id", book.id.toString());
   // addToCartBtn.textContent = "lägg till";
-  addToCartBtn.addEventListener("click", () => {
-    console.log(book.id);
-
-    //   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    //   const existingBook = cart.find((item: { id: number }) => item.id === book.id);
-    //   if (existingBook) {
-    //     existingBook.quantity += 1;
-    //   } else {
-    //     cart.push({ ...book, quantity: 1 });
-    //   }
-
-    //   localStorage.setItem("cart", JSON.stringify(cart));
-    //   console.log(`Boken "${book.title}" lades till i varukorgen.`);
-    // });
-  });
+  addToCartBtn.addEventListener("click", () => addToCart(book));
 
   // cart svg
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -168,7 +155,7 @@ function createBookElement(book: IBook) {
     "icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart-plus"
   );
 
-  // Create all path elements
+  // path elements
   const paths = [
     { d: "M0 0h24v24H0z", stroke: "none", fill: "none" },
     { d: "M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" },
@@ -178,7 +165,7 @@ function createBookElement(book: IBook) {
     { d: "M19 16v6" },
   ];
 
-  // Create and append each path
+  // skapa och appenda varje path
   paths.forEach((pathData) => {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", pathData.d);

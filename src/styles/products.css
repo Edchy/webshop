@@ -113,7 +113,7 @@ article.product {
       border-bottom-left-radius: var(--radius);
       background-color: var(--clr-primary-500);
 
-      & > * {
+      &>* {
         margin-left: 20px;
       }
     }
@@ -271,12 +271,12 @@ button:hover .star-6 {
 
 
 
-.product-image img {
+/* .product-image img {
   min-height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out; /* Smooth transition */
+  transition: transform 0.3s ease-in-out; 
 }
 
 article.product:hover .product-image img {
-  transform: scale(1.05); /* Slight zoom effect */
-}
+  transform: scale(1.05); 
+} */
