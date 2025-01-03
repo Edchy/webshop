@@ -22,9 +22,11 @@ button[popovertarget="shopping-cart"] {
   translate: 0;
   transition: 250ms;
   transition-behavior: allow-discrete;
+
   /* max-block-size: 100vb;
   inline-size: 50vi;
   overflow-y: scroll; */
+
 }
 
 .shopping-cart[popover]:popover-open {
@@ -37,7 +39,7 @@ button[popovertarget="shopping-cart"] {
   }
 
   &::backdrop {
-    background-color: rgba(0, 0, 0, 0.215);
+    background-color: rgba(0, 0, 0, 0.815);
   }
 }
 
@@ -49,7 +51,7 @@ button[popovertarget="shopping-cart"] {
 .cart-item {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   padding: 10px;
   border-bottom: 1px solid #ccc;
 }

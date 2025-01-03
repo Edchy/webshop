@@ -2,7 +2,9 @@ import { ICartBook } from "./Models/CartBook";
 import { IBook } from "./Models/Book";
 
 // referenser
-const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+export const cart: ICartBook[] = JSON.parse(
+  localStorage.getItem("cart") || "[]"
+);
 const cartContainer = document.querySelector(".shopping-cart") as HTMLElement;
 const cartList = document.querySelector(".shopping-cart-list") as HTMLElement;
 //
@@ -18,17 +20,23 @@ export function mapBookToCartBook(book: IBook): ICartBook {
   };
 }
 
-export function addToCart(book: ICartBook) {
-  const existingBook: ICartBook = cart.find(
-    (item: ICartBook) => item.id === book.id
-  );
-  console.log(existingBook);
-  if (existingBook) {
-    existingBook.quantity += 1;
-  } else {
-    cart.push(book);
-  }
+function updateQuantity(item: ICartBook, plusOrMinus: string) {
+  if (plusOrMinus === "+") item.quantity++;
+  if (plusOrMinus === "-") item.quantity--;
+}
 
+export function addToCart(newBook: ICartBook) {
+  const existingBook: ICartBook | undefined = cart.find(
+    (item: ICartBook) => item.id === newBook.id
+  );
+
+  if (existingBook) {
+    // existingBook.quantity += 1;
+    updateQuantity(existingBook, "+");
+  } else {
+    cart.push(newBook);
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
   renderCartUI(); // move away, single responsibility
   console.log(cart);
 }
@@ -43,6 +51,8 @@ export function renderCartUI() {
   }
 }
 
+function deleteCartItem() {}
+
 function createCartItem(book: ICartBook) {
   const cartItem = document.createElement("li");
   cartItem.classList.add("cart-item");
@@ -54,27 +64,17 @@ function createCartItem(book: ICartBook) {
   cartItemDetails.classList.add("cart-item-details");
   cartItemDetails.textContent = `${book.title} - ${book.price} kr`;
 
+  const cartItemActions = document.createElement("div");
+  cartItemActions.classList.add("cart-item-actions");
   const cartItemQuantity = document.createElement("input") as HTMLInputElement;
+  const cartItemRemove = document.createElement("button") as HTMLButtonElement;
+  cartItemRemove.textContent = "❌";
+
   cartItemQuantity.type = "number";
   cartItemQuantity.valueAsNumber = book.quantity;
 
-  cartItem.append(cartItemDetails, cartItemQuantity);
+  cartItemActions.append(cartItemQuantity, cartItemRemove);
+  cartItem.append(cartItemDetails, cartItemActions);
 
   return cartItem;
 }
-
-//   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-//   const existingBook = cart.find((item: { id: number }) => item.id === book.id);
-//   if (existingBook) {
-//     existingBook.quantity += 1;
-//   } else {
-//     cart.push({ ...book, quantity: 1 });
-//   }
-
-//   localStorage.setItem("cart", JSON.stringify(cart));
-//   console.log(`Boken "${book.title}" lades till i varukorgen.`);
-// });
-
-// addToCartBtn.addEventListener("click", () => {
-
-// });

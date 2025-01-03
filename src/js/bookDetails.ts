@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addToCartBtn = document.createElement("button");
   addToCartBtn.innerHTML = "Lägg till i varukorg";
   addToCartBtn.className = "add-btn";
-  addToCartBtn.addEventListener("click", () => addToCart(book));
+  addToCartBtn.addEventListener("click", () => addToCart(book)); //fix
 
   productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
 

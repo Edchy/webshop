@@ -28,7 +28,7 @@ header.container {
     /* font-family: 'system-ui'; */
   }
 
-  ul {
+  ul.nav-links {
     display: flex;
     gap: 20px;
   }

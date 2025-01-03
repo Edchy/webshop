@@ -1,4 +1,4 @@
-import { IBook } from "./products";
+import { IBook } from "./Models/Book";
 
 const favoritesPopover = document.querySelector(".favorites") as HTMLElement;
 const favPopoverBtn = document.querySelector(
