@@ -49,7 +49,7 @@ export function addToCart(newBook: ICartBook) {
     cart.push(newBook);
   }
   updateLocalStorage("cart", cart);
-  renderCartUI(); // move away, single responsibility
+  // renderCartUI();
   console.log(cart);
 }
 
@@ -72,7 +72,7 @@ export function removeFromCart(id: number) {
   const indexToRemove = cart.findIndex((item) => item.id === id);
   cart.splice(indexToRemove, 1);
   updateLocalStorage("cart", cart);
-  renderCartUI();
+  // renderCartUI();
 }
 
 function createCartItem(book: ICartBook) {
@@ -93,7 +93,10 @@ function createCartItem(book: ICartBook) {
 
   const cartItemRemove = document.createElement("button") as HTMLButtonElement;
   cartItemRemove.textContent = "❌";
-  cartItemRemove.addEventListener("click", () => removeFromCart(book.id));
+  cartItemRemove.addEventListener("click", () => {
+    removeFromCart(book.id);
+    renderCartUI();
+  });
 
   const cartItemQuantity = document.createElement("input") as HTMLInputElement;
   cartItemQuantity.type = "number";
@@ -101,6 +104,7 @@ function createCartItem(book: ICartBook) {
   cartItemQuantity.valueAsNumber = book.quantity;
   cartItemQuantity.addEventListener("change", () => {
     updateCart(book.id, cartItemQuantity.valueAsNumber);
+    renderCartUI();
   });
 
   cartItemActions.append(cartItemQuantity, cartItemRemove);
@@ -109,13 +113,12 @@ function createCartItem(book: ICartBook) {
   return cartItem;
 }
 
-function updateCart(bookId: number, newQuantity: number) {
+export function updateCart(bookId: number, newQuantity: number) {
   if (newQuantity < 1) return;
   const indexInArray = cart.findIndex((item) => item.id === bookId);
   if (indexInArray !== -1) {
     cart[indexInArray].quantity = newQuantity;
     console.log(cart);
     updateLocalStorage("cart", cart);
-    renderCartUI();
   }
 }

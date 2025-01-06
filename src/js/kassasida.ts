@@ -1,43 +1,52 @@
 import { balloons } from "balloons-js";
-import { cart } from "./cart";
+import { cart, removeFromCart, updateCart } from "./cart";
+import { ICartBook } from "./Models/CartBook";
+import { calculateTotal } from "./utils";
 
-function loadCart() {
-  // const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+const cartContainer = document.querySelector(".cart-container") as HTMLElement;
+const totalPriceEl = document.querySelector(".total-price") as HTMLElement;
+let totalPrice = 0;
 
-  const cartContainer = document.querySelector(
-    ".cart-container"
-  ) as HTMLElement;
-  const totalPriceEl = document.querySelector(".total-price") as HTMLElement;
+function createCheckoutItem(item: ICartBook) {
+  const productRow = document.createElement("div");
+  productRow.className = "cart-checkout-item";
+  productRow.innerHTML = `
+      <span>${item.title}</span>
+      <span>${item.quantity} st</span>
+      <span>${item.price * item.quantity} kr</span>
+    `;
+  const deleteBtn = document.createElement("button") as HTMLButtonElement;
+  deleteBtn.textContent = "X";
+  deleteBtn.addEventListener("click", () => {
+    removeFromCart(item.id);
+    renderCheckoutCartUI();
+  });
 
-  let totalPrice = 0;
+  const cartItemQuantity = document.createElement("input") as HTMLInputElement;
+  cartItemQuantity.type = "number";
+  cartItemQuantity.min = "1";
+  cartItemQuantity.valueAsNumber = item.quantity;
+  cartItemQuantity.addEventListener("change", () => {
+    updateCart(item.id, cartItemQuantity.valueAsNumber);
+    renderCheckoutCartUI();
+  });
 
+  productRow.append(cartItemQuantity, deleteBtn);
+  return productRow;
+}
+function renderCheckoutCartUI() {
+  if (!cartContainer) return;
   if (cart.length > 0) {
-    cart.forEach(
-      (item: {
-        id: number;
-        title: string;
-        price: number;
-        quantity: number;
-      }) => {
-        const productRow = document.createElement("div");
-        productRow.className = "cart-checkout-item";
-
-        productRow.innerHTML = `
-        <span>${item.title}</span>
-        <span>${item.quantity} st</span>
-        <span>${item.price * item.quantity} kr</span>
-        
-      `;
-
-        cartContainer.appendChild(productRow);
-
-        totalPrice += item.price * item.quantity;
-      }
-    );
+    cartContainer.innerHTML = "";
+    cart.forEach((item) => {
+      const book = createCheckoutItem(item);
+      cartContainer.appendChild(book);
+      // totalPrice += item.price * item.quantity;
+    });
   } else {
     cartContainer.textContent = "Din varukorg är tom.";
   }
-
+  totalPrice = calculateTotal(cart);
   totalPriceEl.textContent = `Total: ${totalPrice} kr`;
 }
 
@@ -58,5 +67,6 @@ function handlePurchase() {
   }
 }
 
-loadCart();
+// loadCart();
+renderCheckoutCartUI();
 handlePurchase();

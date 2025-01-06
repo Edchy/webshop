@@ -1,6 +1,6 @@
 import { addToFavorites } from "./favorites";
 import { books } from "./data";
-import { addToCart, mapBookToCartBook } from "./cart";
+import { addToCart, mapBookToCartBook, renderCartUI } from "./cart";
 import { IBook } from "./Models/Book";
 import { ICartBook } from "./Models/CartBook";
 
@@ -100,6 +100,7 @@ function createBookElement(book: IBook) {
   addToCartBtn.addEventListener("click", () => {
     const cartBook = mapBookToCartBook(book);
     addToCart(cartBook);
+    renderCartUI();
   });
 
   // cart svg
