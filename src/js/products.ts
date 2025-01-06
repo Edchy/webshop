@@ -144,7 +144,9 @@ function createBookElement(book: IBook) {
   favBtn.setAttribute("data-book-id", book.id.toString());
   favBtn.textContent = "✨";
   favBtn.title = "Add to Favorites";
-  favBtn.addEventListener("click", () => addToFavorites(book));
+  favBtn.addEventListener("click", () =>
+    addToFavorites(mapBookToCartBook(book))
+  );
 
   for (let i = 1; i <= 6; i++) {
     favBtn.appendChild(createStarElement(i));
