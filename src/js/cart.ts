@@ -54,7 +54,13 @@ export function renderCartUI() {
     const total = calculateTotalPrice(cart).toString();
     priceTotalOutput.textContent = cart.length > 0 ? total : "";
   }
-  if (cartNotification) cartNotification.innerHTML = calculateTotalBooks(cart);
+  if (cartNotification) {
+    cartNotification.innerHTML = calculateTotalBooks(cart);
+    cartNotification.classList.add("just-added-animation");
+    setTimeout(() => {
+      cartNotification.classList.remove("just-added-animation");
+    }, 200);
+  }
 }
 
 export function removeFromCart(id: number) {

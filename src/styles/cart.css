@@ -17,6 +17,11 @@ button[popovertarget="shopping-cart"] {
     aspect-ratio: 1;
     background-color: var(--clr-primary-300);
     font-weight: bold;
+    transition: width 200ms ease-in-out;
+
+    &.just-added-animation {
+      width: 30px;
+    }
 
   }
 }
