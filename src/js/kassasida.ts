@@ -26,7 +26,9 @@ function loadCart() {
         <span>${item.title}</span>
         <span>${item.quantity} st</span>
         <span>${item.price * item.quantity} kr</span>
+        
       `;
+
         cartContainer.appendChild(productRow);
 
         totalPrice += item.price * item.quantity;

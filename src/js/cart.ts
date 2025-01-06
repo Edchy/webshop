@@ -68,7 +68,7 @@ export function renderCartUI() {
   if (cartNotification) cartNotification.innerHTML = cart.length.toString();
 }
 
-function removeFromCart(id: number) {
+export function removeFromCart(id: number) {
   const indexToRemove = cart.findIndex((item) => item.id === id);
   cart.splice(indexToRemove, 1);
   updateLocalStorage("cart", cart);
