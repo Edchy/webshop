@@ -31,6 +31,9 @@ function updateFavoritesUI() {
 }
 
 function createHTML(obj: ICartBook) {
+  const h1 = document.createElement("h1");
+  h1.innerHTML = "Favoriter";
+
   const div = document.createElement("div");
   div.className = "fav-book";
 
@@ -48,7 +51,7 @@ function createHTML(obj: ICartBook) {
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener("click", () => removeBook(obj.id));
 
-  div.append(cover, link, removeBtn);
+  div.append(h1, cover, link, removeBtn);
   return div;
 }
 

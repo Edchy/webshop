@@ -2,7 +2,7 @@ button[popovertarget="favorites"] {
   background-color: transparent;
   color: var(--clr-light);
   border: none;
-  padding: .25rem;
+  padding: 0.25rem;
   cursor: pointer;
 }
 
@@ -10,14 +10,14 @@ button[popovertarget="favorites"] {
   background-color: red;
   inset: auto;
   right: 0;
-
-
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .favorites[popover]:popover-open {
-  background-color: green;
+  background-color: rgb(255, 255, 255);
   padding: 1rem;
-  width: 50%;
+  width: 25%;
   min-height: 100vh;
   margin-top: 10vh;
 }
