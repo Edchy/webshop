@@ -1,4 +1,4 @@
-import { addToCart, mapBookToCartBook } from "./cart";
+import { addToCart, renderCartUI, mapBookToCartBook } from "./cart";
 import { books } from "./data";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartBtn.addEventListener("click", () => {
       const cartBook = mapBookToCartBook(book);
       addToCart(cartBook);
+      renderCartUI();
     });
 
     productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
