@@ -1,6 +1,10 @@
 import { ICartBook } from "./Models/CartBook";
 import { IBook } from "./Models/Book";
-import { calculateTotalPrice, updateLocalStorage } from "./utils";
+import {
+  calculateTotalPrice,
+  calculateTotalBooks,
+  updateLocalStorage,
+} from "./utils";
 
 export const cart: ICartBook[] = JSON.parse(
   localStorage.getItem("cart") || "[]"
@@ -50,7 +54,7 @@ export function renderCartUI() {
     const total = calculateTotalPrice(cart).toString();
     priceTotalOutput.textContent = cart.length > 0 ? total : "";
   }
-  if (cartNotification) cartNotification.innerHTML = cart.length.toString();
+  if (cartNotification) cartNotification.innerHTML = calculateTotalBooks(cart);
 }
 
 export function removeFromCart(id: number) {
