@@ -1,6 +1,6 @@
-import { addToCart } from "./cart";
-import { books } from "./data";
-import { IBook } from "./Models/Book";
+import { addToCart, renderCartUI } from "./cart";
+// import { books } from "./data";
+// import { IBook } from "./Models/Book";s
 import { ICartBook } from "./Models/CartBook";
 import { updateLocalStorage } from "./utils";
 
@@ -15,7 +15,6 @@ export let favorites: ICartBook[] = JSON.parse(
 );
 
 export function addToFavorites(book: ICartBook) {
-  // kanske plocka ut 3-4 egenskaper och göra favorites till datatyp: IFavoriteBooks []
   const bookExistsInFavorites = favorites.some((fav) => fav.id === book.id);
   console.log(bookExistsInFavorites);
 
@@ -62,7 +61,10 @@ function createHTML(obj: ICartBook) {
   const moveToCartBtn = document.createElement("button");
   moveToCartBtn.textContent = "Flytta till varukorg";
   moveToCartBtn.className = "btn-move-to-cart";
-  moveToCartBtn.addEventListener("click", () => addToCart(books));
+  moveToCartBtn.addEventListener("click", () => {
+    addToCart(obj); // denna funktion lägger till bok i cart array
+    renderCartUI(); // denna funktion loopar igenom arrayen igen och skriver ut alla böcker (nu med den nyligen tillagda)
+  });
   const bookContainer = document.createElement("div");
   bookContainer.className = "book-container";
 
