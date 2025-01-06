@@ -1,6 +1,6 @@
 import { ICartBook } from "./Models/CartBook";
 
-export function calculateTotal(array: ICartBook[]): number {
+export function calculateTotalPrice(array: ICartBook[]): number {
   return array.reduce((total, curr) => total + curr.price * curr.quantity, 0);
 }
 

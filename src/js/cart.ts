@@ -1,6 +1,6 @@
 import { ICartBook } from "./Models/CartBook";
 import { IBook } from "./Models/Book";
-import { calculateTotal, updateLocalStorage } from "./utils";
+import { calculateTotalPrice, updateLocalStorage } from "./utils";
 
 export const cart: ICartBook[] = JSON.parse(
   localStorage.getItem("cart") || "[]"
@@ -47,7 +47,7 @@ export function renderCartUI() {
     });
   }
   if (priceTotalOutput) {
-    const total = calculateTotal(cart).toString();
+    const total = calculateTotalPrice(cart).toString();
     priceTotalOutput.textContent = cart.length > 0 ? total : "";
   }
   if (cartNotification) cartNotification.innerHTML = cart.length.toString();
