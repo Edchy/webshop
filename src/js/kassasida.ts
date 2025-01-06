@@ -1,7 +1,7 @@
 import { balloons } from "balloons-js";
 import { cart, removeFromCart, updateCart } from "./cart";
 import { ICartBook } from "./Models/CartBook";
-import { calculateTotal } from "./utils";
+import { calculateTotalPrice } from "./utils";
 
 const cartContainer = document.querySelector(".cart-container") as HTMLElement;
 const totalPriceEl = document.querySelector(".total-price") as HTMLElement;
@@ -41,12 +41,13 @@ function renderCheckoutCartUI() {
     cart.forEach((item) => {
       const book = createCheckoutItem(item);
       cartContainer.appendChild(book);
+      // totalPrice += item.price * item.quantity;
     });
   } else {
     cartContainer.textContent = "Din varukorg är tom.";
   }
-  totalPrice = calculateTotal(cart);
-  // totalPrice += item.price * item.quantity;
+  totalPrice = calculateTotalPrice(cart);
+
   totalPriceEl.textContent = `Total: ${totalPrice} kr`;
 }
 
