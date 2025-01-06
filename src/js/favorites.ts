@@ -38,16 +38,16 @@ function updateFavoritesUI() {
   });
 }
 
-function createHTML(obj: ICartBook) {
+function createHTML(book: ICartBook) {
   const favContainer = document.createElement("div");
   favContainer.className = "fav-container";
 
   const favTitle = document.createElement("h3");
-  favTitle.textContent = obj.title;
+  favTitle.textContent = book.title;
   favTitle.className = "book-title";
 
   const cover = document.createElement("img");
-  cover.src = obj.cover;
+  cover.src = book.cover;
   cover.className = "book-cover";
 
   const buttonContainer = document.createElement("div");
@@ -56,13 +56,13 @@ function createHTML(obj: ICartBook) {
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Ta bort";
   removeBtn.className = "btn-remove";
-  removeBtn.addEventListener("click", () => removeBook(obj.id));
+  removeBtn.addEventListener("click", () => removeBook(book.id));
 
   const moveToCartBtn = document.createElement("button");
   moveToCartBtn.textContent = "Flytta till varukorg";
   moveToCartBtn.className = "btn-move-to-cart";
   moveToCartBtn.addEventListener("click", () => {
-    addToCart(obj); // denna funktion lägger till bok i cart array
+    addToCart(book); // denna funktion lägger till bok i cart array
     renderCartUI(); // denna funktion loopar igenom arrayen igen och skriver ut alla böcker (nu med den nyligen tillagda)
   });
   const bookContainer = document.createElement("div");
