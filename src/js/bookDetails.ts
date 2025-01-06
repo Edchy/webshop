@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartBtn.addEventListener("click", () => {
       const cartBook = mapBookToCartBook(book);
       addToCart(cartBook);
-    }); //fix
+    });
 
     productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
 

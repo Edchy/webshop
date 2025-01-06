@@ -41,12 +41,13 @@ function renderCheckoutCartUI() {
     cart.forEach((item) => {
       const book = createCheckoutItem(item);
       cartContainer.appendChild(book);
+      // totalPrice += item.price * item.quantity;
     });
   } else {
     cartContainer.textContent = "Din varukorg är tom.";
   }
   totalPrice = calculateTotal(cart);
-  // totalPrice += item.price * item.quantity;
+
   totalPriceEl.textContent = `Total: ${totalPrice} kr`;
 }
 
