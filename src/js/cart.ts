@@ -72,7 +72,6 @@ export function removeFromCart(id: number) {
   const indexToRemove = cart.findIndex((item) => item.id === id);
   cart.splice(indexToRemove, 1);
   updateLocalStorage("cart", cart);
-  // renderCartUI();
 }
 
 function createCartItem(book: ICartBook) {
