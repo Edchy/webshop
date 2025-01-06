@@ -33,14 +33,17 @@ button[popovertarget="favorites"] {
 
   img {
     width: 50px;
-    aspect-ratio: 1;
+    height: auto;
+    margin-right: 10px;
   }
 }
 
 .book-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  align-items: center;
 }
 
 .btn-remove {
