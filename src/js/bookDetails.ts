@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (book) {
     const link = document.createElement("a");
-    link.href = `product-test.html?id=${book.id}&title=${book.title}`;
+    link.href = `product.html?id=${book.id}&title=${book.title}`;
 
     const img = document.createElement("img");
     img.src = book.cover;
@@ -63,17 +63,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const descriptionP = document.createElement("p");
     descriptionP.textContent = book.description ?? "Beskrivning saknas";
 
+    const addToCartBtn = document.createElement("button");
+    addToCartBtn.innerHTML = "Lägg till i varukorg";
+    addToCartBtn.className = "add-btn";
+    addToCartBtn.addEventListener("click", () => {
+      const cartBook = mapBookToCartBook(book);
+      addToCart(cartBook);
+    }); //fix
 
-  const addToCartBtn = document.createElement("button");
-  addToCartBtn.innerHTML = "Lägg till i varukorg";
-  addToCartBtn.className = "add-btn";
-  addToCartBtn.addEventListener("click", () => {
-    const cartBook = mapBookToCartBook(book);
-    addToCart(cartBook);
-  }); //fix
-
-  productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
-
+    productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
 
     const imageContainer = document.createElement("div");
     imageContainer.className = "product-image";

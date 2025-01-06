@@ -41,7 +41,7 @@ function createHTML(obj: ICartBook) {
   title.textContent = obj.title;
 
   const link = document.createElement("a");
-  link.href = "product-test.html?id=" + obj.id;
+  link.href = "product.html?id=" + obj.id;
   link.appendChild(title);
 
   const removeBtn = document.createElement("button");
