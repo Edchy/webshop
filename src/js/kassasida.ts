@@ -13,7 +13,7 @@ function createCheckoutItem(item: ICartBook) {
   productRow.innerHTML = `
       <span>${item.title}</span>
       <span>${item.quantity} st</span>
-      <span>${item.price * item.quantity} kr</span>
+      <span>${item.price} kr</span>
     `;
   const deleteBtn = document.createElement("button") as HTMLButtonElement;
   deleteBtn.textContent = "X";

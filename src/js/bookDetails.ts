@@ -1,6 +1,5 @@
 import { addToCart, renderCartUI, mapBookToCartBook } from "./cart";
 import { books } from "./data";
-
 document.addEventListener("DOMContentLoaded", () => {
   const bookDetailsContainer = document.getElementById("book-details");
   // const cartContainer = document.getElementById("shopping-cart");
@@ -12,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const urlParams = new URLSearchParams(window.location.search);
   const bookId = Number(urlParams.get("id"));
+  const bookTitle = urlParams.get("title");
 
   if (!bookId) {
     bookDetailsContainer.innerHTML = "<p>Bok-ID saknas!</p>";
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const book = books.find((b) => b.id === bookId);
+  document.title = bookTitle ? bookTitle.toString() : "404";
 
   if (book) {
     const link = document.createElement("a");

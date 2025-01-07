@@ -1,7 +1,6 @@
 button[popovertarget="favorites"] {
   background-color: transparent;
   color: var(--clr-light);
-  border: none;
   padding: .25rem;
   cursor: pointer;
 }

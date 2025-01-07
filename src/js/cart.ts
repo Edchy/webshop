@@ -43,7 +43,9 @@ export function addToCart(newBook: ICartBook) {
 }
 
 export function renderCartUI() {
-  if (cartList) {
+  cartList.innerHTML = "din varukorg är tom";
+
+  if (cartList && cart.length > 0) {
     cartList.innerHTML = "";
     cart.forEach((item: ICartBook) => {
       const cartItem = createCartItem(item);
@@ -54,7 +56,13 @@ export function renderCartUI() {
     const total = calculateTotalPrice(cart).toString();
     priceTotalOutput.textContent = cart.length > 0 ? total : "";
   }
-  if (cartNotification) cartNotification.innerHTML = calculateTotalBooks(cart);
+  if (cartNotification) {
+    cartNotification.innerHTML = calculateTotalBooks(cart);
+    cartNotification.classList.add("just-added-animation");
+    setTimeout(() => {
+      cartNotification.classList.remove("just-added-animation");
+    }, 200);
+  }
 }
 
 export function removeFromCart(id: number) {
@@ -109,4 +117,23 @@ export function updateCart(bookId: number, newQuantity: number) {
     console.log(cart);
     updateLocalStorage("cart", cart);
   }
+}
+
+const closeCartButton = document.querySelector(".close-cart") as HTMLElement;
+const shoppingCart = document.querySelector(".shopping-cart") as HTMLElement;
+const openCartButton = document.querySelector(
+  '[popovertarget="shopping-cart"]'
+) as HTMLElement;
+
+if (closeCartButton && shoppingCart) {
+  closeCartButton.addEventListener("click", () => {
+    shoppingCart.setAttribute("popover", "");
+    // shoppingCart.hidePopover();
+  });
+}
+
+if (openCartButton && shoppingCart) {
+  openCartButton.addEventListener("click", () => {
+    shoppingCart.setAttribute("popover", "open");
+  });
 }
