@@ -1,6 +1,5 @@
-import { addToCart, mapBookToCartBook } from "./cart";
+import { addToCart, renderCartUI, mapBookToCartBook } from "./cart";
 import { books } from "./data";
-
 document.addEventListener("DOMContentLoaded", () => {
   const bookDetailsContainer = document.getElementById("book-details");
   // const cartContainer = document.getElementById("shopping-cart");
@@ -12,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const urlParams = new URLSearchParams(window.location.search);
   const bookId = Number(urlParams.get("id"));
+  const bookTitle = urlParams.get("title");
 
   if (!bookId) {
     bookDetailsContainer.innerHTML = "<p>Bok-ID saknas!</p>";
@@ -19,10 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const book = books.find((b) => b.id === bookId);
+  document.title = bookTitle ? bookTitle.toString() : "404";
 
   if (book) {
     const link = document.createElement("a");
-    link.href = `product-test.html?id=${book.id}&title=${book.title}`;
+    link.href = `product.html?id=${book.id}&title=${book.title}`;
 
     const img = document.createElement("img");
     img.src = book.cover;
@@ -63,17 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const descriptionP = document.createElement("p");
     descriptionP.textContent = book.description ?? "Beskrivning saknas";
 
+    const addToCartBtn = document.createElement("button");
+    addToCartBtn.innerHTML = "Lägg till i varukorg";
+    addToCartBtn.className = "add-btn";
+    addToCartBtn.addEventListener("click", () => {
+      const cartBook = mapBookToCartBook(book);
+      addToCart(cartBook);
+      renderCartUI();
+    });
 
-  const addToCartBtn = document.createElement("button");
-  addToCartBtn.innerHTML = "Lägg till i varukorg";
-  addToCartBtn.className = "add-btn";
-  addToCartBtn.addEventListener("click", () => {
-    const cartBook = mapBookToCartBook(book);
-    addToCart(cartBook);
-  }); //fix
-
-  productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
-
+    productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
 
     const imageContainer = document.createElement("div");
     imageContainer.className = "product-image";

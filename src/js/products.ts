@@ -32,7 +32,7 @@ function createBookElement(book: IBook) {
 
   // länk till produktsidan, skicka med bok.id som url parameter
   const link = document.createElement("a");
-  link.href = `product-test.html?id=${book.id}`;
+  link.href = `product.html?id=${book.id}&title=${book.title}`;
 
   const img = document.createElement("img");
   img.src = book.cover;

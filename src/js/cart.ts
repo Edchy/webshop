@@ -1,16 +1,14 @@
 import { ICartBook } from "./Models/CartBook";
 import { IBook } from "./Models/Book";
-import { calculateTotal, updateLocalStorage } from "./utils";
+import {
+  calculateTotalPrice,
+  calculateTotalBooks,
+  updateLocalStorage,
+} from "./utils";
 
-// referenser
 export const cart: ICartBook[] = JSON.parse(
   localStorage.getItem("cart") || "[]"
 );
-// const cartOpenBtn = document.querySelector(
-//   "button[popovertarget='shopping-cart']"
-// );
-
-const cartContainer = document.querySelector(".shopping-cart") as HTMLElement;
 const cartList = document.querySelector(".shopping-cart-list") as HTMLElement;
 const priceTotalOutput = document.querySelector(
   ".shopping-cart-total"
@@ -18,8 +16,6 @@ const priceTotalOutput = document.querySelector(
 const cartNotification = document.querySelector(
   ".cart-notification"
 ) as HTMLElement;
-//
-// cartOpenBtn?.addEventListener("click", () => console.log("hi"));
 
 export function mapBookToCartBook(book: IBook): ICartBook {
   return {
@@ -32,11 +28,6 @@ export function mapBookToCartBook(book: IBook): ICartBook {
   };
 }
 
-// function updateQuantity(item: ICartBook, plusOrMinus: string) {
-//   if (plusOrMinus === "+") item.quantity++;
-//   if (plusOrMinus === "-") item.quantity--;
-// }
-
 export function addToCart(newBook: ICartBook) {
   const existingBook: ICartBook | undefined = cart.find(
     (item: ICartBook) => item.id === newBook.id
@@ -44,17 +35,17 @@ export function addToCart(newBook: ICartBook) {
 
   if (existingBook) {
     existingBook.quantity += 1;
-    // updateQuantity(existingBook, "+");
   } else {
     cart.push(newBook);
   }
   updateLocalStorage("cart", cart);
-  // renderCartUI();
   console.log(cart);
 }
 
 export function renderCartUI() {
-  if (cartList) {
+  cartList.innerHTML = "din varukorg är tom";
+
+  if (cartList && cart.length > 0) {
     cartList.innerHTML = "";
     cart.forEach((item: ICartBook) => {
       const cartItem = createCartItem(item);
@@ -62,10 +53,16 @@ export function renderCartUI() {
     });
   }
   if (priceTotalOutput) {
-    const total = calculateTotal(cart).toString();
+    const total = calculateTotalPrice(cart).toString();
     priceTotalOutput.textContent = cart.length > 0 ? total : "";
   }
-  if (cartNotification) cartNotification.innerHTML = cart.length.toString();
+  if (cartNotification) {
+    cartNotification.innerHTML = calculateTotalBooks(cart);
+    cartNotification.classList.add("just-added-animation");
+    setTimeout(() => {
+      cartNotification.classList.remove("just-added-animation");
+    }, 200);
+  }
 }
 
 export function removeFromCart(id: number) {
@@ -120,4 +117,23 @@ export function updateCart(bookId: number, newQuantity: number) {
     console.log(cart);
     updateLocalStorage("cart", cart);
   }
+}
+
+const closeCartButton = document.querySelector(".close-cart") as HTMLElement;
+const shoppingCart = document.querySelector(".shopping-cart") as HTMLElement;
+const openCartButton = document.querySelector(
+  '[popovertarget="shopping-cart"]'
+) as HTMLElement;
+
+if (closeCartButton && shoppingCart) {
+  closeCartButton.addEventListener("click", () => {
+    shoppingCart.setAttribute("popover", "");
+    // shoppingCart.hidePopover();
+  });
+}
+
+if (openCartButton && shoppingCart) {
+  openCartButton.addEventListener("click", () => {
+    shoppingCart.setAttribute("popover", "open");
+  });
 }
