@@ -45,7 +45,7 @@ export function addToCart(newBook: ICartBook) {
   }
   updateLocalStorage("cart", cart);
   console.log(cart);
-  shoppingCart.showPopover();
+  shoppingCart.showPopover(); // MAYBE?
 }
 
 export function renderCartUI() {
