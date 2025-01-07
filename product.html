@@ -48,12 +48,22 @@
           </svg>
         </button>
         <div popover class="shopping-cart" id="shopping-cart">
-          <ul class="shopping-cart-list">
-            your cart is empty...
-          </ul>
+          <button class="close-cart">&#10005;</button>
+          <ul class="shopping-cart-list"></ul>
           <footer class="shopping-cart-footer">
+            <div class="free-shipping-progress-container">
+              <p class="progress-message">X kvar till fri frakt</p>
+              <div class="outer">
+                <div class="inner"></div>
+              </div>
+            </div>
             <p class="shopping-cart-total"></p>
-            <button class="go-to-payment-btn" onclick="location.href='kassasida.html'">Till kassan</button>
+            <button
+              class="go-to-payment-btn"
+              onclick="location.href='kassasida.html'"
+            >
+              Till kassan
+            </button>
           </footer>
         </div>
       </nav>

@@ -10,6 +10,7 @@ import {
 export const cart: ICartBook[] = JSON.parse(
   localStorage.getItem("cart") || "[]"
 );
+const shoppingCart = document.querySelector(".shopping-cart") as HTMLElement;
 const cartList = document.querySelector(".shopping-cart-list") as HTMLElement;
 const priceTotalOutput = document.querySelector(
   ".shopping-cart-total"
@@ -44,6 +45,7 @@ export function addToCart(newBook: ICartBook) {
   }
   updateLocalStorage("cart", cart);
   console.log(cart);
+  shoppingCart.showPopover(); // MAYBE?
 }
 
 export function renderCartUI() {
@@ -135,20 +137,19 @@ export function updateCart(bookId: number, newQuantity: number) {
 }
 
 const closeCartButton = document.querySelector(".close-cart") as HTMLElement;
-const shoppingCart = document.querySelector(".shopping-cart") as HTMLElement;
-const openCartButton = document.querySelector(
-  '[popovertarget="shopping-cart"]'
-) as HTMLElement;
+// const openCartButton = document.querySelector(
+//   '[popovertarget="shopping-cart"]'
+// ) as HTMLElement;
 
 if (closeCartButton && shoppingCart) {
   closeCartButton.addEventListener("click", () => {
-    shoppingCart.setAttribute("popover", "");
-    // shoppingCart.hidePopover();
+    // shoppingCart.setAttribute("popover", "");
+    shoppingCart.hidePopover();
   });
 }
 
-if (openCartButton && shoppingCart) {
-  openCartButton.addEventListener("click", () => {
-    shoppingCart.setAttribute("popover", "open");
-  });
-}
+// if (openCartButton && shoppingCart) {
+//   openCartButton.addEventListener("click", () => {
+//     shoppingCart.setAttribute("popover", "open");
+//   });
+// }
