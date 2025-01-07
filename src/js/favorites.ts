@@ -1,3 +1,5 @@
+import { addToCart } from "./cart";
+import { books } from "./data";
 import { IBook } from "./Models/Book";
 import { ICartBook } from "./Models/CartBook";
 import { updateLocalStorage } from "./utils";
@@ -27,29 +29,49 @@ favPopoverBtn?.addEventListener("click", updateFavoritesUI);
 
 function updateFavoritesUI() {
   favoritesPopover.innerHTML = "";
-  favorites.forEach((book) => favoritesPopover.append(createHTML(book)));
+  const header = document.createElement("h1");
+  header.innerHTML = "Favoriter";
+  header.className = "fav-header";
+  favoritesPopover.appendChild(header);
+
+  favorites.forEach((book) => {
+    favoritesPopover.append(createHTML(book));
+  });
 }
 
 function createHTML(obj: ICartBook) {
-  const div = document.createElement("div");
-  div.className = "fav-book";
+  const favContainer = document.createElement("div");
+  favContainer.className = "fav-container";
+
+  const favTitle = document.createElement("h3");
+  favTitle.textContent = obj.title;
+  favTitle.className = "book-title";
 
   const cover = document.createElement("img");
   cover.src = obj.cover;
+  cover.className = "book-cover";
 
-  const title = document.createElement("h3");
-  title.textContent = obj.title;
-
-  const link = document.createElement("a");
-  link.href = "product.html?id=" + obj.id;
-  link.appendChild(title);
+  const buttonContainer = document.createElement("div");
+  buttonContainer.className = "button-container";
 
   const removeBtn = document.createElement("button");
-  removeBtn.textContent = "Remove";
+  removeBtn.textContent = "Ta bort";
+  removeBtn.className = "btn-remove";
   removeBtn.addEventListener("click", () => removeBook(obj.id));
 
-  div.append(cover, link, removeBtn);
-  return div;
+  const moveToCartBtn = document.createElement("button");
+  moveToCartBtn.textContent = "Flytta till varukorg";
+  moveToCartBtn.className = "btn-move-to-cart";
+  moveToCartBtn.addEventListener("click", () => addToCart(books));
+  const bookContainer = document.createElement("div");
+  bookContainer.className = "book-container";
+
+  buttonContainer.append(moveToCartBtn, removeBtn);
+  bookContainer.append(cover, favTitle, buttonContainer);
+
+  favContainer.appendChild(bookContainer);
+
+  return favContainer;
 }
 
 function removeBook(id: number) {
