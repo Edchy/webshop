@@ -88,8 +88,6 @@
     font-size: 1rem;
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: var(--radius);
     cursor: pointer;
 }
 

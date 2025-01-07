@@ -1,7 +1,6 @@
 button[popovertarget="shopping-cart"] {
   background-color: transparent;
   color: var(--clr-light);
-  border: none;
   padding: .25rem;
   cursor: pointer;
   position: relative;
@@ -114,14 +113,17 @@ button[popovertarget="shopping-cart"] {
 }
 
 .shopping-cart-footer {
-  background-color: var(--clr-primary-300);
-  padding: 1rem;
+
+  padding: 1.5rem;
   position: sticky;
   bottom: 0;
+
 
   button {
     width: 100%;
     padding: 1rem;
+    background-color: var(--clr-primary-300);
+    color: var(--clr-light);
   }
 }
 
@@ -141,10 +143,7 @@ button[popovertarget="shopping-cart"] {
     }
   }
 
-  .shopping-cart-footer {
-    padding: 1rem;
-    background-color: var(--clr-primary-300);
-  }
+
 
   .cart-item {
     flex-direction: column;
@@ -173,7 +172,7 @@ button[popovertarget="shopping-cart"] {
   right: 10px;
   background: transparent;
   color: var(--clr-dark);
-  border: none;
+
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 9999;

@@ -26,17 +26,15 @@ footer:not(.shopping-cart-footer) {
     width: 50%;
     padding: 10px;
     margin-bottom: 15px;
-    border: none;
+
     border-radius: var(--radius);
 }
 
 .footer-section button {
     background-color: var(--clr-primary-400);
-    color: #fff;
-    border: none;
+    color: var(--clr-light), #FFF;
     padding: 10px 16px;
     cursor: pointer;
-    border-radius: var(--radius);
     transition: background-color 0.3s;
 }
 
