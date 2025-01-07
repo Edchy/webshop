@@ -40,7 +40,7 @@ button[popovertarget="shopping-cart"] {
   transition: all 0.3s ease-in-out;
   opacity: 0;
   translate: 100%;
-  transition: all 250ms ease-in-out;
+  /*transition: all 250ms ease-in-out;*/
   transition-behavior: allow-discrete;
 
   &::backdrop {
@@ -164,7 +164,7 @@ button[popovertarget="shopping-cart"] {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 10; 
+  z-index: 9999; 
   transition: color 0.2s ease-in-out, transform 0.3s ease-in-out; 
 }
 

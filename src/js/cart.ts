@@ -117,3 +117,21 @@ export function updateCart(bookId: number, newQuantity: number) {
   }
 }
 
+
+const closeCartButton = document.querySelector('.close-cart') as HTMLElement;
+const shoppingCart = document.querySelector('.shopping-cart') as HTMLElement;
+const openCartButton = document.querySelector('[popovertarget="shopping-cart"]') as HTMLElement;
+
+if (closeCartButton && shoppingCart) {
+  // När krysset klickas, stäng popovern
+  closeCartButton.addEventListener('click', () => {
+    shoppingCart.setAttribute('popover', '');  // Stänger popovern genom att ta bort attributet
+  });
+}
+
+if (openCartButton && shoppingCart) {
+  // När knappen för att öppna kassan klickas, öppna popovern
+  openCartButton.addEventListener('click', () => {
+    shoppingCart.setAttribute('popover', 'open');  // Sätter popover-attributet för att öppna popovern
+  });
+}
