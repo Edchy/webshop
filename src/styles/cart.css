@@ -137,13 +137,16 @@ button[popovertarget="shopping-cart"] {
 .free-shipping-progress-container {
 
   .outer {
-    background-color: red;
+    background-color: var(--clr-primary-400);
     height: 10px;
+    border-radius: var(--radius);
 
   }
 
   .inner {
-    background-color: #007bff;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    background-color: var(--clr-primary-300);
     height: 10px;
     width: 50%;
   }
