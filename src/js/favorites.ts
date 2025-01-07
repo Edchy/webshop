@@ -1,4 +1,4 @@
-import { addToCart } from "./cart";
+import { addToCart, renderCartUI } from "./cart";
 import { books } from "./data";
 import { IBook } from "./Models/Book";
 import { ICartBook } from "./Models/CartBook";
@@ -39,16 +39,16 @@ function updateFavoritesUI() {
   });
 }
 
-function createHTML(obj: ICartBook) {
+function createHTML(book: ICartBook) {
   const favContainer = document.createElement("div");
   favContainer.className = "fav-container";
 
   const favTitle = document.createElement("h3");
-  favTitle.textContent = obj.title;
+  favTitle.textContent = book.title;
   favTitle.className = "book-title";
 
   const cover = document.createElement("img");
-  cover.src = obj.cover;
+  cover.src = book.cover;
   cover.className = "book-cover";
 
   const buttonContainer = document.createElement("div");
@@ -57,12 +57,17 @@ function createHTML(obj: ICartBook) {
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Ta bort";
   removeBtn.className = "btn-remove";
-  removeBtn.addEventListener("click", () => removeBook(obj.id));
+  removeBtn.addEventListener("click", () => removeBook(book.id));
 
   const moveToCartBtn = document.createElement("button");
   moveToCartBtn.textContent = "Flytta till varukorg";
   moveToCartBtn.className = "btn-move-to-cart";
-  moveToCartBtn.addEventListener("click", () => addToCart(books));
+  moveToCartBtn.addEventListener("click", () => {
+    addToCart(book);
+    removeBook(book.id);
+    renderCartUI();
+  });
+
   const bookContainer = document.createElement("div");
   bookContainer.className = "book-container";
 
