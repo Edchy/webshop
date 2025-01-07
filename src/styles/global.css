@@ -54,7 +54,9 @@ img {
 }
 
 button {
+  border: none;
   transition: opacity .2s;
+  border-radius: var(--radius);
 
   &:hover {
     opacity: .9;
