@@ -116,3 +116,4 @@ export function updateCart(bookId: number, newQuantity: number) {
     updateLocalStorage("cart", cart);
   }
 }
+
