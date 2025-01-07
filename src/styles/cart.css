@@ -68,6 +68,15 @@ button[popovertarget="shopping-cart"] {
 .shopping-cart-list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80%;
+}
+
+/* Med :has kan man style ett element beroende på hur många barn det har */
+.shopping-cart-list:has(:nth-child(2)) {
+  justify-content: unset;
+  align-items: unset;
 }
 
 .cart-item {
@@ -117,15 +126,16 @@ button[popovertarget="shopping-cart"] {
 
 @media (max-width: 768px) {
   .shopping-cart[popover] {
-    width: 100vw; 
-    height: 100vh; 
-    margin-top: 0; 
-    border-radius: 0; 
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0;
+    border-radius: 0;
     translate: 100%;
     opacity: 0;
 
     &::backdrop {
-      background-color: rgba(0, 0, 0, 0.815);; 
+      background-color: rgba(0, 0, 0, 0.815);
+      ;
     }
   }
 
@@ -135,12 +145,12 @@ button[popovertarget="shopping-cart"] {
   }
 
   .cart-item {
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .cart-item img {
-    width: 15%; 
+    width: 15%;
     height: auto;
     margin: 0 0 1rem 0;
   }
@@ -148,7 +158,7 @@ button[popovertarget="shopping-cart"] {
   .cart-item-actions {
     display: flex;
     justify-content: space-between;
-    width: 100%; 
+    width: 100%;
     margin-top: 0.5rem;
   }
 }
@@ -160,16 +170,15 @@ button[popovertarget="shopping-cart"] {
   top: 10px;
   right: 10px;
   background: transparent;
-  color: var(--clr-dark); 
+  color: var(--clr-dark);
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 9999; 
-  transition: color 0.2s ease-in-out, transform 0.3s ease-in-out; 
+  z-index: 9999;
+  transition: color 0.2s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .close-cart:hover {
   color: var(--clr-primary-300);
-  transform: scale(1.3); 
+  transform: scale(1.3);
 }
-
