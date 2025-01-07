@@ -113,11 +113,18 @@ button[popovertarget="shopping-cart"] {
 }
 
 .shopping-cart-footer {
-
+  background-color: var(--clr-primary-500);
+  color: var(--clr-light);
   padding: 1.5rem;
   position: sticky;
   bottom: 0;
 
+  .shopping-cart-total {
+    font-weight: bold;
+    font-size: var(--fs-1);
+    text-align: right;
+    padding-block: 1rem;
+  }
 
   button {
     width: 100%;
@@ -126,6 +133,25 @@ button[popovertarget="shopping-cart"] {
     color: var(--clr-light);
   }
 }
+
+.free-shipping-progress-container {
+
+  .outer {
+    background-color: var(--clr-primary-400);
+    height: 10px;
+    border-radius: var(--radius);
+
+  }
+
+  .inner {
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    background-color: var(--clr-primary-300);
+    height: 10px;
+    width: 50%;
+  }
+}
+
 
 
 @media (max-width: 768px) {
