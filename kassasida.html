@@ -9,33 +9,89 @@
   </head>
 
   <body>
-    <h1>Kassa</h1>
-    <section class="cartHeadings">
-      <h3>Produkt</h3>
-      <h3>Antal</h3>
-      <h3>Pris</h3>
-    </section>
+    <header class="container">
+      <nav class="navigation">
+        <a href="/" class="logo-container">
+          <img src="/src/photos/logo.svg" alt="" />
+          <sparkly-text style="--sparkly-text-color: rainbow">
+            <h2>Tales & Tails</h2>
+          </sparkly-text>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Produkter</a></li>
+          <li><a href="#footer">Kontakt</a></li>
+        </ul>
+        <p>Fri frakt över 599kr</p>
+    
+        <!-- Favorites -->
+        <button popovertarget="favorites">favs</button>
+        <div popover class="favorites" id="favorites">hehe</div>
+    
+        <!-- Cart -->
+        <button popovertarget="shopping-cart">
+          <div class="cart-notification">1</div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M17 17h-11v-14h-2" />
+            <path d="M6 5l14 1l-1 7h-13" />
+          </svg>
+        </button>
+        <div popover class="shopping-cart" id="shopping-cart">
+          <ul class="shopping-cart-list">
+            your cart is empty...
+          </ul>
+          <footer class="shopping-cart-footer">
+            <p class="shopping-cart-total"></p>
+            <button class="go-to-payment-btn" onclick="location.href='kassasida.html'">Till kassan</button>
+    
+          </footer>
+        </div>
+      </nav>
+    </header>
 
-    <section class="cart-container"></section>
-    <p class="total-price">Totalt: 0 kr</p>
-    <section class="consumerInfo">
-      <h3>Kontaktuppgifter</h3>
-      <input type="text" placeholder="Förnamn" class="contact-info" />
-      <input type="text" placeholder="Efternamn" class="contact-info" />
-      <input type="text" placeholder="Adress" class="contact-info" />
-      <input type="text" placeholder="E-post" class="contact-info" />
-      <input type="text" placeholder="telefonnummer" class="contact-info" />
-      <h3>Betalningsmetod</h3>
-      <label>
-        <input type="radio" name="payment-method" value="card" />
-        Kortbetalning
-      </label>
-      <input type="text" placeholder="Kortinnehavare" class="contact-info" />
-      <input type="text" placeholder="Kortnummer" class="contact-info" />
-      <input type="text" placeholder="CVC" class="contact-info" />
+    <main>
+      <h1 class="headingC">Kassa</h1>
 
-      <button class="purchase-button">Köp</button>
-    </section>
+      <section class="flex-container">
+        <div class="render-checkout">
+
+          <div class="cart-headings">
+            <h3>Produkt</h3>
+            <h3>Antal</h3>
+            <h3>Pris</h3>
+            <h3>Ändra Antal</h3>
+            <h3>Ta bort</h3>
+          </div>
+
+          <div class="cart-container"></div>
+          
+          <p class="total-price">Totalt: 0 kr</p>
+        </div>
+      </section>
+
+      <section class="consumerInfo">
+        <h3>Kontaktuppgifter</h3>
+        <input type="text" placeholder="Förnamn" class="contact-info" />
+        <input type="text" placeholder="Efternamn" class="contact-info" />
+        <input type="text" placeholder="Adress" class="contact-info" />
+        <input type="text" placeholder="E-post" class="contact-info" />
+        <input type="text" placeholder="telefonnummer" class="contact-info" />
+        <h3>Betalningsmetod</h3>
+        <label>
+          <input type="radio" name="payment-method" value="card" />
+          Kortbetalning
+        </label>
+        <input type="text" placeholder="Kortinnehavare" class="contact-info" />
+        <input type="text" placeholder="Kortnummer" class="contact-info" />
+        <input type="text" placeholder="CVC" class="contact-info" />
+
+        <button class="purchase-button">Köp</button>
+      </section>
+    </main>
 
     <footer id="footer">
       <section class="footer-container">

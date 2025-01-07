@@ -1,52 +1,70 @@
 /* fixa global styles */
-h1 {
+
+.headingC {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    align-items: center;
+    font-size: 40px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.flex-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.render-checkout {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.138);
+    border-radius: var(--radius);
+}
+
+.cart-headings {
+    display: contents;
+    font-weight: bold;
+    padding-bottom: 5px;
+    text-align: center;
 }
 
 .cart-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: contents;
+    gap: 10px;
     padding: 20px;
-}
-
-.cartHeadings {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 .cart-checkout-item {
-    display: flex;
-    justify-content: space-between;
+    display: contents;
+    text-align: center;
     padding: 1rem;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.138);
-    border-radius: var(--radius);
-    background-color: white;
 }
 
 .total-price {
+    grid-column: span 5;
+    grid-row: 5;
     font-size: 1.2rem;
     font-weight: 600;
-    display: flex;
-    justify-content: right;
-    padding: 20px;
+    margin: 20px;
+    text-align: right;
+    justify-self: end;
 }
 
 .consumerInfo {
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     text-align: center;
     margin: 0 auto;
-    max-width: 600px;
+    margin-bottom: 20px;
     gap: 10px;
     padding: 20px;
     background-color: white;
@@ -57,7 +75,7 @@ h1 {
 .contact-info {
     display: flex;
     justify-content: center;
-    width: 150px;
+    width: 300px;
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #ccc;
