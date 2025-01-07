@@ -75,7 +75,7 @@ export function renderCartUI() {
     if (progressText)
       progressText.textContent =
         total < 599
-          ? `${599 - total} kvar till fri frakt`
+          ? `${599 - total}kr kvar till fri frakt`
           : "Grattis du har fri frakt";
   }
 }
