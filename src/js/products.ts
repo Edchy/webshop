@@ -3,7 +3,6 @@ import { books } from "./data";
 import { addToCart, mapBookToCartBook, renderCartUI } from "./cart";
 import { IBook } from "./Models/Book";
 import { createStarElement } from "./utils";
-import { removeFromFavorites, updateFavoritesUI } from "./favorites";
 
 // hämta en referens till html-element, som finns i vår index.html
 const productList = document.querySelector(".product-list") as HTMLUListElement;
@@ -145,20 +144,10 @@ function createBookElement(book: IBook) {
   favBtn.type = "button";
   favBtn.className = "add-to-fav-button";
   favBtn.setAttribute("data-book-id", book.id.toString());
-  // favBtn.textContent = book.favorite ? "♥️" : "🤍";
+  favBtn.textContent = "🤍";
   favBtn.title = "Add to Favorites";
   favBtn.addEventListener("click", () => {
-    // favBtn.textContent = book.favorite ? "♥️" : "🤍";
-    if (book.favorite) {
-      removeFromFavorites(book.id);
-      favBtn.textContent = "🤍";
-    } else {
-      book.favorite = !book.favorite;
-      addToFavorites(mapBookToCartBook(book));
-      favBtn.textContent = "♥️";
-    }
-    // updateFavoritesUI();
-    console.log(book);
+    addToFavorites(mapBookToCartBook(book));
   });
 
   for (let i = 1; i <= 6; i++) {
