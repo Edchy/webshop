@@ -54,7 +54,13 @@
     </header>
 
     <main>
-      <h1 class="headingC">Kassa</h1>
+      <section class="purchaseHead">
+        <button class="back-button" onclick="window.location.href='index.html'">
+          ← Fortsätt shoppa
+        </button>
+        <h1 class="headingC">Kassa</h1>
+      </section>
+
 
       <section class="flex-container">
         <div class="render-checkout">
@@ -68,29 +74,32 @@
           </div>
 
           <div class="cart-container"></div>
-          
           <p class="total-price">Totalt: 0 kr</p>
         </div>
       </section>
 
       <section class="consumerInfo">
         <h3>Kontaktuppgifter</h3>
-        <input type="text" placeholder="Förnamn" class="contact-info" />
-        <input type="text" placeholder="Efternamn" class="contact-info" />
-        <input type="text" placeholder="Adress" class="contact-info" />
-        <input type="text" placeholder="E-post" class="contact-info" />
-        <input type="text" placeholder="telefonnummer" class="contact-info" />
+        <p>Vänligen fyll i alla obligatoriska fält*</p>
+        <input type="text" id="name" placeholder="Förnamn*" class="contact-info" required />
+        <input type="text" placeholder="Efternamn*" class="contact-info" />
+        <input type="text" id="address" placeholder="Adress*" class="contact-info" required />
+        <input type="email" id="email" placeholder="E-post*" class="contact-info" required />
+        <input type="text" placeholder="Telefonnummer*" class="contact-info" />
+
         <h3>Betalningsmetod</h3>
         <label>
           <input type="radio" name="payment-method" value="card" />
           Kortbetalning
         </label>
-        <input type="text" placeholder="Kortinnehavare" class="contact-info" />
-        <input type="text" placeholder="Kortnummer" class="contact-info" />
-        <input type="text" placeholder="CVC" class="contact-info" />
+
+        <input type="text" placeholder="Kortinnehavare*" class="contact-info" />
+        <input type="text" placeholder="Kortnummer*" class="contact-info" />
+        <input type="text" placeholder="CVC*" class="contact-info" />
 
         <button class="purchase-button">Köp</button>
       </section>
+
     </main>
 
     <footer id="footer">

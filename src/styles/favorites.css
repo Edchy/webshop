@@ -3,10 +3,14 @@ button[popovertarget="favorites"] {
   color: var(--clr-light);
   border: none;
   padding: 0.25rem;
-
 }
 
-
+.fav-header {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 10px;
+}
 
 button[popovertarget="favorites"] svg {
   width: 24px;
@@ -18,9 +22,6 @@ button[popovertarget="favorites"] svg {
 button[popovertarget="favorites"]:hover svg {
   color: rgb(255, 0, 0);
 }
-
-
-
 
 .favorites[popover] {
   inset: auto;
@@ -62,6 +63,19 @@ button[popovertarget="favorites"]:hover svg {
   align-items: center;
 }
 
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  button {
+    background: transparent;
+    color: var(--clr-dark);
+    font-size: 1.5rem;
+    z-index: 9999;
+  }
+}
+
 .btn-remove {
   border-radius: 10px;
   background-color: var(--clr-primary-500);
@@ -75,9 +89,7 @@ button[popovertarget="favorites"]:hover svg {
 .btn-remove:hover {
   background-color: red;
   color: white;
-
 }
-
 
 .btn-move-to-cart {
   border-radius: 10px;
@@ -89,15 +101,45 @@ button[popovertarget="favorites"]:hover svg {
   padding: 8px;
   margin-bottom: 10px;
 }
+@media (max-width: 1500px) {
+  .favorites[popover]:popover-open {
+    width: 40%;
+    left: 55%;
+    height: 100vh;
+    margin-top: 10.2vh;
+  }
+}
+@media (max-width: 1150px) {
+  .favorites[popover]:popover-open {
+    width: 50%;
+    left: 45%;
+    height: 100vh;
+    margin-top: 10.2vh;
+  }
+}
 
-
-
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .favorites[popover]:popover-open {
     width: 100vw;
     height: 100vh;
-    margin-top: 10.2vh;
+    margin-top: 7.2vh;
     position: fixed;
     left: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .favorites[popover]:popover-open {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 7.2vh;
+    position: fixed;
+    left: 0;
+    margin-top: 120px;
+  }
+  .book-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }

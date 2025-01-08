@@ -1,5 +1,6 @@
 import { addToCart, renderCartUI, mapBookToCartBook } from "./cart";
 import { books } from "./data";
+import { addToFavorites } from "./favorites";
 document.addEventListener("DOMContentLoaded", () => {
   const bookDetailsContainer = document.getElementById("book-details");
   // const cartContainer = document.getElementById("shopping-cart");
@@ -64,16 +65,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const descriptionP = document.createElement("p");
     descriptionP.textContent = book.description ?? "Beskrivning saknas";
 
+    const actions = document.createElement("div");
+    actions.className = "product-action";
+
     const addToCartBtn = document.createElement("button");
+    addToCartBtn.type = "button";
     addToCartBtn.innerHTML = "Lägg till i varukorg";
-    addToCartBtn.className = "add-btn";
+    addToCartBtn.className = "add-to-cart-button";
+    addToCartBtn.setAttribute("data-book-id", book.id.toString());
+    // addToCartBtn.textContent = "lägg till";
     addToCartBtn.addEventListener("click", () => {
       const cartBook = mapBookToCartBook(book);
       addToCart(cartBook);
       renderCartUI();
     });
 
-    productDetails.append(h1, authorP, priceDiv, descriptionP, addToCartBtn);
+    const favBtn = document.createElement("button");
+    favBtn.type = "button";
+    favBtn.className = "add-to-fav-button";
+    favBtn.setAttribute("data-book-id", book.id.toString());
+    favBtn.textContent = "✨";
+    favBtn.title = "Add to Favorites";
+    favBtn.addEventListener("click", () =>
+      addToFavorites(mapBookToCartBook(book))
+    );
+
+    actions.append(addToCartBtn, favBtn);
+
+    productDetails.append(h1, authorP, priceDiv, descriptionP, actions);
 
     const imageContainer = document.createElement("div");
     imageContainer.className = "product-image";

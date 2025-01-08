@@ -52,9 +52,208 @@
   margin: 5px 0;
 }
 
-.add-btn {
-  background-color: var(--clr-primary-500);
-  max-width: 150px;
+.product-action {
+  max-width: 200px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  button {
+    display: grid;
+    place-content: center;
+    color: var(--clr-golden);
+    padding-block: var(--gap-s);
+
+    &:disabled {
+      background-color: var(--disabled);
+      cursor: not-allowed;
+    }
+  }
+
+  .add-to-cart-button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    background-color: var(--clr-primary-500);
+
+    & > * {
+      margin-left: 20px;
+    }
+  }
+
+  .add-to-fav-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    background-color: var(--clr-primary-400);
+  }
+}
+
+/* Fav button effect */
+button.add-to-fav-button {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 var(--color-primary-300));
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 var(--color-primary-300));
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 var(--color-primary-300));
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 var(--color-primary-300));
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 var(--color-primary-300));
+  z-index: -5;
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 var(--color-primary-300));
+  z-index: -5;
+  transition: all 0.8s ease;
+}
+
+button.add-to-fav-button {
+  background-color: var(--color-secondary-300);
   color: var(--clr-golden);
-  padding-block: var(--gap-s);
+  box-shadow: 0 0 25px var(--color-primary-300);
+}
+
+button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--clr-golden));
+  z-index: 2;
+}
+
+button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--clr-golden));
+  z-index: 2;
+}
+
+button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--clr-golden));
+  z-index: 2;
+}
+
+button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--clr-golden));
+  z-index: 2;
+}
+
+button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--clr-golden));
+  z-index: 2;
+}
+
+button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px var(--clr-golden));
+  z-index: 2;
+}
+
+.fil0 {
+  fill: var(--clr-golden);
+}
+
+@media screen and (max-width: 560px) {
+  .product-information {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .product-additional-info {
+    p {
+      font-size: 20px;
+    }
+  }
+  .product-details {
+    p {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+  }
+  .product-price {
+    font-size: 20px;
+  }
+  .product-image {
+  }
 }

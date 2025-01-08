@@ -1,13 +1,32 @@
 /* fixa global styles */
 
-.headingC {
+.purchaseHead {
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 40px;
-    margin-top: 150px;
-    margin-bottom: 50px;
+    justify-content: space-between;
+    padding: 40px;
+    margin-top: 100px;
 }
+
+.back-button {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.headingC {
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 100px;
+    font-size: 2rem;
+}
+
 
 .flex-container {
     width: 100vw;
@@ -59,7 +78,7 @@
 
 .total-price {
     grid-column: span 5;
-    grid-row: 5;
+    grid-row: auto;
     font-size: 1.2rem;
     font-weight: 600;
     margin: 20px;
