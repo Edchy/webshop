@@ -72,7 +72,7 @@ button[popovertarget="shopping-cart"] {
   min-height: 80%;
 }
 
-/* Med :has kan man style ett element beroende på hur många barn det har */
+/* Med :has kan man style ett element beroende på hur många barn det har , tack (:*/
 .shopping-cart-list:has(:nth-child(2)) {
   justify-content: unset;
   align-items: unset;
