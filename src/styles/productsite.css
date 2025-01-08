@@ -33,6 +33,9 @@
 .product-author,
 .product-price {
   font-weight: 200;
+  /* font-weight: bold;
+  font-size: var(--fs-0);
+  color: var(--clr-primary-400); */
 }
 
 .product-details p {

@@ -1,6 +1,7 @@
 import { addToCart, renderCartUI, mapBookToCartBook } from "./cart";
 import { books } from "./data";
 import { addToFavorites } from "./favorites";
+import { createStarElement } from "./utils";
 document.addEventListener("DOMContentLoaded", () => {
   const bookDetailsContainer = document.getElementById("book-details");
   // const cartContainer = document.getElementById("shopping-cart");
@@ -84,11 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
     favBtn.type = "button";
     favBtn.className = "add-to-fav-button";
     favBtn.setAttribute("data-book-id", book.id.toString());
-    favBtn.textContent = "✨";
+    favBtn.textContent = "🤍";
     favBtn.title = "Add to Favorites";
     favBtn.addEventListener("click", () =>
       addToFavorites(mapBookToCartBook(book))
     );
+
+    for (let i = 1; i <= 6; i++) {
+      favBtn.appendChild(createStarElement(i));
+    }
 
     actions.append(addToCartBtn, favBtn);
 
