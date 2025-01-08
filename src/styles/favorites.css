@@ -5,6 +5,13 @@ button[popovertarget="favorites"] {
   padding: 0.25rem;
 }
 
+.fav-header {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
 button[popovertarget="favorites"] svg {
   width: 24px;
   height: 24px;
@@ -81,8 +88,24 @@ button[popovertarget="favorites"]:hover svg {
   padding: 8px;
   margin-bottom: 10px;
 }
+@media (max-width: 1500px) {
+  .favorites[popover]:popover-open {
+    width: 40%;
+    left: 55%;
+    height: 100vh;
+    margin-top: 10.2vh;
+  }
+}
+@media (max-width: 1150px) {
+  .favorites[popover]:popover-open {
+    width: 50%;
+    left: 45%;
+    height: 100vh;
+    margin-top: 10.2vh;
+  }
+}
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .favorites[popover]:popover-open {
     width: 100vw;
     height: 100vh;
@@ -91,9 +114,18 @@ button[popovertarget="favorites"]:hover svg {
     left: 0;
   }
 }
-@media (max-width: 1500px) {
+
+@media (max-width: 430px) {
+  .favorites[popover]:popover-open {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 10.2vh;
+    position: fixed;
+    left: 0;
+  }
   .book-container {
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 }
