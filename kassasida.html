@@ -9,50 +9,86 @@
   </head>
 
   <body>
-    <header class="container">
-      <nav class="navigation">
-        <a href="/" class="logo-container">
-          <img src="/src/photos/logo.svg" alt="" />
-          <sparkly-text style="--sparkly-text-color: rainbow">
+    <header class="page-header">
+      <nav class="main-nav">
+        <div class="logo-container">
+          <a href="/">
+            <sparkly-text style="--sparkly-text-color: rainbow">
+              <img src="/src/photos/logo.svg" alt="Company logo" />
+            </sparkly-text>
             <h2>Tales & Tails</h2>
-          </sparkly-text>
-        </a>
+          </a>
+        </div>
         <ul class="nav-links">
           <li><a href="index.html">Produkter</a></li>
           <li><a href="#footer">Kontakt</a></li>
         </ul>
         <p>Fri frakt över 599kr</p>
-    
-        <!-- Favorites -->
-        <button popovertarget="favorites">favs</button>
-        <div popover class="favorites" id="favorites">hehe</div>
-    
-        <!-- Cart -->
-        <button popovertarget="shopping-cart">
-          <div class="cart-notification">1</div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-            <path d="M17 17h-11v-14h-2" />
-            <path d="M6 5l14 1l-1 7h-13" />
-          </svg>
-        </button>
-        <div popover class="shopping-cart" id="shopping-cart">
-          <ul class="shopping-cart-list">
-            your cart is empty...
-          </ul>
-          <footer class="shopping-cart-footer">
-            <p class="shopping-cart-total"></p>
-            <button class="go-to-payment-btn" onclick="location.href='kassasida.html'">Till kassan</button>
-    
-          </footer>
+        <div class="header-actions">
+          <!-- Favorites -->
+          <button popovertarget="favorites">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 21C12 21 4 13 4 8C4 5 6 3 8 3C9.5 3 11 4.5 12 6C13 4.5 14.5 3 16 3C18 3 20 5 20 8C20 13 12 21 12 21Z"
+              ></path>
+            </svg>
+          </button>
+          <div popover class="favorites" id="favorites"></div>
+          <!-- Cart -->
+          <button popovertarget="shopping-cart">
+            <div class="cart-notification"></div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M17 17h-11v-14h-2" />
+              <path d="M6 5l14 1l-1 7h-13" />
+            </svg>
+          </button>
+          <div popover class="shopping-cart" id="shopping-cart">
+            <button class="close-cart">&#10005;</button>
+            <ul class="shopping-cart-list"></ul>
+            <footer class="shopping-cart-footer">
+              <button class="clear-cart-btn">ta bort allt</button>
+              <div class="free-shipping-progress-container">
+                <p class="progress-message">X kvar till fri frakt</p>
+                <div class="outer">
+                  <div class="inner"></div>
+                </div>
+              </div>
+              <p class="shopping-cart-total"></p>
+              <button
+                class="go-to-payment-btn"
+                onclick="location.href='kassasida.html'"
+              >
+                Till kassan
+              </button>
+            </footer>
+          </div>
         </div>
       </nav>
     </header>
-
     <main>
       <section class="purchaseHead">
         <button class="back-button" onclick="window.location.href='index.html'">
@@ -61,10 +97,8 @@
         <h1 class="headingC">Kassa</h1>
       </section>
 
-
       <section class="flex-container">
         <div class="render-checkout">
-
           <div class="cart-headings">
             <h3>Produkt</h3>
             <h3>Antal</h3>
@@ -81,10 +115,28 @@
       <section class="consumerInfo">
         <h3>Kontaktuppgifter</h3>
         <p>Vänligen fyll i alla obligatoriska fält*</p>
-        <input type="text" id="name" placeholder="Förnamn*" class="contact-info" required />
+        <input
+          type="text"
+          id="name"
+          placeholder="Förnamn*"
+          class="contact-info"
+          required
+        />
         <input type="text" placeholder="Efternamn*" class="contact-info" />
-        <input type="text" id="address" placeholder="Adress*" class="contact-info" required />
-        <input type="email" id="email" placeholder="E-post*" class="contact-info" required />
+        <input
+          type="text"
+          id="address"
+          placeholder="Adress*"
+          class="contact-info"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          placeholder="E-post*"
+          class="contact-info"
+          required
+        />
         <input type="text" placeholder="Telefonnummer*" class="contact-info" />
 
         <h3>Betalningsmetod</h3>
@@ -99,7 +151,6 @@
 
         <button class="purchase-button">Köp</button>
       </section>
-
     </main>
 
     <footer id="footer">
