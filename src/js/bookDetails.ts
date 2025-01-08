@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     productDetails.append(h1, authorP, priceDiv, descriptionP, actions);
 
     const imageContainer = document.createElement("div");
-    imageContainer.className = "product-image";
+    imageContainer.className = "product-img";
     imageContainer.appendChild(link);
 
     productInformation.append(imageContainer, productDetails);
