@@ -1,6 +1,7 @@
 .product-section {
   padding: var(--gap-l);
   margin-bottom: 1rem;
+  width: var(--wrapper-width);
 
   h2 {
     padding-block-end: var(--gap-s);
