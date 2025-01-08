@@ -142,6 +142,10 @@ button[popovertarget="shopping-cart"] {
 }
 
 .free-shipping-progress-container {
+  .progress-message {
+    margin-bottom: .5rem;
+    font-size: var(--fs--1);
+  }
 
   .outer {
     background-color: var(--clr-primary-400);

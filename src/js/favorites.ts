@@ -1,6 +1,4 @@
 import { addToCart, renderCartUI } from "./cart";
-import { books } from "./data";
-import { IBook } from "./Models/Book";
 import { ICartBook } from "./Models/CartBook";
 import { updateLocalStorage } from "./utils";
 
@@ -27,7 +25,7 @@ export function addToFavorites(book: ICartBook) {
 
 favPopoverBtn?.addEventListener("click", updateFavoritesUI);
 
-function updateFavoritesUI() {
+export function updateFavoritesUI() {
   favoritesPopover.innerHTML = "";
 
   const titleContainer = document.createElement("div");
@@ -70,14 +68,14 @@ function createHTML(book: ICartBook) {
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Ta bort";
   removeBtn.className = "btn-remove";
-  removeBtn.addEventListener("click", () => removeBook(book.id));
+  removeBtn.addEventListener("click", () => removeFromFavorites(book.id));
 
   const moveToCartBtn = document.createElement("button");
   moveToCartBtn.textContent = "Flytta till varukorg";
   moveToCartBtn.className = "btn-move-to-cart";
   moveToCartBtn.addEventListener("click", () => {
     addToCart(book);
-    removeBook(book.id);
+    removeFromFavorites(book.id);
     renderCartUI();
   });
 
@@ -92,7 +90,7 @@ function createHTML(book: ICartBook) {
   return favContainer;
 }
 
-function removeBook(id: number) {
+export function removeFromFavorites(id: number) {
   console.log(id);
   const filtered = favorites.filter((book) => book.id !== id);
   favorites = [...filtered];

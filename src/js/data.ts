@@ -15,6 +15,7 @@ export const books: IBook[] = [
     price: 182,
     discount: 0,
     stock: 100,
+    favorite: false,
   },
   {
     id: 390,
@@ -30,6 +31,7 @@ export const books: IBook[] = [
     price: 182,
     discount: 0,
     stock: 100,
+    favorite: false,
   },
   {
     id: 211,
@@ -280,6 +282,21 @@ export const books: IBook[] = [
     description:
       "KNOW SOMEONE WHO LOVES CATS? THEN READ ON FOR THE PERFECT GIFT . . . This book should not be left in the company of dog-lovers Spectator ---- DO YOU EVER THINK YOUR CAT IS TRYING TO TELL YOU SOMETHING? Cat lovers know all too well how mysterious their feline friends can be. Descended from shy, solitary North African wild cats, domestic cats set up home with devoted owners across the world. But how did those wildcats of old creep into our homes and our hearts, convincing us to keep them warm, fed, and pampered? Quite simply, they learned to talk to us. Each chapter dives into a different form of communication, including: - Vocalisation - Tail signals - Scents - Rubbing Renowned cat behaviour scientist Dr. Sarah Brown reveals the previously unexplored secrets of cat communication, translating every meow and every blank stare. Her book will be perfect for any cat lover who wants to learn more about their companion. ---- PRAISE FOR THE HIDDEN LANGUAGE OF CATS Sarah Brown knows cats. A fascinating blend of real-life stories and science informed by her deep expertise, this book will both entertain and inform any cat-lover John Bradshaw, New York Times bestselling author of The Trainable Cat and Cat Sense Every cat lover wishes they could understand what their cat is thinking: This book will help you do just that! Highly-entertaining and evidence-based guide to how cats communicate and how to have a better relationship with the cat in your life' Dr. Mikel Delgado, PhD, Certified Applied Animal Behaviourist and coauthor of Total Cat Mojo 'Reading Dr Brown's book has only strengthened my love of and fascination with cats!' Olivia Petter, Independent",
     price: 129,
+    discount: 0,
+    stock: 100,
+  },
+  {
+    id: 76,
+    title: "The Cat and The City",
+    author: "Nick Bradley",
+    cover: "https://s1.adlibris.com/images/58879944/the-cat-and-the-city.jpg",
+    year: 2021,
+    format: "Häftad",
+    genre: "Some genre",
+    pages: 304,
+    lang: "English",
+    description: "Some descr...",
+    price: 143,
     discount: 0,
     stock: 100,
   },

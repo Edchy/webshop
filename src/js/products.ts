@@ -2,14 +2,15 @@ import { addToFavorites } from "./favorites";
 import { books } from "./data";
 import { addToCart, mapBookToCartBook, renderCartUI } from "./cart";
 import { IBook } from "./Models/Book";
-import { ICartBook } from "./Models/CartBook";
 import { createStarElement } from "./utils";
+import { removeFromFavorites, updateFavoritesUI } from "./favorites";
 
 // hämta en referens till html-element, som finns i vår index.html
 const productList = document.querySelector(".product-list") as HTMLUListElement;
 
 // rendera en lista med våra produkter, denna funktion exporteras och anropas i "main.ts" när sidan laddats.
 export function renderProductList() {
+  console.log(1);
   // om listan och arrayen "finns"
   if (productList && books) {
     // loopa igenom arrayen och appenda resultat av funktionanropet till produktlistan(ul)
@@ -54,10 +55,10 @@ function createBookElement(book: IBook) {
   h3.className = "product-title";
   h3.textContent = book.title;
 
-  const time = document.createElement("time");
-  time.className = "product-release-date";
-  time.dateTime = book.year.toString();
-  time.textContent = book.year.toString();
+  const releaseYear = document.createElement("time");
+  releaseYear.className = "product-release-date";
+  releaseYear.dateTime = book.year.toString();
+  releaseYear.textContent = book.year.toString();
 
   titleContainer.append(h3);
 
@@ -69,7 +70,7 @@ function createBookElement(book: IBook) {
   authorLink.textContent = book.author;
 
   authorP.appendChild(authorLink);
-  productInfo.append(time, authorP);
+  productInfo.append(releaseYear, authorP);
   article.append(titleContainer, productInfo);
 
   const availability = document.createElement("div");
@@ -144,11 +145,21 @@ function createBookElement(book: IBook) {
   favBtn.type = "button";
   favBtn.className = "add-to-fav-button";
   favBtn.setAttribute("data-book-id", book.id.toString());
-  favBtn.textContent = "🤍";
+  // favBtn.textContent = book.favorite ? "♥️" : "🤍";
   favBtn.title = "Add to Favorites";
-  favBtn.addEventListener("click", () =>
-    addToFavorites(mapBookToCartBook(book))
-  );
+  favBtn.addEventListener("click", () => {
+    // favBtn.textContent = book.favorite ? "♥️" : "🤍";
+    if (book.favorite) {
+      removeFromFavorites(book.id);
+      favBtn.textContent = "🤍";
+    } else {
+      book.favorite = !book.favorite;
+      addToFavorites(mapBookToCartBook(book));
+      favBtn.textContent = "♥️";
+    }
+    // updateFavoritesUI();
+    console.log(book);
+  });
 
   for (let i = 1; i <= 6; i++) {
     favBtn.appendChild(createStarElement(i));

@@ -12,4 +12,5 @@ export interface IBook {
   price: number;
   discount: number;
   stock: number;
+  favorite?: boolean;
 }

@@ -5,4 +5,5 @@ export interface ICartBook {
   cover: string;
   price: number;
   quantity: number;
+  favorite: boolean;
 }

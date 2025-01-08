@@ -103,6 +103,7 @@ article.product {
     grid-template-columns: 2fr 1fr;
     max-width: 200px;
 
+
     button {
       display: grid;
       place-content: center;
@@ -133,6 +134,7 @@ article.product {
       border-top-right-radius: var(--radius);
       border-bottom-right-radius: var(--radius);
       background-color: var(--clr-primary-400);
+      font-size: var(--fs-0);
     }
   }
 }

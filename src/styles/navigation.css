@@ -20,7 +20,7 @@
     "ul p";
   align-items: center;
 
-  @media (width > 600px) {
+  @media (width > 768px) {
     grid-template-areas:
       "logo ul p actions"
     ;
@@ -38,7 +38,7 @@
     h2 {
       font-size: var(--fs-0);
 
-      @media (width < 700px) {
+      @media (width < 380px) {
         visibility: hidden;
       }
     }
@@ -53,8 +53,9 @@
   .nav-links {
     grid-area: ul;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     font-size: var(--fs--1);
+    text-transform: uppercase;
 
     li:hover {
       opacity: .8;
@@ -62,9 +63,10 @@
 
   }
 
-  p {
+  .header-text {
     grid-area: p;
     font-size: var(--fs--2);
+    font-weight: bold;
     justify-self: flex-end;
   }
 
