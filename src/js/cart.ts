@@ -21,6 +21,18 @@ const cartNotification = document.querySelector(
 const progressBar = document.querySelector(
   ".free-shipping-progress-container .inner"
 ) as HTMLElement;
+const clearCartBtn = document.querySelector(
+  ".clear-cart-btn"
+) as HTMLButtonElement;
+
+clearCartBtn.addEventListener("click", () => {
+  clearCart();
+  renderCartUI();
+});
+export function clearCart() {
+  cart.length = 0;
+  localStorage.removeItem("cart");
+}
 
 export function mapBookToCartBook(book: IBook): ICartBook {
   return {
