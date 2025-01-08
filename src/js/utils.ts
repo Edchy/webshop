@@ -19,3 +19,4 @@ export function updateLocalStorage(key: string, value: ICartBook[]) {
 export function calulatePercentage(value: number, total: number) {
   return (value / total) * 100;
 }
+

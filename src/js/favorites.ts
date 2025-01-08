@@ -4,6 +4,8 @@ import { IBook } from "./Models/Book";
 import { ICartBook } from "./Models/CartBook";
 import { updateLocalStorage } from "./utils";
 
+
+
 const favoritesPopover = document.querySelector(".favorites") as HTMLElement;
 const favPopoverBtn = document.querySelector(
   "button[popovertarget='favorites']"
@@ -86,3 +88,4 @@ function removeBook(id: number) {
   updateLocalStorage("favorites", favorites);
   updateFavoritesUI();
 }
+
