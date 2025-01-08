@@ -36,6 +36,7 @@ button[popovertarget="favorites"]:hover svg {
   width: 30%;
   min-height: 100vh;
   margin-top: 10vh;
+  overflow-y: auto;
 }
 
 .fav-container {
@@ -43,10 +44,10 @@ button[popovertarget="favorites"]:hover svg {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 5px;
+  margin-top: 10px;
 
   img {
-    width: 60px;
+    width: 15%;
     height: auto;
     margin-right: 10px;
   }
