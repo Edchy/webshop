@@ -120,7 +120,7 @@ button[popovertarget="shopping-cart"] {
   bottom: 0;
 
   .clear-cart-btn {
-    background-color: rgb(236, 79, 79);
+    background-color: var(--clr-accent-300);
     color: var(--clr-light);
     padding: .25rem;
     display: block;
