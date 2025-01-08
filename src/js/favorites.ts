@@ -4,8 +4,6 @@ import { IBook } from "./Models/Book";
 import { ICartBook } from "./Models/CartBook";
 import { updateLocalStorage } from "./utils";
 
-
-
 const favoritesPopover = document.querySelector(".favorites") as HTMLElement;
 const favPopoverBtn = document.querySelector(
   "button[popovertarget='favorites']"
@@ -31,10 +29,19 @@ favPopoverBtn?.addEventListener("click", updateFavoritesUI);
 
 function updateFavoritesUI() {
   favoritesPopover.innerHTML = "";
+
+  const titleContainer = document.createElement("div");
+  titleContainer.className = "title-container";
   const header = document.createElement("h1");
   header.innerHTML = "Favoriter";
   header.className = "fav-header";
-  favoritesPopover.appendChild(header);
+
+  const closeBtn = document.createElement("button");
+  closeBtn.type = "button";
+  closeBtn.innerHTML = "X";
+
+  titleContainer.append(header, closeBtn);
+  favoritesPopover.append(titleContainer);
 
   favorites.forEach((book) => {
     favoritesPopover.append(createHTML(book));
@@ -88,4 +95,3 @@ function removeBook(id: number) {
   updateLocalStorage("favorites", favorites);
   updateFavoritesUI();
 }
-
