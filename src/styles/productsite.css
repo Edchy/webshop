@@ -58,3 +58,29 @@
   color: var(--clr-golden);
   padding-block: var(--gap-s);
 }
+
+@media screen and (max-width: 560px) {
+  .product-information {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .product-additional-info {
+    p {
+      font-size: 20px;
+    }
+  }
+  .product-details {
+    p {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+  }
+  .product-price {
+    font-size: 20px;
+  }
+  .product-image {
+  }
+}
