@@ -3,19 +3,20 @@ button[popovertarget="favorites"] {
   color: var(--clr-light);
   border: none;
   padding: 0.25rem;
-  cursor: pointer;
+
 }
 
 
 
 button[popovertarget="favorites"] svg {
-  width: 24px; 
-  height: 24px; 
-  color: var(--clr-light); 
-  transition: color 0.3s ease; 
+  width: 24px;
+  height: 24px;
+  color: var(--clr-light);
+  transition: color 0.3s ease;
 }
+
 button[popovertarget="favorites"]:hover svg {
-  color: rgb(255, 0, 0); 
+  color: rgb(255, 0, 0);
 }
 
 
@@ -67,13 +68,12 @@ button[popovertarget="favorites"]:hover svg {
   max-width: 150px;
   border: none;
   color: var(--clr-golden);
-  cursor: pointer;
   padding: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease; 
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-remove:hover {
-  background-color: red; 
+  background-color: red;
   color: white;
 
 }
@@ -85,7 +85,6 @@ button[popovertarget="favorites"]:hover svg {
   max-width: 150px;
   border: none;
   color: var(--clr-golden);
-  cursor: pointer;
   margin-right: 10px;
   padding: 8px;
   margin-bottom: 10px;
@@ -95,13 +94,10 @@ button[popovertarget="favorites"]:hover svg {
 
 @media (max-width: 768px) {
   .favorites[popover]:popover-open {
-    width: 100vw;     
-    height: 100vh;      
-    margin-top: 10.2vh;  
-    position: fixed;   
-    left: 0;           
+    width: 100vw;
+    height: 100vh;
+    margin-top: 10.2vh;
+    position: fixed;
+    left: 0;
   }
 }
-
-
-

@@ -99,7 +99,6 @@ article.product {
       place-content: center;
       color: var(--clr-golden);
       padding-block: var(--gap-s);
-      cursor: pointer;
 
       &:disabled {
         background-color: var(--disabled);

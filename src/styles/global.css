@@ -57,6 +57,7 @@ button {
   border: none;
   transition: opacity .2s;
   border-radius: var(--radius);
+  cursor: pointer;
 
   &:hover {
     opacity: .9;
