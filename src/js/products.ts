@@ -69,8 +69,8 @@ function createBookElement(book: IBook) {
   authorLink.textContent = book.author;
 
   authorP.appendChild(authorLink);
-  productInfo.append(titleContainer, time, authorP);
-  article.appendChild(productInfo);
+  productInfo.append(time, authorP);
+  article.append(titleContainer, productInfo);
 
   const availability = document.createElement("div");
   availability.className = "product-availability";

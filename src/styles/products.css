@@ -24,7 +24,7 @@ article.product {
   position: relative;
   display: grid;
   grid-template-rows: subgrid;
-  grid-row: span 4;
+  grid-row: span 5;
   background-color: var(--clr-light);
   color: var(--text);
   width: min(300px, 100%);
@@ -47,26 +47,28 @@ article.product {
     }
   }
 
-  .product-info {
-    .title-container {
-      padding-block-start: var(--gap-s);
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
+  .title-container {
+    padding-block-start: var(--gap-s);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 
-      .product-title {
-        /* text-wrap: balance; */
-        font-size: var(--fs-0);
+    .product-title {
+      /* text-wrap: balance; */
+      font-size: var(--fs-0);
 
-        /* Cappa långa titlar */
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+      /* Cappa långa titlar */
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
+  }
+
+  .product-info {
+
 
     .product-author a {
       color: var(--text-faded);

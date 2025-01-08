@@ -66,7 +66,7 @@ button[popovertarget="favorites"]:hover svg {
 .title-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 
   button {
     background: transparent;
