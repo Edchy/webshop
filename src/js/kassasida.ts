@@ -10,19 +10,25 @@ let totalPrice = 0;
 function createCheckoutItem(item: ICartBook) {
   const productRow = document.createElement("div");
   productRow.className = "cart-checkout-item";
-  productRow.innerHTML = `
-      <span>${item.title}</span>
-      <span>${item.quantity} st</span>
-      <span>${item.price} kr</span>
-    `;
-  const deleteBtn = document.createElement("button") as HTMLButtonElement;
+  
+  const title = document.createElement("span");
+  title.className = "cart-title";
+  title.textContent = item.title;
+
+  const quantity = document.createElement("span");
+  quantity.textContent = `${item.quantity} st`;
+
+  const price = document.createElement("span");
+  price.textContent = `${item.price} kr`;
+
+  const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "X";
   deleteBtn.addEventListener("click", () => {
     removeFromCart(item.id);
     renderCheckoutCartUI();
   });
 
-  const cartItemQuantity = document.createElement("input") as HTMLInputElement;
+  const cartItemQuantity = document.createElement("input");
   cartItemQuantity.type = "number";
   cartItemQuantity.min = "1";
   cartItemQuantity.valueAsNumber = item.quantity;
@@ -31,9 +37,10 @@ function createCheckoutItem(item: ICartBook) {
     renderCheckoutCartUI();
   });
 
-  productRow.append(cartItemQuantity, deleteBtn);
+  productRow.append(title, quantity, price, cartItemQuantity, deleteBtn);
   return productRow;
 }
+
 function renderCheckoutCartUI() {
   if (!cartContainer) return;
   if (cart.length > 0) {
