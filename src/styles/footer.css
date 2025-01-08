@@ -34,7 +34,6 @@ footer:not(.shopping-cart-footer) {
     background-color: var(--clr-primary-400);
     color: var(--clr-light), #FFF;
     padding: 10px 16px;
-    cursor: pointer;
     transition: background-color 0.3s;
 }
 
