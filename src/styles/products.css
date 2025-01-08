@@ -90,9 +90,10 @@ article.product {
   }
 
   .product-actions {
-    width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    max-width: 200px;
+    width: 200px;
 
     button {
       display: grid;
@@ -113,7 +114,7 @@ article.product {
       border-bottom-left-radius: var(--radius);
       background-color: var(--clr-primary-500);
 
-      &>* {
+      & > * {
         margin-left: 20px;
       }
     }
@@ -204,7 +205,6 @@ button.add-to-fav-button {
   background-color: var(--color-secondary-300);
   color: var(--clr-golden);
   box-shadow: 0 0 25px var(--color-primary-300);
-
 }
 
 button:hover .star-1 {
@@ -270,8 +270,6 @@ button:hover .star-6 {
 .fil0 {
   fill: var(--clr-golden);
 }
-
-
 
 .product-image img {
   min-height: 100%;
