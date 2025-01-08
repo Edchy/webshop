@@ -2,6 +2,7 @@ import { balloons } from "balloons-js";
 import { cart, removeFromCart, updateCart } from "./cart";
 import { ICartBook } from "./Models/CartBook";
 import { calculateTotalPrice } from "./utils";
+import { validateEmail } from "./utils";
 
 const cartContainer = document.querySelector(".cart-container") as HTMLElement;
 const totalPriceEl = document.querySelector(".total-price") as HTMLElement;
@@ -58,20 +59,40 @@ function renderCheckoutCartUI() {
   totalPriceEl.textContent = `Total: ${totalPrice} kr`;
 }
 
-  const purchaseButton = document.querySelector(
-    ".purchase-button"
-  ) as HTMLButtonElement;
+function validateContactInfo(): boolean {
+  const name = (document.querySelector("#name") as HTMLInputElement).value;
+  const email = (document.querySelector("#email") as HTMLInputElement).value;
+  const address = (document.querySelector("#address") as HTMLInputElement).value;
 
-  if (purchaseButton) {
-    purchaseButton.addEventListener("click", () => {
+  if (!name || !email || !address) {
+    alert("Vänligen fyll i alla obligatoriska fält.");
+    return false;
+  }
+
+  if (!validateEmail(email)) {
+    alert("Vänligen ange en giltig e-postadress.");
+    return false;
+  }
+
+  return true;
+}
+
+const purchaseButton = document.querySelector(".purchase-button") as HTMLButtonElement;
+
+if (purchaseButton) {
+  purchaseButton.addEventListener("click", (event) => {
+    if (!validateContactInfo()) {
+      event.preventDefault();
+    } else {
       balloons();
       alert("Tack för ditt köp! Din beställning har mottagits.");
       localStorage.removeItem("cart");
       // window.location.href = "index.html";
-    });
-  } else {
-    console.error("Knappen 'purchase-button' kunde inte hittas.");
-  }
+    }
+  });
+} else {
+  console.error("Knappen 'purchase-button' kunde inte hittas.");
+}
 
 // loadCart();
 renderCheckoutCartUI();
