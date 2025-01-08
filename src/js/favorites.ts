@@ -38,7 +38,7 @@ function updateFavoritesUI() {
 
   const closeBtn = document.createElement("button");
   closeBtn.type = "button";
-  closeBtn.innerHTML = "X";
+  closeBtn.innerHTML = "&#10005;";
 
   closeBtn.addEventListener("click", function () {
     favoritesPopover.style.display = "none";
