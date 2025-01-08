@@ -51,7 +51,6 @@ function renderCheckoutCartUI() {
   totalPriceEl.textContent = `Total: ${totalPrice} kr`;
 }
 
-function handlePurchase() {
   const purchaseButton = document.querySelector(
     ".purchase-button"
   ) as HTMLButtonElement;
@@ -66,8 +65,6 @@ function handlePurchase() {
   } else {
     console.error("Knappen 'purchase-button' kunde inte hittas.");
   }
-}
 
 // loadCart();
 renderCheckoutCartUI();
-handlePurchase();

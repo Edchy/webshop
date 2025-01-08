@@ -3,18 +3,23 @@ import { IBook } from "./Models/Book";
 import {
   calculateTotalPrice,
   calculateTotalBooks,
+  calulatePercentage,
   updateLocalStorage,
 } from "./utils";
 
 export const cart: ICartBook[] = JSON.parse(
   localStorage.getItem("cart") || "[]"
 );
+const shoppingCart = document.querySelector(".shopping-cart") as HTMLElement;
 const cartList = document.querySelector(".shopping-cart-list") as HTMLElement;
 const priceTotalOutput = document.querySelector(
   ".shopping-cart-total"
 ) as HTMLElement;
 const cartNotification = document.querySelector(
   ".cart-notification"
+) as HTMLElement;
+const progressBar = document.querySelector(
+  ".free-shipping-progress-container .inner"
 ) as HTMLElement;
 
 export function mapBookToCartBook(book: IBook): ICartBook {
@@ -40,10 +45,12 @@ export function addToCart(newBook: ICartBook) {
   }
   updateLocalStorage("cart", cart);
   console.log(cart);
+  shoppingCart.showPopover(); // MAYBE?
 }
 
 export function renderCartUI() {
   cartList.innerHTML = "din varukorg är tom";
+  const total = calculateTotalPrice(cart);
 
   if (cartList && cart.length > 0) {
     cartList.innerHTML = "";
@@ -53,8 +60,8 @@ export function renderCartUI() {
     });
   }
   if (priceTotalOutput) {
-    const total = calculateTotalPrice(cart).toString();
-    priceTotalOutput.textContent = cart.length > 0 ? total : "";
+    priceTotalOutput.textContent =
+      cart.length > 0 ? `Totalt: ${total.toString()}kr` : "";
   }
   if (cartNotification) {
     cartNotification.innerHTML = calculateTotalBooks(cart);
@@ -62,6 +69,16 @@ export function renderCartUI() {
     setTimeout(() => {
       cartNotification.classList.remove("just-added-animation");
     }, 200);
+  }
+  if (progressBar) {
+    const progress = calulatePercentage(total, 599); // ta bort magic number
+    progressBar.style.width = progress < 100 ? `${progress}%` : "100%";
+    const progressText = document.querySelector(".progress-message");
+    if (progressText)
+      progressText.textContent =
+        total < 599
+          ? `${599 - total}kr kvar till fri frakt`
+          : "Grattis du har fri frakt";
   }
 }
 
@@ -120,20 +137,19 @@ export function updateCart(bookId: number, newQuantity: number) {
 }
 
 const closeCartButton = document.querySelector(".close-cart") as HTMLElement;
-const shoppingCart = document.querySelector(".shopping-cart") as HTMLElement;
-const openCartButton = document.querySelector(
-  '[popovertarget="shopping-cart"]'
-) as HTMLElement;
+// const openCartButton = document.querySelector(
+//   '[popovertarget="shopping-cart"]'
+// ) as HTMLElement;
 
 if (closeCartButton && shoppingCart) {
   closeCartButton.addEventListener("click", () => {
-    shoppingCart.setAttribute("popover", "");
-    // shoppingCart.hidePopover();
+    // shoppingCart.setAttribute("popover", "");
+    shoppingCart.hidePopover();
   });
 }
 
-if (openCartButton && shoppingCart) {
-  openCartButton.addEventListener("click", () => {
-    shoppingCart.setAttribute("popover", "open");
-  });
-}
+// if (openCartButton && shoppingCart) {
+//   openCartButton.addEventListener("click", () => {
+//     shoppingCart.setAttribute("popover", "open");
+//   });
+// }

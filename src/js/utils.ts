@@ -15,3 +15,8 @@ export function validateEmail(email: string): boolean {
 export function updateLocalStorage(key: string, value: ICartBook[]) {
   localStorage.setItem(key, JSON.stringify(value));
 }
+
+export function calulatePercentage(value: number, total: number) {
+  return (value / total) * 100;
+}
+
