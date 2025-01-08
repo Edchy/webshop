@@ -41,7 +41,7 @@ function updateFavoritesUI() {
   closeBtn.innerHTML = "&#10005;";
 
   closeBtn.addEventListener("click", function () {
-    favoritesPopover.style.display = "none";
+    favoritesPopover.hidePopover();
   });
 
   titleContainer.append(header, closeBtn);
