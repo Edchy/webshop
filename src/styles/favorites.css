@@ -3,10 +3,7 @@ button[popovertarget="favorites"] {
   color: var(--clr-light);
   border: none;
   padding: 0.25rem;
-
 }
-
-
 
 button[popovertarget="favorites"] svg {
   width: 24px;
@@ -18,9 +15,6 @@ button[popovertarget="favorites"] svg {
 button[popovertarget="favorites"]:hover svg {
   color: rgb(255, 0, 0);
 }
-
-
-
 
 .favorites[popover] {
   inset: auto;
@@ -75,9 +69,7 @@ button[popovertarget="favorites"]:hover svg {
 .btn-remove:hover {
   background-color: red;
   color: white;
-
 }
-
 
 .btn-move-to-cart {
   border-radius: 10px;
@@ -90,8 +82,6 @@ button[popovertarget="favorites"]:hover svg {
   margin-bottom: 10px;
 }
 
-
-
 @media (max-width: 768px) {
   .favorites[popover]:popover-open {
     width: 100vw;
@@ -99,5 +89,11 @@ button[popovertarget="favorites"]:hover svg {
     margin-top: 10.2vh;
     position: fixed;
     left: 0;
+  }
+}
+@media (max-width: 1500px) {
+  .book-container {
+    display: flex;
+    flex-direction: column;
   }
 }
