@@ -40,6 +40,10 @@ function updateFavoritesUI() {
   closeBtn.type = "button";
   closeBtn.innerHTML = "X";
 
+  closeBtn.addEventListener("click", function () {
+    favoritesPopover.style.display = "none";
+  });
+
   titleContainer.append(header, closeBtn);
   favoritesPopover.append(titleContainer);
 
