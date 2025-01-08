@@ -37,10 +37,13 @@ header.container {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    font-size: var(--fs--1)
+    font-size: var(--fs--1);
   }
 
   p {
     font-size: var(--fs--1);
   }
+}
+
+@media screen and (min-width: 400px) {
 }
