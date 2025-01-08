@@ -76,7 +76,7 @@
     border-bottom-left-radius: var(--radius);
     background-color: var(--clr-primary-500);
 
-    & > * {
+    &>* {
       margin-left: 20px;
     }
   }
@@ -238,22 +238,26 @@ button:hover .star-6 {
     flex-direction: column;
     width: 100%;
   }
+
   .product-additional-info {
     p {
       font-size: 20px;
     }
   }
+
   .product-details {
     p {
       font-size: 20px;
     }
+
     h1 {
       font-size: 30px;
     }
   }
+
   .product-price {
     font-size: 20px;
   }
-  .product-image {
-  }
+
+  /* .product-image {} */
 }

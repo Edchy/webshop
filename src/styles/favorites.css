@@ -101,6 +101,7 @@ button[popovertarget="favorites"]:hover svg {
   padding: 8px;
   margin-bottom: 10px;
 }
+
 @media (max-width: 1500px) {
   .favorites[popover]:popover-open {
     width: 40%;
@@ -109,6 +110,7 @@ button[popovertarget="favorites"]:hover svg {
     margin-top: 10.2vh;
   }
 }
+
 @media (max-width: 1150px) {
   .favorites[popover]:popover-open {
     width: 50%;
@@ -137,6 +139,7 @@ button[popovertarget="favorites"]:hover svg {
     left: 0;
     margin-top: 120px;
   }
+
   .book-container {
     display: flex;
     flex-direction: column;

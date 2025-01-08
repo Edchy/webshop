@@ -1,7 +1,8 @@
 .product-section {
   padding: var(--gap-l);
   margin-bottom: 1rem;
-  width: var(--wrapper-width);
+  /* width: var(--wrapper-width);
+  margin: auto; */
 
   h2 {
     padding-block-end: var(--gap-s);
@@ -37,7 +38,12 @@ article.product {
 
     img {
       min-height: 100%;
+      width: 100%;
       object-fit: cover;
+      object-fit: scale-down;
+      /* width: 100px; */
+      /* margin: auto; */
+      transition: transform 0.3s ease-in-out;
     }
   }
 
@@ -94,7 +100,6 @@ article.product {
     display: grid;
     grid-template-columns: 2fr 1fr;
     max-width: 200px;
-    width: 200px;
 
     button {
       display: grid;
@@ -115,7 +120,7 @@ article.product {
       border-bottom-left-radius: var(--radius);
       background-color: var(--clr-primary-500);
 
-      & > * {
+      &>* {
         margin-left: 20px;
       }
     }
@@ -128,6 +133,10 @@ article.product {
       background-color: var(--clr-primary-400);
     }
   }
+}
+
+article.product:hover .product-image img {
+  transform: scale(1.05);
 }
 
 /* Fav button effect */
@@ -270,14 +279,4 @@ button:hover .star-6 {
 
 .fil0 {
   fill: var(--clr-golden);
-}
-
-.product-image img {
-  min-height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-}
-
-article.product:hover .product-image img {
-  transform: scale(1.05);
 }
