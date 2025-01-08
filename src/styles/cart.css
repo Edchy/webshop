@@ -119,6 +119,14 @@ button[popovertarget="shopping-cart"] {
   position: sticky;
   bottom: 0;
 
+  .clear-cart-btn {
+    background-color: var(--clr-accent-300);
+    color: var(--clr-light);
+    padding: .25rem;
+    display: block;
+    margin-left: auto;
+  }
+
   .shopping-cart-total {
     font-weight: bold;
     font-size: var(--fs-1);
@@ -126,7 +134,7 @@ button[popovertarget="shopping-cart"] {
     padding-block: 1rem;
   }
 
-  button {
+  .go-to-payment-btn {
     width: 100%;
     padding: 1rem;
     background-color: var(--clr-primary-300);

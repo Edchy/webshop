@@ -21,6 +21,18 @@ const cartNotification = document.querySelector(
 const progressBar = document.querySelector(
   ".free-shipping-progress-container .inner"
 ) as HTMLElement;
+const clearCartBtn = document.querySelector(
+  ".clear-cart-btn"
+) as HTMLButtonElement;
+
+clearCartBtn.addEventListener("click", () => {
+  clearCart();
+  renderCartUI();
+});
+export function clearCart() {
+  cart.length = 0;
+  localStorage.removeItem("cart");
+}
 
 export function mapBookToCartBook(book: IBook): ICartBook {
   return {
@@ -45,11 +57,18 @@ export function addToCart(newBook: ICartBook) {
   }
   updateLocalStorage("cart", cart);
   console.log(cart);
-  shoppingCart.showPopover(); // MAYBE?
+  // shoppingCart.showPopover(); // MAYBE?
 }
 
 export function renderCartUI() {
-  cartList.innerHTML = "din varukorg är tom";
+  cartList.innerHTML = "din varukorg är tom...";
+
+  // cartList.innerHTML = `
+  //   <div>
+  //     <img style="width: 50%" src="/src/photos/bok5.jpeg" alt="" />
+  //     <p>din varukorg är tom</p>
+  //   </div>
+  //   `;
   const total = calculateTotalPrice(cart);
 
   if (cartList && cart.length > 0) {
@@ -107,6 +126,7 @@ function createCartItem(book: ICartBook) {
   const cartItemRemove = document.createElement("button") as HTMLButtonElement;
   cartItemRemove.textContent = "❌";
   cartItemRemove.addEventListener("click", () => {
+    console.log("hello");
     removeFromCart(book.id);
     renderCartUI();
   });
