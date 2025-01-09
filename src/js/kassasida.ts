@@ -56,7 +56,7 @@ function renderCheckoutCartUI() {
   }
   totalPrice = calculateTotalPrice(cart);
 
-  totalPriceEl.textContent = `Total: ${totalPrice} kr`;
+  totalPriceEl.textContent = `Totalt: ${totalPrice} kr`;
 }
 
 function validateContactInfo(): boolean {
