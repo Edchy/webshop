@@ -36,7 +36,8 @@
     grid-area: logo;
 
     h2 {
-      font-size: var(--fs-0);
+      font-size: var(--fs-1);
+      font-family: var(--brand-font);
 
       @media (width < 380px) {
         visibility: hidden;

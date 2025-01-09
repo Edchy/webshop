@@ -62,13 +62,6 @@ export function addToCart(newBook: ICartBook) {
 
 export function renderCartUI() {
   cartList.innerHTML = "din varukorg är tom...";
-
-  // cartList.innerHTML = `
-  //   <div>
-  //     <img style="width: 50%" src="/src/photos/bok5.jpeg" alt="" />
-  //     <p>din varukorg är tom</p>
-  //   </div>
-  //   `;
   const total = calculateTotalPrice(cart);
 
   if (cartList && cart.length > 0) {

@@ -24,7 +24,7 @@ body {
   background-color: var(--primary-color);
   background-color: white;
   color: var(--copy-color);
-  /* font-family: 'Bespoke Serif', serif; */
+  /* font-family: 'CMGeom', system-ui; */
   font-family: 'system-ui';
 }
 
