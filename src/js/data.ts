@@ -294,7 +294,7 @@ export const books: IBook[] = [
     pages: 304,
     lang: "English",
     description: "Some descr...",
-    price: 143,
+    price: 150,
     discount: 0,
     stock: 100,
   },

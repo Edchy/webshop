@@ -1,0 +1,41 @@
+<div class="free-shipping-progress-container">
+  <p class="progress-message">X kvar till fri frakt</p>
+  <div class="outer">
+     <div class="inner"></div>
+  </div>
+</div>
+
+Här har vi en container med 2 barn. En p. Och en div. Div har ett barn – en till div.
+Div.outer är progressbar containern.
+Div.inner är själva ”mätaren” – har en mörkare färg. 
+
+När div.inner har en width på 50% så tar den upp halva containern, 100% så fylls hela container av mätaren, osv. 
+
+Så 100% på mätaren motsvarar 599 (fri frakt 599kr). Så om man har lagt till en bok som kostar 300kr ska mätaren stå på 50%. Om vi lägger till en till bok som kostar 100kr. Så ska mätaren vara 66% (300+100=400). Så varje gång vi renderar kundvagnen så behöver vi veta totalpriset på alla varor tillsammans. Detta gör vi inuti renderCartUI() med const total = calculateTotalPrice(cart);
+
+Där resultatet av att skicka in cart-arrayen i calculateTotalPrice ger totalpriset.
+
+Sedan sparar vi en referens till .inner-diven 
+const progressBar = document.querySelector(
+".free-shipping-progress-container .inner"
+) as HTMLElement;
+
+Och räknar ut hur många PROCENT totalen är av 599 const progress = calulatePercentage(total, 599);
+
+Så, om totalen av alla böcker i carten är 150kr, så blir const progress = 25 i ovanstående funktion.
+
+Detta betyder att vi vill att div.inner ska ha width: 25%
+
+Lägger vi till en till bok som kostar 150kr så är det totalt 300kr. Då uppdateras const progess till att vara 50. och inner.style.width = 50%
+
+Denna rad säger: sätt width på progressbar till att vara variabeln ”{progress} + %”, om om {progress} är mer än 100, sätt den till att vara exakt 100%. Detta pga att vi vill inte att mätaren ska kunna vara bredare än sin container. Ni kan testa att bara sätta progressBar.style.width = progress, och lägga till några böcker så kommer ni se att mätaren skjuter iväg.
+progressBar.style.width = progress < 100 ? `${progress}%` : "100%";
+
+Nästa grej har bara med texten som står att göra. Vi vill skriva ut hur mycket det är kvar till fri frakt så länge total är mindre än 599, och då vill vi skriva ut något annat.
+const progressText = document.querySelector(".progress-message");
+if (progressText)
+progressText.textContent =
+total < 599
+? `${599 - total}kr kvar till fri frakt`
+: "Grattis du har fri frakt";
+
