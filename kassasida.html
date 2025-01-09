@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>T&T</title>
+    <title>T&T | Kassa</title>
     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/js/kassasida.ts"></script>
   </head>
+
   <body>
     <header class="page-header">
       <nav class="main-nav">
@@ -84,31 +85,68 @@
         </div>
       </nav>
     </header>
-    <div class="wrapper">
-      <main>
-        <div class="hero">
-          <div class="hero-text">
-            <h1>Katt á postrofala böcker online!</h1>
-            <p>
-              Utforska vårt lilla utbud av exklusiva katter och apostrofer ´🐈‍⬛`
-            </p>
+    <main>
+      <section class="purchaseHead">
+        <button class="back-button" onclick="window.location.href='index.html'">
+          ← Fortsätt shoppa
+        </button>
+        <h1 class="headingC">Kassa</h1>
+      </section>
+
+      <section class="flex-container">
+        <div class="render-checkout">
+          <div class="cart-headings">
+            <h3>Produkt</h3>
+            <h3>Antal</h3>
+            <h3>Pris á</h3>
+            <h3>Ändra antal</h3>
+            <h3>Ta bort</h3>
           </div>
 
-          <div class="hero-image">
-            <img src="src/assets/images/bok5.jpeg" alt="Bild på böcker" />
-          </div>
+          <div class="cart-container"></div>
+          <p class="total-price">Totalt</p>
         </div>
+      </section>
 
-        <!-- ProduktSektion -->
-        <section class="product-section">
-          <h2>Senaste</h2>
-          <!-- ProduktLista -->
-          <ul class="product-list"></ul>
-          <!-- ProduktLista end -->
-        </section>
-        <!-- ProduktSektion end -->
-      </main>
-    </div>
+      <section class="consumerInfo">
+        <h3>Kontaktuppgifter</h3>
+        <p>Vänligen fyll i alla obligatoriska fält*</p>
+        <input
+          type="text"
+          id="name"
+          placeholder="Förnamn*"
+          class="contact-info"
+          required
+        />
+        <input type="text" placeholder="Efternamn*" class="contact-info" />
+        <input
+          type="text"
+          id="address"
+          placeholder="Adress*"
+          class="contact-info"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          placeholder="E-post*"
+          class="contact-info"
+          required
+        />
+        <input type="text" placeholder="Telefonnummer*" class="contact-info" />
+
+        <h3>Betalningsmetod</h3>
+        <label>
+        <input type="radio" name="payment-method" value="card" />            Kortbetalning
+        </label>
+
+        <input type="text" placeholder="Kortinnehavare*" class="contact-info" />
+        <input type="text" placeholder="Kortnummer*" class="contact-info" />
+        <input type="text" placeholder="CVC*" class="contact-info" />
+
+        <button class="purchase-button">Köp</button>
+      </section>
+    </main>
 
     <footer id="footer">
       <section class="footer-container">
@@ -130,11 +168,11 @@
         <div class="footer-section">
           <h3>Kontakt</h3>
           <p>
-            Gustavslundsvägen 151 D <br />
-            167 51 Bromma<br />+46 123 345 67 88
+            Gustavslundsvägen 151 D <br />167 51 Bromma<br />+46 123 345 67 88
           </p>
         </div>
       </section>
     </footer>
+    <!-- <script type="module" src="/src/js/kassasida.ts" defer></script> -->
   </body>
 </html>

@@ -1,33 +1,81 @@
-h1 {
-  font-size: var(--fs-1);
-}
-
-.container {
+.page-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
   background-color: var(--clr-primary-500);
-  padding: 20px;
   color: var(--clr-light);
   border-bottom: 2px solid #ccc;
-  /* Lägg till ett streck under hela navigationen */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Valfritt: en skugga för effekt */
 }
 
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.main-nav {
   width: var(--wrapper-width);
   margin-inline: auto;
-}
+  padding-block: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "logo actions"
+    "ul p";
+  align-items: center;
 
-ul {
-  display: flex;
-  gap: 20px;
-}
+  @media (width > 768px) {
+    grid-template-areas:
+      "logo ul p actions"
+    ;
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  font-size: var(--fs--1)
+  a {
+    text-decoration: none;
+    color: var(--clr-light);
+  }
+
+
+  .logo-container {
+    grid-area: logo;
+
+    h2 {
+      font-size: var(--fs-1);
+      font-family: var(--brand-font);
+
+      @media (width < 380px) {
+        visibility: hidden;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+    }
+  }
+
+  .nav-links {
+    grid-area: ul;
+    display: flex;
+    gap: 1.5rem;
+    font-size: var(--fs--1);
+    text-transform: uppercase;
+
+    li:hover {
+      opacity: .8;
+    }
+
+  }
+
+  .header-text {
+    grid-area: p;
+    font-size: var(--fs--2);
+    font-weight: bold;
+    justify-self: flex-end;
+  }
+
+  .header-actions {
+    grid-area: actions;
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
 }

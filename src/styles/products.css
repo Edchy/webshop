@@ -1,10 +1,12 @@
 .product-section {
   padding: var(--gap-l);
   margin-bottom: 1rem;
+  /* width: var(--wrapper-width);
+  margin: auto; */
 
   h2 {
     padding-block-end: var(--gap-s);
-    font-size: var(--fs-0);
+    font-size: var(--fs--1);
   }
 
   .product-list {
@@ -22,7 +24,7 @@ article.product {
   position: relative;
   display: grid;
   grid-template-rows: subgrid;
-  grid-row: span 4;
+  grid-row: span 5;
   background-color: var(--clr-light);
   color: var(--text);
   width: min(300px, 100%);
@@ -36,33 +38,37 @@ article.product {
 
     img {
       min-height: 100%;
+      width: 100%;
       object-fit: cover;
+      object-fit: scale-down;
+      /* width: 100px; */
+      /* margin: auto; */
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .title-container {
+    padding-block-start: var(--gap-s);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    .product-title {
+      /* text-wrap: balance; */
+      font-size: var(--fs-0);
+
+      /* Cappa långa titlar */
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   .product-info {
 
-    .title-container {
-      padding-block-start: var(--gap-s);
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-
-      .product-title {
-        /* text-wrap: balance; */
-        font-size: var(--fs-0);
-
-        /* Cappa långa titlar */
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-
-    }
 
     .product-author a {
       color: var(--text-faded);
@@ -90,21 +96,19 @@ article.product {
     .product-price {
       font-weight: bold;
     }
-
   }
 
   .product-actions {
-    width: 100%;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    max-width: 200px;
+
 
     button {
       display: grid;
       place-content: center;
-      border: none;
       color: var(--clr-golden);
       padding-block: var(--gap-s);
-      cursor: pointer;
 
       &:disabled {
         background-color: var(--disabled);
@@ -113,7 +117,8 @@ article.product {
     }
 
     .add-to-cart-button {
-
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
       border-top-left-radius: var(--radius);
       border-bottom-left-radius: var(--radius);
       background-color: var(--clr-primary-500);
@@ -121,23 +126,27 @@ article.product {
       &>* {
         margin-left: 20px;
       }
-
-
     }
 
     .add-to-fav-button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
       border-top-right-radius: var(--radius);
       border-bottom-right-radius: var(--radius);
       background-color: var(--clr-primary-400);
+      font-size: var(--fs-0);
     }
   }
 }
 
+article.product:hover .product-image img {
+  transform: scale(1.05);
+}
 
 /* Fav button effect */
 button.add-to-fav-button {
   position: relative;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .star-1 {
@@ -181,7 +190,7 @@ button.add-to-fav-button {
   height: auto;
   filter: drop-shadow(0 0 0 var(--color-primary-300));
   z-index: -5;
-  transition: all .8s cubic-bezier(0, 0.4, 0, 1.01);
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
 }
 
 .star-5 {
@@ -192,7 +201,7 @@ button.add-to-fav-button {
   height: auto;
   filter: drop-shadow(0 0 0 var(--color-primary-300));
   z-index: -5;
-  transition: all .6s cubic-bezier(0, 0.4, 0, 1.01);
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
 }
 
 .star-6 {
@@ -203,14 +212,13 @@ button.add-to-fav-button {
   height: auto;
   filter: drop-shadow(0 0 0 var(--color-primary-300));
   z-index: -5;
-  transition: all .8s ease;
+  transition: all 0.8s ease;
 }
 
 button.add-to-fav-button {
   background-color: var(--color-secondary-300);
   color: var(--clr-golden);
   box-shadow: 0 0 25px var(--color-primary-300);
-  border: 3px solid var(--clr-golden);
 }
 
 button:hover .star-1 {

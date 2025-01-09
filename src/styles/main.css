@@ -1,8 +1,11 @@
+@import "./fontface.css";
 @import "./variables.css";
 @import "./global.css";
 @import "./navigation.css";
+@import "./favorites.css";
 @import "./cart.css";
 @import "./products.css";
 @import "./productsite.css";
 @import "./footer.css";
 @import "./hero.css";
+@import "./kassasida.css";

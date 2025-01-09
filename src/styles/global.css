@@ -12,8 +12,7 @@
 .wrapper {
   width: min(1268px, 100% - 1rem);
   margin-inline: auto;
-  margin-block: 1rem;
-  outline: 1px solid white;
+  margin-block: 10rem;
   min-height: 100vh;
 }
 
@@ -25,7 +24,8 @@ body {
   background-color: var(--primary-color);
   background-color: white;
   color: var(--copy-color);
-  font-family: system-ui;
+  /* font-family: 'CMGeom', system-ui; */
+  font-family: 'system-ui';
 }
 
 h1,
@@ -36,6 +36,7 @@ h5 {
   line-height: 1.1;
   /* text-wrap: balance; */
   overflow-wrap: break-word;
+
 }
 
 p {
@@ -53,7 +54,10 @@ img {
 }
 
 button {
+  border: none;
   transition: opacity .2s;
+  border-radius: var(--radius);
+  cursor: pointer;
 
   &:hover {
     opacity: .9;

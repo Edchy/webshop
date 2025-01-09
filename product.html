@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>T&T</title>
     <script type="module" src="/src/main.ts"></script>
+    <title>Document</title>
   </head>
   <body>
     <header class="page-header">
@@ -85,31 +84,8 @@
       </nav>
     </header>
     <div class="wrapper">
-      <main>
-        <div class="hero">
-          <div class="hero-text">
-            <h1>Katt á postrofala böcker online!</h1>
-            <p>
-              Utforska vårt lilla utbud av exklusiva katter och apostrofer ´🐈‍⬛`
-            </p>
-          </div>
-
-          <div class="hero-image">
-            <img src="src/assets/images/bok5.jpeg" alt="Bild på böcker" />
-          </div>
-        </div>
-
-        <!-- ProduktSektion -->
-        <section class="product-section">
-          <h2>Senaste</h2>
-          <!-- ProduktLista -->
-          <ul class="product-list"></ul>
-          <!-- ProduktLista end -->
-        </section>
-        <!-- ProduktSektion end -->
-      </main>
+      <div id="book-details"></div>
     </div>
-
     <footer id="footer">
       <section class="footer-container">
         <div class="footer-section">
@@ -136,5 +112,6 @@
         </div>
       </section>
     </footer>
+    <script type="module" src="/src/js/bookDetails.ts"></script>
   </body>
 </html>

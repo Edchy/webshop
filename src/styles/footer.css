@@ -1,4 +1,4 @@
-footer {
+footer:not(.shopping-cart-footer) {
     background-color: var(--clr-primary-500);
     color: #fff;
     padding: 40px 20px;
@@ -21,24 +21,47 @@ footer {
     font-size: 20px;
 }
 
+.footer-section h3.logo {
+    font-family: var(--brand-font);
+}
+
 .footer-section input {
     width: 50%;
     padding: 10px;
     margin-bottom: 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--radius);
 }
 
 .footer-section button {
-    background-color: var(--clr-primary-500);
-    color: #fff;
-    border: none;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-light), #FFF;
     padding: 10px 16px;
-    cursor: pointer;
-    border-radius: 10px;
     transition: background-color 0.3s;
 }
 
 .footer-section button:hover {
-    background-color: var(--clr-primary-400);
+    background-color: var(--clr-primary-300);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .footer-section input {
+        width: 50%;
+    }
+
+    .footer-section button {
+        width: auto;
+    }
 }
