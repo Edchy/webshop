@@ -21,8 +21,6 @@ export function renderProductList() {
 }
 
 function createBookElement(book: IBook) {
-  // funktion som skapar starDivs
-
   // Bok
   const article = document.createElement("article");
   article.className = "product";
@@ -96,8 +94,7 @@ function createBookElement(book: IBook) {
   addToCartBtn.type = "button";
   addToCartBtn.title = "Add to Cart";
   addToCartBtn.className = "add-to-cart-button";
-  addToCartBtn.setAttribute("data-book-id", book.id.toString());
-  // addToCartBtn.textContent = "lägg till";
+  // addToCartBtn.setAttribute("data-book-id", book.id.toString());
   addToCartBtn.addEventListener("click", () => {
     const cartBook = mapBookToCartBook(book);
     addToCart(cartBook);
@@ -143,7 +140,7 @@ function createBookElement(book: IBook) {
   const favBtn = document.createElement("button");
   favBtn.type = "button";
   favBtn.className = "add-to-fav-button";
-  favBtn.setAttribute("data-book-id", book.id.toString());
+  // favBtn.setAttribute("data-book-id", book.id.toString());
   favBtn.textContent = "🤍";
   favBtn.title = "Add to Favorites";
   favBtn.addEventListener("click", () => {

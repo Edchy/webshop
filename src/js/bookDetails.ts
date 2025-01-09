@@ -73,8 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartBtn.type = "button";
     addToCartBtn.innerHTML = "Lägg till i varukorg";
     addToCartBtn.className = "add-to-cart-button";
-    addToCartBtn.setAttribute("data-book-id", book.id.toString());
-    // addToCartBtn.textContent = "lägg till";
+    // addToCartBtn.setAttribute("data-book-id", book.id.toString());
     addToCartBtn.addEventListener("click", () => {
       const cartBook = mapBookToCartBook(book);
       addToCart(cartBook);
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const favBtn = document.createElement("button");
     favBtn.type = "button";
     favBtn.className = "add-to-fav-button";
-    favBtn.setAttribute("data-book-id", book.id.toString());
+    // favBtn.setAttribute("data-book-id", book.id.toString());
     favBtn.textContent = "🤍";
     favBtn.title = "Add to Favorites";
     favBtn.addEventListener("click", () =>

@@ -42,7 +42,6 @@ export function mapBookToCartBook(book: IBook): ICartBook {
     cover: book.cover,
     price: book.price,
     quantity: 1,
-    favorite: book.favorite ?? false,
   };
 }
 

@@ -15,7 +15,6 @@ export const books: IBook[] = [
     price: 182,
     discount: 0,
     stock: 100,
-    favorite: false,
   },
   {
     id: 390,
@@ -31,7 +30,6 @@ export const books: IBook[] = [
     price: 182,
     discount: 0,
     stock: 100,
-    favorite: false,
   },
   {
     id: 211,
