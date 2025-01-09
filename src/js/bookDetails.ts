@@ -24,13 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.title = bookTitle ? bookTitle.toString() : "404";
 
   if (book) {
-    const link = document.createElement("a");
-    link.href = `product.html?id=${book.id}&title=${book.title}`;
+    // vi behöver ingen länk här - appendar på img-elementet istället på rad 104
+    // const link = document.createElement("a");
+    // link.href = `product.html?id=${book.id}&title=${book.title}`;
 
     const img = document.createElement("img");
     img.src = book.cover;
     img.alt = `Omslag för ${book.title} av ${book.author}`;
-    link.appendChild(img);
+    // link.appendChild(img);
 
     const mainContent = document.createElement("div");
     mainContent.className = "main-content";
@@ -100,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const imageContainer = document.createElement("div");
     imageContainer.className = "product-img";
-    imageContainer.appendChild(link);
+    imageContainer.appendChild(img);
 
     productInformation.append(imageContainer, productDetails);
 

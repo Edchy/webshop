@@ -151,16 +151,16 @@ button[popovertarget="shopping-cart"] {
     background-color: var(--clr-primary-400);
     height: 10px;
     border-radius: var(--radius);
-    ;
 
   }
 
   .inner {
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
+    /* border-radius: var(--radius); */
     background-color: var(--clr-primary-300);
     height: 10px;
-    width: 50%;
+    /* width: 50%; */
   }
 }
 
