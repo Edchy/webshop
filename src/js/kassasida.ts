@@ -23,7 +23,8 @@ function createCheckoutItem(item: ICartBook) {
   price.textContent = `${item.price} kr`;
 
   const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "X";
+  deleteBtn.textContent = "  ❌  ";
+  deleteBtn.className =  "cart-item-delete";
   deleteBtn.addEventListener("click", () => {
     removeFromCart(item.id);
     renderCheckoutCartUI();
@@ -33,6 +34,7 @@ function createCheckoutItem(item: ICartBook) {
   cartItemQuantity.type = "number";
   cartItemQuantity.min = "1";
   cartItemQuantity.valueAsNumber = item.quantity;
+  cartItemQuantity.className = "cart-item-quantity";
   cartItemQuantity.addEventListener("change", () => {
     updateCart(item.id, cartItemQuantity.valueAsNumber);
     renderCheckoutCartUI();
