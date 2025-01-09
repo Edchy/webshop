@@ -39,6 +39,7 @@ export function mapBookToCartBook(book: IBook): ICartBook {
     id: book.id,
     title: book.title,
     author: book.author,
+    year: book.year,
     cover: book.cover,
     price: book.price,
     quantity: 1,
@@ -111,7 +112,24 @@ function createCartItem(book: ICartBook) {
 
   const cartItemDetails = document.createElement("div");
   cartItemDetails.classList.add("cart-item-details");
-  cartItemDetails.textContent = `${book.title} - ${book.price} kr`;
+
+  const cartItemTitle = document.createElement("h3");
+  cartItemTitle.classList.add("cart-item-title");
+  cartItemTitle.textContent = `${book.title}`;
+
+  const cartItemAuthor = document.createElement("span");
+  cartItemAuthor.classList.add("cart-item-author");
+  cartItemAuthor.textContent = `av ${book.author}`;
+
+  const cartItemYear = document.createElement("time");
+  cartItemYear.classList.add("cart-item-year");
+  cartItemYear.textContent = `(${book.year})`;
+
+  cartItemDetails.append(cartItemTitle, cartItemAuthor, cartItemYear);
+
+  const cartItemPrice = document.createElement("span");
+  cartItemPrice.classList.add("cart-item-price");
+  cartItemPrice.textContent = `${book.price} kr`;
 
   const cartItemActions = document.createElement("div");
   cartItemActions.classList.add("cart-item-actions");
@@ -134,7 +152,7 @@ function createCartItem(book: ICartBook) {
   });
 
   cartItemActions.append(cartItemQuantity, cartItemRemove);
-  cartItem.append(cartItemDetails, cartItemActions);
+  cartItem.append(cartItemDetails, cartItemPrice, cartItemActions);
 
   return cartItem;
 }
